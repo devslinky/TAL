@@ -1,0 +1,3012 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_62fa1dbee3bf8abde88445e7898e59ed {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="position:fixed;bottom:40px;left:40px;background:rgba(20,20,20,0.85);border:1px solid #555;border-radius:8px;padding:12px 16px;z-index:9999;font-family:monospace;color:#eee;font-size:13px;">
+  <b>Avg Delay</b><br><br>
+  <span style="color:#1a9850;">&#9632;</span> Early<br>
+  <span style="color:#fee08b;">&#9632;</span> On time<br>
+  <span style="color:#d73027;">&#9632;</span> Late
+</div>
+    
+            <div class="folium-map" id="map_62fa1dbee3bf8abde88445e7898e59ed" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_62fa1dbee3bf8abde88445e7898e59ed = L.map(
+                "map_62fa1dbee3bf8abde88445e7898e59ed",
+                {
+                    center: [43.684654125, -79.44430685227273],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_5411f9d8f2f5d99f16208eb7f9076e30 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_5411f9d8f2f5d99f16208eb7f9076e30.addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+            var circle_marker_1aa239880941a5ccfe311b532c0dd2f6 = L.circleMarker(
+                [43.666082, -79.438076],
+                {"bubblingMouseEvents": true, "color": "#45ad5b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#45ad5b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_48e59032178beb4d6a02276bf050cbca = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_b141992cf7a80c2b910f89d6451c557e = $(`<div id="html_b141992cf7a80c2b910f89d6451c557e" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Lappin Ave South Side</b><br>Avg Delay: -2.3 min</div>`)[0];
+                popup_48e59032178beb4d6a02276bf050cbca.setContent(html_b141992cf7a80c2b910f89d6451c557e);
+            
+        
+
+        circle_marker_1aa239880941a5ccfe311b532c0dd2f6.bindPopup(popup_48e59032178beb4d6a02276bf050cbca)
+        ;
+
+        
+    
+    
+            circle_marker_1aa239880941a5ccfe311b532c0dd2f6.bindTooltip(
+                `<div>
+                     Dufferin St at Lappin Ave South Side: -2.3 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_032a94910acbcefcca5e1c44700b9bd1 = L.circleMarker(
+                [43.71788, -79.455672],
+                {"bubblingMouseEvents": true, "color": "#fafdb8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fafdb8", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_30e725c3fd1aa0b0fa83fea53307fcaa = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_f000ecf65009b3d20cbb135e3aeb7401 = $(`<div id="html_f000ecf65009b3d20cbb135e3aeb7401" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Samor Rd South Side</b><br>Avg Delay: -0.1 min</div>`)[0];
+                popup_30e725c3fd1aa0b0fa83fea53307fcaa.setContent(html_f000ecf65009b3d20cbb135e3aeb7401);
+            
+        
+
+        circle_marker_032a94910acbcefcca5e1c44700b9bd1.bindPopup(popup_30e725c3fd1aa0b0fa83fea53307fcaa)
+        ;
+
+        
+    
+    
+            circle_marker_032a94910acbcefcca5e1c44700b9bd1.bindTooltip(
+                `<div>
+                     Dufferin St at Samor Rd South Side: -0.1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fd4f1b6635d1e94dd5c36ceb95bc61bc = L.circleMarker(
+                [43.644509, -79.429381],
+                {"bubblingMouseEvents": true, "color": "#fffebe", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fffebe", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_2a9ddecdef5a782b0d4fe37817dfe29d = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_23e56316e3d83f213adcade36b52fb35 = $(`<div id="html_23e56316e3d83f213adcade36b52fb35" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Alma Ave</b><br>Avg Delay: 0.0 min</div>`)[0];
+                popup_2a9ddecdef5a782b0d4fe37817dfe29d.setContent(html_23e56316e3d83f213adcade36b52fb35);
+            
+        
+
+        circle_marker_fd4f1b6635d1e94dd5c36ceb95bc61bc.bindPopup(popup_2a9ddecdef5a782b0d4fe37817dfe29d)
+        ;
+
+        
+    
+    
+            circle_marker_fd4f1b6635d1e94dd5c36ceb95bc61bc.bindTooltip(
+                `<div>
+                     Dufferin St at Alma Ave: 0.0 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_229cb78c85e77fd2406a7a2007241faa = L.circleMarker(
+                [43.706896, -79.453031],
+                {"bubblingMouseEvents": true, "color": "#fdc372", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fdc372", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_a16fd318038299528309a89b8860d3b1 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_49a7739bcad9877e90ecc2e1aa375edd = $(`<div id="html_49a7739bcad9877e90ecc2e1aa375edd" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Glencairn Ave</b><br>Avg Delay: 1.1 min</div>`)[0];
+                popup_a16fd318038299528309a89b8860d3b1.setContent(html_49a7739bcad9877e90ecc2e1aa375edd);
+            
+        
+
+        circle_marker_229cb78c85e77fd2406a7a2007241faa.bindPopup(popup_a16fd318038299528309a89b8860d3b1)
+        ;
+
+        
+    
+    
+            circle_marker_229cb78c85e77fd2406a7a2007241faa.bindTooltip(
+                `<div>
+                     Dufferin St at Glencairn Ave: 1.1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_67771efd7936014798e6337e2ade378f = L.circleMarker(
+                [43.724737, -79.457304],
+                {"bubblingMouseEvents": true, "color": "#fbfdba", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fbfdba", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_5cb2e5cb6fac428a36a908170de28fc3 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_0f476c5abd8541061ea6bf1df933b3b7 = $(`<div id="html_0f476c5abd8541061ea6bf1df933b3b7" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Jane Osler Blvd - Yorkdale Shopping Centre</b><br>Avg Delay: -0.1 min</div>`)[0];
+                popup_5cb2e5cb6fac428a36a908170de28fc3.setContent(html_0f476c5abd8541061ea6bf1df933b3b7);
+            
+        
+
+        circle_marker_67771efd7936014798e6337e2ade378f.bindPopup(popup_5cb2e5cb6fac428a36a908170de28fc3)
+        ;
+
+        
+    
+    
+            circle_marker_67771efd7936014798e6337e2ade378f.bindTooltip(
+                `<div>
+                     Dufferin St at Jane Osler Blvd - Yorkdale Shopping Centre: -0.1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9733bc0633f7b31ea97784e1397d090a = L.circleMarker(
+                [43.731811, -79.458665],
+                {"bubblingMouseEvents": true, "color": "#f88950", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f88950", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_48bb49b2cd4d6922bd7369bdac37391c = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_f23458708b12828ff4310d95aeaf5adf = $(`<div id="html_f23458708b12828ff4310d95aeaf5adf" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Wilson Ave</b><br>Avg Delay: 1.8 min</div>`)[0];
+                popup_48bb49b2cd4d6922bd7369bdac37391c.setContent(html_f23458708b12828ff4310d95aeaf5adf);
+            
+        
+
+        circle_marker_9733bc0633f7b31ea97784e1397d090a.bindPopup(popup_48bb49b2cd4d6922bd7369bdac37391c)
+        ;
+
+        
+    
+    
+            circle_marker_9733bc0633f7b31ea97784e1397d090a.bindTooltip(
+                `<div>
+                     Dufferin St at Wilson Ave: 1.8 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_146cc1255165c8c62b62794c541ad695 = L.circleMarker(
+                [43.690767, -79.448119],
+                {"bubblingMouseEvents": true, "color": "#fff2aa", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fff2aa", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_53d4a8b93d5dea8393d41f5a904ee6df = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_b70ab8ba7e6d0a4e0a77a4303609bfa7 = $(`<div id="html_b70ab8ba7e6d0a4e0a77a4303609bfa7" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Gibson St North Side</b><br>Avg Delay: 0.3 min</div>`)[0];
+                popup_53d4a8b93d5dea8393d41f5a904ee6df.setContent(html_b70ab8ba7e6d0a4e0a77a4303609bfa7);
+            
+        
+
+        circle_marker_146cc1255165c8c62b62794c541ad695.bindPopup(popup_53d4a8b93d5dea8393d41f5a904ee6df)
+        ;
+
+        
+    
+    
+            circle_marker_146cc1255165c8c62b62794c541ad695.bindTooltip(
+                `<div>
+                     Dufferin St at Gibson St North Side: 0.3 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2cf0fb37528c0534e929a1ddd07f820a = L.circleMarker(
+                [43.695717, -79.450479],
+                {"bubblingMouseEvents": true, "color": "#2aa054", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2aa054", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_8ea0f6bc1e298413c55e8ac0726b4524 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_b3c9c0d37e3eb08cdad5b0a3fd24d242 = $(`<div id="html_b3c9c0d37e3eb08cdad5b0a3fd24d242" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Ramsden Rd South Side</b><br>Avg Delay: -2.6 min</div>`)[0];
+                popup_8ea0f6bc1e298413c55e8ac0726b4524.setContent(html_b3c9c0d37e3eb08cdad5b0a3fd24d242);
+            
+        
+
+        circle_marker_2cf0fb37528c0534e929a1ddd07f820a.bindPopup(popup_8ea0f6bc1e298413c55e8ac0726b4524)
+        ;
+
+        
+    
+    
+            circle_marker_2cf0fb37528c0534e929a1ddd07f820a.bindTooltip(
+                `<div>
+                     Dufferin St at Ramsden Rd South Side: -2.6 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e9a5111fd34bbb7f5d73735e5ff02762 = L.circleMarker(
+                [43.692029, -79.448632],
+                {"bubblingMouseEvents": true, "color": "#fff2aa", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fff2aa", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_93a25ce38b0c595d2b3e2ddca068d7f1 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_5bd001611c921f6881676f9918bde36a = $(`<div id="html_5bd001611c921f6881676f9918bde36a" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Rowan Ave</b><br>Avg Delay: 0.3 min</div>`)[0];
+                popup_93a25ce38b0c595d2b3e2ddca068d7f1.setContent(html_5bd001611c921f6881676f9918bde36a);
+            
+        
+
+        circle_marker_e9a5111fd34bbb7f5d73735e5ff02762.bindPopup(popup_93a25ce38b0c595d2b3e2ddca068d7f1)
+        ;
+
+        
+    
+    
+            circle_marker_e9a5111fd34bbb7f5d73735e5ff02762.bindTooltip(
+                `<div>
+                     Dufferin St at Rowan Ave: 0.3 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e661b5004b9ac2554509e852ff6cb3fe = L.circleMarker(
+                [43.670324, -79.439719],
+                {"bubblingMouseEvents": true, "color": "#fec877", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fec877", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_0f9299317f1d395ab3ff9e2f152ea8cf = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_8210efa69f84b65b1ad30ed494897cad = $(`<div id="html_8210efa69f84b65b1ad30ed494897cad" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Brandon Ave</b><br>Avg Delay: 1.0 min</div>`)[0];
+                popup_0f9299317f1d395ab3ff9e2f152ea8cf.setContent(html_8210efa69f84b65b1ad30ed494897cad);
+            
+        
+
+        circle_marker_e661b5004b9ac2554509e852ff6cb3fe.bindPopup(popup_0f9299317f1d395ab3ff9e2f152ea8cf)
+        ;
+
+        
+    
+    
+            circle_marker_e661b5004b9ac2554509e852ff6cb3fe.bindTooltip(
+                `<div>
+                     Dufferin St at Brandon Ave: 1.0 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_aeb853c710f81d54478cd06900517bf5 = L.circleMarker(
+                [43.636946, -79.426505],
+                {"bubblingMouseEvents": true, "color": "#fffebe", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fffebe", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_df711984e1981c31c1c3687674f87787 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_fb83bbf258fd91f27ca927926c102fac = $(`<div id="html_fb83bbf258fd91f27ca927926c102fac" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Liberty St</b><br>Avg Delay: 0.0 min</div>`)[0];
+                popup_df711984e1981c31c1c3687674f87787.setContent(html_fb83bbf258fd91f27ca927926c102fac);
+            
+        
+
+        circle_marker_aeb853c710f81d54478cd06900517bf5.bindPopup(popup_df711984e1981c31c1c3687674f87787)
+        ;
+
+        
+    
+    
+            circle_marker_aeb853c710f81d54478cd06900517bf5.bindTooltip(
+                `<div>
+                     Dufferin St at Liberty St: 0.0 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_03947208e42c1adea6f401ac84bc9853 = L.circleMarker(
+                [43.731126, -79.458778],
+                {"bubblingMouseEvents": true, "color": "#fffebe", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fffebe", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_6933e79ca0c279f12282b7b65a3bd890 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_e42a266dc5f2837d6f6ecad7711e204e = $(`<div id="html_e42a266dc5f2837d6f6ecad7711e204e" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Wilson Ave South Side</b><br>Avg Delay: 0.0 min</div>`)[0];
+                popup_6933e79ca0c279f12282b7b65a3bd890.setContent(html_e42a266dc5f2837d6f6ecad7711e204e);
+            
+        
+
+        circle_marker_03947208e42c1adea6f401ac84bc9853.bindPopup(popup_6933e79ca0c279f12282b7b65a3bd890)
+        ;
+
+        
+    
+    
+            circle_marker_03947208e42c1adea6f401ac84bc9853.bindTooltip(
+                `<div>
+                     Dufferin St at Wilson Ave South Side: 0.0 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_43c10fce48746e076b87667b8b56dedf = L.circleMarker(
+                [43.714241, -79.454916],
+                {"bubblingMouseEvents": true, "color": "#a7d96b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a7d96b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_1a2d1d0bccf2df50e336629076723c2f = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_6022d146aaa7d5f6e6b22a75190265b9 = $(`<div id="html_6022d146aaa7d5f6e6b22a75190265b9" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Lawrence Ave West</b><br>Avg Delay: -1.4 min</div>`)[0];
+                popup_1a2d1d0bccf2df50e336629076723c2f.setContent(html_6022d146aaa7d5f6e6b22a75190265b9);
+            
+        
+
+        circle_marker_43c10fce48746e076b87667b8b56dedf.bindPopup(popup_1a2d1d0bccf2df50e336629076723c2f)
+        ;
+
+        
+    
+    
+            circle_marker_43c10fce48746e076b87667b8b56dedf.bindTooltip(
+                `<div>
+                     Dufferin St at Lawrence Ave West: -1.4 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_670602e6ed5f4276aa1909f7a34808bf = L.circleMarker(
+                [43.720554, -79.456276],
+                {"bubblingMouseEvents": true, "color": "#fbfdba", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fbfdba", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_29fb250765c964791fd7a4786ff34765 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_fbe59f563a361401b4c46e89417324de = $(`<div id="html_fbe59f563a361401b4c46e89417324de" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Orfus Rd</b><br>Avg Delay: -0.1 min</div>`)[0];
+                popup_29fb250765c964791fd7a4786ff34765.setContent(html_fbe59f563a361401b4c46e89417324de);
+            
+        
+
+        circle_marker_670602e6ed5f4276aa1909f7a34808bf.bindPopup(popup_29fb250765c964791fd7a4786ff34765)
+        ;
+
+        
+    
+    
+            circle_marker_670602e6ed5f4276aa1909f7a34808bf.bindTooltip(
+                `<div>
+                     Dufferin St at Orfus Rd: -0.1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f445558e0dfc9f6eb41ee5ffd88266e0 = L.circleMarker(
+                [43.677768, -79.442907],
+                {"bubblingMouseEvents": true, "color": "#fec877", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fec877", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_b6464b609540a2abd37595519106f028 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_6cc441625c75cf4be68880ae40c09d5d = $(`<div id="html_6cc441625c75cf4be68880ae40c09d5d" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at St Clair Ave West</b><br>Avg Delay: 1.0 min</div>`)[0];
+                popup_b6464b609540a2abd37595519106f028.setContent(html_6cc441625c75cf4be68880ae40c09d5d);
+            
+        
+
+        circle_marker_f445558e0dfc9f6eb41ee5ffd88266e0.bindPopup(popup_b6464b609540a2abd37595519106f028)
+        ;
+
+        
+    
+    
+            circle_marker_f445558e0dfc9f6eb41ee5ffd88266e0.bindTooltip(
+                `<div>
+                     Dufferin St at St Clair Ave West: 1.0 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a36ff21819303e7e9794f7d34c8a6fa3 = L.circleMarker(
+                [43.652658, -79.432661],
+                {"bubblingMouseEvents": true, "color": "#15904c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15904c", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_3064f02f194485c0c17f476995b1847e = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_499fcb6f1707123c51edea479fd80153 = $(`<div id="html_499fcb6f1707123c51edea479fd80153" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at College St</b><br>Avg Delay: -2.8 min</div>`)[0];
+                popup_3064f02f194485c0c17f476995b1847e.setContent(html_499fcb6f1707123c51edea479fd80153);
+            
+        
+
+        circle_marker_a36ff21819303e7e9794f7d34c8a6fa3.bindPopup(popup_3064f02f194485c0c17f476995b1847e)
+        ;
+
+        
+    
+    
+            circle_marker_a36ff21819303e7e9794f7d34c8a6fa3.bindTooltip(
+                `<div>
+                     Dufferin St at College St: -2.8 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_72b34e5aa4953048f84a738fbd6c188c = L.circleMarker(
+                [43.710983, -79.454179],
+                {"bubblingMouseEvents": true, "color": "#9bd469", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9bd469", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_cd8461fdca7f86842a3aa982b98f3436 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_e94f239acb2688f9f44b7bf8ba6687c5 = $(`<div id="html_e94f239acb2688f9f44b7bf8ba6687c5" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Playfair Ave</b><br>Avg Delay: -1.5 min</div>`)[0];
+                popup_cd8461fdca7f86842a3aa982b98f3436.setContent(html_e94f239acb2688f9f44b7bf8ba6687c5);
+            
+        
+
+        circle_marker_72b34e5aa4953048f84a738fbd6c188c.bindPopup(popup_cd8461fdca7f86842a3aa982b98f3436)
+        ;
+
+        
+    
+    
+            circle_marker_72b34e5aa4953048f84a738fbd6c188c.bindTooltip(
+                `<div>
+                     Dufferin St at Playfair Ave: -1.5 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_187f685f670891bfa27bcd45f092bee3 = L.circleMarker(
+                [43.702243, -79.451968],
+                {"bubblingMouseEvents": true, "color": "#fdc372", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fdc372", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_f24d52c0d3fb541ac993575b470ffeb1 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_a4eb414c66c7b9227c4cd063d735fe43 = $(`<div id="html_a4eb414c66c7b9227c4cd063d735fe43" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Briar Hill Ave</b><br>Avg Delay: 1.1 min</div>`)[0];
+                popup_f24d52c0d3fb541ac993575b470ffeb1.setContent(html_a4eb414c66c7b9227c4cd063d735fe43);
+            
+        
+
+        circle_marker_187f685f670891bfa27bcd45f092bee3.bindPopup(popup_f24d52c0d3fb541ac993575b470ffeb1)
+        ;
+
+        
+    
+    
+            circle_marker_187f685f670891bfa27bcd45f092bee3.bindTooltip(
+                `<div>
+                     Dufferin St at Briar Hill Ave: 1.1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_27b9509ebce8e21ef3282ca235ada079 = L.circleMarker(
+                [43.668082, -79.43895],
+                {"bubblingMouseEvents": true, "color": "#45ad5b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#45ad5b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_de546cbbf28fa0bd32ab474010b44f14 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_e6a5b26df720f6497cef9ee2884819c6 = $(`<div id="html_e6a5b26df720f6497cef9ee2884819c6" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Dupont St South Side</b><br>Avg Delay: -2.3 min</div>`)[0];
+                popup_de546cbbf28fa0bd32ab474010b44f14.setContent(html_e6a5b26df720f6497cef9ee2884819c6);
+            
+        
+
+        circle_marker_27b9509ebce8e21ef3282ca235ada079.bindPopup(popup_de546cbbf28fa0bd32ab474010b44f14)
+        ;
+
+        
+    
+    
+            circle_marker_27b9509ebce8e21ef3282ca235ada079.bindTooltip(
+                `<div>
+                     Dufferin St at Dupont St South Side: -2.3 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_738595f541558202f2be38bd66f902a5 = L.circleMarker(
+                [43.692263, -79.448914],
+                {"bubblingMouseEvents": true, "color": "#2da155", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2da155", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_fb152c8788b6b59480cef7ebe1ae5801 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_7414b67e8c8649f981ede8b32e73786d = $(`<div id="html_7414b67e8c8649f981ede8b32e73786d" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Rowan Ave</b><br>Avg Delay: -2.5 min</div>`)[0];
+                popup_fb152c8788b6b59480cef7ebe1ae5801.setContent(html_7414b67e8c8649f981ede8b32e73786d);
+            
+        
+
+        circle_marker_738595f541558202f2be38bd66f902a5.bindPopup(popup_fb152c8788b6b59480cef7ebe1ae5801)
+        ;
+
+        
+    
+    
+            circle_marker_738595f541558202f2be38bd66f902a5.bindTooltip(
+                `<div>
+                     Dufferin St at Rowan Ave: -2.5 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e1d5ee8c2a7566ca9dfcf8989d2827d6 = L.circleMarker(
+                [43.63907, -79.427505],
+                {"bubblingMouseEvents": true, "color": "#0f8446", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0f8446", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_c83f25ec920986dd72a5633414a761d6 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_414acd8ce224660efe8569f0fb030d70 = $(`<div id="html_414acd8ce224660efe8569f0fb030d70" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at King St West</b><br>Avg Delay: -3.0 min</div>`)[0];
+                popup_c83f25ec920986dd72a5633414a761d6.setContent(html_414acd8ce224660efe8569f0fb030d70);
+            
+        
+
+        circle_marker_e1d5ee8c2a7566ca9dfcf8989d2827d6.bindPopup(popup_c83f25ec920986dd72a5633414a761d6)
+        ;
+
+        
+    
+    
+            circle_marker_e1d5ee8c2a7566ca9dfcf8989d2827d6.bindTooltip(
+                `<div>
+                     Dufferin St at King St West: -3.0 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bf9e1aba83bfba805e074ac4968e0224 = L.circleMarker(
+                [43.700622, -79.45155],
+                {"bubblingMouseEvents": true, "color": "#fdc372", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fdc372", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_f670ce2b3c7ffe37b0f621c7113cc9ce = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_af73505afc499e118a9143c6589bafc2 = $(`<div id="html_af73505afc499e118a9143c6589bafc2" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Castlefield Ave</b><br>Avg Delay: 1.1 min</div>`)[0];
+                popup_f670ce2b3c7ffe37b0f621c7113cc9ce.setContent(html_af73505afc499e118a9143c6589bafc2);
+            
+        
+
+        circle_marker_bf9e1aba83bfba805e074ac4968e0224.bindPopup(popup_f670ce2b3c7ffe37b0f621c7113cc9ce)
+        ;
+
+        
+    
+    
+            circle_marker_bf9e1aba83bfba805e074ac4968e0224.bindTooltip(
+                `<div>
+                     Dufferin St at Castlefield Ave: 1.1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_83d29f2a7595701d6491a03f477446c4 = L.circleMarker(
+                [43.716083, -79.454991],
+                {"bubblingMouseEvents": true, "color": "#fdc372", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fdc372", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_f024afe6975a43d747683fc4bd94113a = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_bc60c8898b8ad2a8b45160134a02c5a4 = $(`<div id="html_bc60c8898b8ad2a8b45160134a02c5a4" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Dane Ave</b><br>Avg Delay: 1.1 min</div>`)[0];
+                popup_f024afe6975a43d747683fc4bd94113a.setContent(html_bc60c8898b8ad2a8b45160134a02c5a4);
+            
+        
+
+        circle_marker_83d29f2a7595701d6491a03f477446c4.bindPopup(popup_f024afe6975a43d747683fc4bd94113a)
+        ;
+
+        
+    
+    
+            circle_marker_83d29f2a7595701d6491a03f477446c4.bindTooltip(
+                `<div>
+                     Dufferin St at Dane Ave: 1.1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2b5e5e1447331c9eb6b8b5b077f9f6c2 = L.circleMarker(
+                [43.662856, -79.436555],
+                {"bubblingMouseEvents": true, "color": "#fec877", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fec877", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_08c44d3a8ffb64fbe81d4c99d4c01741 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_04e89043ebde2073e6600a01deaa0881 = $(`<div id="html_04e89043ebde2073e6600a01deaa0881" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Shanly St</b><br>Avg Delay: 1.0 min</div>`)[0];
+                popup_08c44d3a8ffb64fbe81d4c99d4c01741.setContent(html_04e89043ebde2073e6600a01deaa0881);
+            
+        
+
+        circle_marker_2b5e5e1447331c9eb6b8b5b077f9f6c2.bindPopup(popup_08c44d3a8ffb64fbe81d4c99d4c01741)
+        ;
+
+        
+    
+    
+            circle_marker_2b5e5e1447331c9eb6b8b5b077f9f6c2.bindTooltip(
+                `<div>
+                     Dufferin St at Shanly St: 1.0 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_44a8fa2d98a9a102baffb4ceb3a5e439 = L.circleMarker(
+                [43.685461, -79.445973],
+                {"bubblingMouseEvents": true, "color": "#fff2aa", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fff2aa", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_25ee21cbe56cea6b22203b3205e7f5ab = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_ac3b16748618dfc29b262fa8c5baf0f9 = $(`<div id="html_ac3b16748618dfc29b262fa8c5baf0f9" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Rogers Rd</b><br>Avg Delay: 0.3 min</div>`)[0];
+                popup_25ee21cbe56cea6b22203b3205e7f5ab.setContent(html_ac3b16748618dfc29b262fa8c5baf0f9);
+            
+        
+
+        circle_marker_44a8fa2d98a9a102baffb4ceb3a5e439.bindPopup(popup_25ee21cbe56cea6b22203b3205e7f5ab)
+        ;
+
+        
+    
+    
+            circle_marker_44a8fa2d98a9a102baffb4ceb3a5e439.bindTooltip(
+                `<div>
+                     Dufferin St at Rogers Rd: 0.3 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1cbd4417e2ee1ff40418cbb9336d5deb = L.circleMarker(
+                [43.734475, -79.45092],
+                {"bubblingMouseEvents": true, "color": "#fffebe", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fffebe", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_c00fa3be809f923af484324025dd2fe6 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_7781a92f34430ec845847fdeea931f98 = $(`<div id="html_7781a92f34430ec845847fdeea931f98" style="width: 100.0%; height: 100.0%;"><b>Wilson Station at Bus Bay 1A</b><br>Avg Delay: 0.0 min</div>`)[0];
+                popup_c00fa3be809f923af484324025dd2fe6.setContent(html_7781a92f34430ec845847fdeea931f98);
+            
+        
+
+        circle_marker_1cbd4417e2ee1ff40418cbb9336d5deb.bindPopup(popup_c00fa3be809f923af484324025dd2fe6)
+        ;
+
+        
+    
+    
+            circle_marker_1cbd4417e2ee1ff40418cbb9336d5deb.bindTooltip(
+                `<div>
+                     Wilson Station at Bus Bay 1A: 0.0 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4d479674a08b21415d810a8b93738f93 = L.circleMarker(
+                [43.695556, -79.450105],
+                {"bubblingMouseEvents": true, "color": "#fff2aa", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fff2aa", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_307f0a5f525cc006be3cc3dbc75134d8 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_4e1ad2e8a9161e70c0ac39e1961a6d6f = $(`<div id="html_4e1ad2e8a9161e70c0ac39e1961a6d6f" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Eglinton Ave West</b><br>Avg Delay: 0.3 min</div>`)[0];
+                popup_307f0a5f525cc006be3cc3dbc75134d8.setContent(html_4e1ad2e8a9161e70c0ac39e1961a6d6f);
+            
+        
+
+        circle_marker_4d479674a08b21415d810a8b93738f93.bindPopup(popup_307f0a5f525cc006be3cc3dbc75134d8)
+        ;
+
+        
+    
+    
+            circle_marker_4d479674a08b21415d810a8b93738f93.bindTooltip(
+                `<div>
+                     Dufferin St at Eglinton Ave West: 0.3 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d1c77f67e39bbbaa71fb6f9f37773146 = L.circleMarker(
+                [43.64236, -79.428744],
+                {"bubblingMouseEvents": true, "color": "#0f8446", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0f8446", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_a52371082af9e4cb4a3b89e8478aff61 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_94494f7a9ece196afe0f9e4b895b623f = $(`<div id="html_94494f7a9ece196afe0f9e4b895b623f" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Queen St West</b><br>Avg Delay: -3.0 min</div>`)[0];
+                popup_a52371082af9e4cb4a3b89e8478aff61.setContent(html_94494f7a9ece196afe0f9e4b895b623f);
+            
+        
+
+        circle_marker_d1c77f67e39bbbaa71fb6f9f37773146.bindPopup(popup_a52371082af9e4cb4a3b89e8478aff61)
+        ;
+
+        
+    
+    
+            circle_marker_d1c77f67e39bbbaa71fb6f9f37773146.bindTooltip(
+                `<div>
+                     Dufferin St at Queen St West: -3.0 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bc8c3ab256db3799c124070a07d9c7d2 = L.circleMarker(
+                [43.688509, -79.447222],
+                {"bubblingMouseEvents": true, "color": "#feefa3", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#feefa3", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_b14158cfa9a20628b00a29378f7ef6dc = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_a88ebe33f691c4900779f25ebdf2bff2 = $(`<div id="html_a88ebe33f691c4900779f25ebdf2bff2" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Martin St</b><br>Avg Delay: 0.4 min</div>`)[0];
+                popup_b14158cfa9a20628b00a29378f7ef6dc.setContent(html_a88ebe33f691c4900779f25ebdf2bff2);
+            
+        
+
+        circle_marker_bc8c3ab256db3799c124070a07d9c7d2.bindPopup(popup_b14158cfa9a20628b00a29378f7ef6dc)
+        ;
+
+        
+    
+    
+            circle_marker_bc8c3ab256db3799c124070a07d9c7d2.bindTooltip(
+                `<div>
+                     Dufferin St at Martin St: 0.4 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bfd7008c3e7c56b70cbbc0611d675037 = L.circleMarker(
+                [43.680038, -79.443781],
+                {"bubblingMouseEvents": true, "color": "#fdb163", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fdb163", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_ffd9cf31b4d6987a90e41fd3ec3f1c43 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_046f9c5e9e02cd7c63b82e181a375031 = $(`<div id="html_046f9c5e9e02cd7c63b82e181a375031" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Ascot Ave</b><br>Avg Delay: 1.3 min</div>`)[0];
+                popup_ffd9cf31b4d6987a90e41fd3ec3f1c43.setContent(html_046f9c5e9e02cd7c63b82e181a375031);
+            
+        
+
+        circle_marker_bfd7008c3e7c56b70cbbc0611d675037.bindPopup(popup_ffd9cf31b4d6987a90e41fd3ec3f1c43)
+        ;
+
+        
+    
+    
+            circle_marker_bfd7008c3e7c56b70cbbc0611d675037.bindTooltip(
+                `<div>
+                     Dufferin St at Ascot Ave: 1.3 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_45262755f97df290a9d2b63ed5af6608 = L.circleMarker(
+                [43.646696, -79.430224],
+                {"bubblingMouseEvents": true, "color": "#fffebe", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fffebe", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_78810391a8e72ac4cfafc026cb133e00 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_1b5a28c1f4d4db8d5269d51eb544c7f5 = $(`<div id="html_1b5a28c1f4d4db8d5269d51eb544c7f5" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Gordon St</b><br>Avg Delay: 0.0 min</div>`)[0];
+                popup_78810391a8e72ac4cfafc026cb133e00.setContent(html_1b5a28c1f4d4db8d5269d51eb544c7f5);
+            
+        
+
+        circle_marker_45262755f97df290a9d2b63ed5af6608.bindPopup(popup_78810391a8e72ac4cfafc026cb133e00)
+        ;
+
+        
+    
+    
+            circle_marker_45262755f97df290a9d2b63ed5af6608.bindTooltip(
+                `<div>
+                     Dufferin St at Gordon St: 0.0 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_53677e06688d56edf74b3ca3a246ab78 = L.circleMarker(
+                [43.697772, -79.450959],
+                {"bubblingMouseEvents": true, "color": "#fed27f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fed27f", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_70146d76e4c63eced0907e4e3b1c59e7 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_17031336b83da929b698613627673e88 = $(`<div id="html_17031336b83da929b698613627673e88" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Whitmore Ave</b><br>Avg Delay: 0.9 min</div>`)[0];
+                popup_70146d76e4c63eced0907e4e3b1c59e7.setContent(html_17031336b83da929b698613627673e88);
+            
+        
+
+        circle_marker_53677e06688d56edf74b3ca3a246ab78.bindPopup(popup_70146d76e4c63eced0907e4e3b1c59e7)
+        ;
+
+        
+    
+    
+            circle_marker_53677e06688d56edf74b3ca3a246ab78.bindTooltip(
+                `<div>
+                     Dufferin St at Whitmore Ave: 0.9 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e698ce3b23ae49fdc63d485489d50293 = L.circleMarker(
+                [43.710483, -79.453838],
+                {"bubblingMouseEvents": true, "color": "#fdc372", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fdc372", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_6147ca9c666cafdce7186736957bd2c8 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_6514d230e36bab45660f0469f30aa7b5 = $(`<div id="html_6514d230e36bab45660f0469f30aa7b5" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Wenderly Dr</b><br>Avg Delay: 1.1 min</div>`)[0];
+                popup_6147ca9c666cafdce7186736957bd2c8.setContent(html_6514d230e36bab45660f0469f30aa7b5);
+            
+        
+
+        circle_marker_e698ce3b23ae49fdc63d485489d50293.bindPopup(popup_6147ca9c666cafdce7186736957bd2c8)
+        ;
+
+        
+    
+    
+            circle_marker_e698ce3b23ae49fdc63d485489d50293.bindTooltip(
+                `<div>
+                     Dufferin St at Wenderly Dr: 1.1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e36ca586905e7f71cb6dcce0d979959c = L.circleMarker(
+                [43.703932, -79.452566],
+                {"bubblingMouseEvents": true, "color": "#7fc866", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7fc866", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_a0ae42750a3cbebe439bb9a40503265e = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_8924b41c4cc2c845fd2560b52ee02b13 = $(`<div id="html_8924b41c4cc2c845fd2560b52ee02b13" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Wingold Ave</b><br>Avg Delay: -1.8 min</div>`)[0];
+                popup_a0ae42750a3cbebe439bb9a40503265e.setContent(html_8924b41c4cc2c845fd2560b52ee02b13);
+            
+        
+
+        circle_marker_e36ca586905e7f71cb6dcce0d979959c.bindPopup(popup_a0ae42750a3cbebe439bb9a40503265e)
+        ;
+
+        
+    
+    
+            circle_marker_e36ca586905e7f71cb6dcce0d979959c.bindTooltip(
+                `<div>
+                     Dufferin St at Wingold Ave: -1.8 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a82461c6153bfd549db370224f920904 = L.circleMarker(
+                [43.67053, -79.440005],
+                {"bubblingMouseEvents": true, "color": "#45ad5b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#45ad5b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_869199d5cf9d5e5c21aac5ad2274c3d5 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_34c3a2837e23fdd4c1b8128d45a1d39f = $(`<div id="html_34c3a2837e23fdd4c1b8128d45a1d39f" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Brandon Ave</b><br>Avg Delay: -2.3 min</div>`)[0];
+                popup_869199d5cf9d5e5c21aac5ad2274c3d5.setContent(html_34c3a2837e23fdd4c1b8128d45a1d39f);
+            
+        
+
+        circle_marker_a82461c6153bfd549db370224f920904.bindPopup(popup_869199d5cf9d5e5c21aac5ad2274c3d5)
+        ;
+
+        
+    
+    
+            circle_marker_a82461c6153bfd549db370224f920904.bindTooltip(
+                `<div>
+                     Dufferin St at Brandon Ave: -2.3 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8621886e11725e48994d13b200e670cf = L.circleMarker(
+                [43.665387, -79.437622],
+                {"bubblingMouseEvents": true, "color": "#fec877", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fec877", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_0fd63d88dadfc05566cd6c897c242dfc = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_4d91fbe1a9749a91701a275c252eae9b = $(`<div id="html_4d91fbe1a9749a91701a275c252eae9b" style="width: 100.0%; height: 100.0%;"><b>Dufferin St and Millicent St</b><br>Avg Delay: 1.0 min</div>`)[0];
+                popup_0fd63d88dadfc05566cd6c897c242dfc.setContent(html_4d91fbe1a9749a91701a275c252eae9b);
+            
+        
+
+        circle_marker_8621886e11725e48994d13b200e670cf.bindPopup(popup_0fd63d88dadfc05566cd6c897c242dfc)
+        ;
+
+        
+    
+    
+            circle_marker_8621886e11725e48994d13b200e670cf.bindTooltip(
+                `<div>
+                     Dufferin St and Millicent St: 1.0 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ea5ff620d0174579063e26f57ec8d156 = L.circleMarker(
+                [43.726531, -79.457356],
+                {"bubblingMouseEvents": true, "color": "#f88950", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f88950", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_9306bfd8e393f507af5a97fc520088b5 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_1b51f0e2dfa926c1db289e26c817558a = $(`<div id="html_1b51f0e2dfa926c1db289e26c817558a" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Yorkdale Rd</b><br>Avg Delay: 1.8 min</div>`)[0];
+                popup_9306bfd8e393f507af5a97fc520088b5.setContent(html_1b51f0e2dfa926c1db289e26c817558a);
+            
+        
+
+        circle_marker_ea5ff620d0174579063e26f57ec8d156.bindPopup(popup_9306bfd8e393f507af5a97fc520088b5)
+        ;
+
+        
+    
+    
+            circle_marker_ea5ff620d0174579063e26f57ec8d156.bindTooltip(
+                `<div>
+                     Dufferin St at Yorkdale Rd: 1.8 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9bb1a7d01b844bd91d7f0a869939c1a5 = L.circleMarker(
+                [43.725083, -79.456993],
+                {"bubblingMouseEvents": true, "color": "#f88950", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f88950", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_72912979cc20d2c799eab2e5634235df = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_351ce4b297af53327cdc2ff4c1c58297 = $(`<div id="html_351ce4b297af53327cdc2ff4c1c58297" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Jane Osler Blvd - Yorkdale Shopping Centre</b><br>Avg Delay: 1.8 min</div>`)[0];
+                popup_72912979cc20d2c799eab2e5634235df.setContent(html_351ce4b297af53327cdc2ff4c1c58297);
+            
+        
+
+        circle_marker_9bb1a7d01b844bd91d7f0a869939c1a5.bindPopup(popup_72912979cc20d2c799eab2e5634235df)
+        ;
+
+        
+    
+    
+            circle_marker_9bb1a7d01b844bd91d7f0a869939c1a5.bindTooltip(
+                `<div>
+                     Dufferin St at Jane Osler Blvd - Yorkdale Shopping Centre: 1.8 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cfac472bb29d31cb8fdc6e1d788fd355 = L.circleMarker(
+                [43.657218, -79.43441],
+                {"bubblingMouseEvents": true, "color": "#15904c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15904c", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_6961e095b03746c82f5675d39b19e449 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_8f77968ae89bcec4d7d3400468727e41 = $(`<div id="html_8f77968ae89bcec4d7d3400468727e41" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Dufferin Park Ave</b><br>Avg Delay: -2.8 min</div>`)[0];
+                popup_6961e095b03746c82f5675d39b19e449.setContent(html_8f77968ae89bcec4d7d3400468727e41);
+            
+        
+
+        circle_marker_cfac472bb29d31cb8fdc6e1d788fd355.bindPopup(popup_6961e095b03746c82f5675d39b19e449)
+        ;
+
+        
+    
+    
+            circle_marker_cfac472bb29d31cb8fdc6e1d788fd355.bindTooltip(
+                `<div>
+                     Dufferin St at Dufferin Park Ave: -2.8 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cc3576e0b58d46e015d69d9e7a786078 = L.circleMarker(
+                [43.733336, -79.453577],
+                {"bubblingMouseEvents": true, "color": "#fffebe", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fffebe", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_d39e6b3cb6920e1c7d98874ad4b54a4e = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_4876ec67ecb614dd233f928304bcf0f6 = $(`<div id="html_4876ec67ecb614dd233f928304bcf0f6" style="width: 100.0%; height: 100.0%;"><b>Wilson Ave at Transit Rd West Side</b><br>Avg Delay: 0.0 min</div>`)[0];
+                popup_d39e6b3cb6920e1c7d98874ad4b54a4e.setContent(html_4876ec67ecb614dd233f928304bcf0f6);
+            
+        
+
+        circle_marker_cc3576e0b58d46e015d69d9e7a786078.bindPopup(popup_d39e6b3cb6920e1c7d98874ad4b54a4e)
+        ;
+
+        
+    
+    
+            circle_marker_cc3576e0b58d46e015d69d9e7a786078.bindTooltip(
+                `<div>
+                     Wilson Ave at Transit Rd West Side: 0.0 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9b0349f1b50cbb0e3f1933efc112d168 = L.circleMarker(
+                [43.707138, -79.453371],
+                {"bubblingMouseEvents": true, "color": "#8ccd67", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8ccd67", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_529371590253206033ad69ebd53c9f20 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_aa46582418856286dd9bfd03668a5882 = $(`<div id="html_aa46582418856286dd9bfd03668a5882" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Glencairn Ave</b><br>Avg Delay: -1.6 min</div>`)[0];
+                popup_529371590253206033ad69ebd53c9f20.setContent(html_aa46582418856286dd9bfd03668a5882);
+            
+        
+
+        circle_marker_9b0349f1b50cbb0e3f1933efc112d168.bindPopup(popup_529371590253206033ad69ebd53c9f20)
+        ;
+
+        
+    
+    
+            circle_marker_9b0349f1b50cbb0e3f1933efc112d168.bindTooltip(
+                `<div>
+                     Dufferin St at Glencairn Ave: -1.6 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_858656d4eb6374fc3b367e49c065cb5d = L.circleMarker(
+                [43.690529, -79.448215],
+                {"bubblingMouseEvents": true, "color": "#2da155", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2da155", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_23a78a25f14a67a5422f8ce6b9ddf7a0 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_ef22e35d77d73de36822d6d3d8be3d6e = $(`<div id="html_ef22e35d77d73de36822d6d3d8be3d6e" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Preston Rd South Side</b><br>Avg Delay: -2.5 min</div>`)[0];
+                popup_23a78a25f14a67a5422f8ce6b9ddf7a0.setContent(html_ef22e35d77d73de36822d6d3d8be3d6e);
+            
+        
+
+        circle_marker_858656d4eb6374fc3b367e49c065cb5d.bindPopup(popup_23a78a25f14a67a5422f8ce6b9ddf7a0)
+        ;
+
+        
+    
+    
+            circle_marker_858656d4eb6374fc3b367e49c065cb5d.bindTooltip(
+                `<div>
+                     Dufferin St at Preston Rd South Side: -2.5 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7e70bf4f3229bfca5d4a0efa5370da49 = L.circleMarker(
+                [43.714493, -79.454638],
+                {"bubblingMouseEvents": true, "color": "#fdc372", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fdc372", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_00ae7bfd317b661c9c32e30f1d8b0807 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_30747afe9e2f6dcd6a0a7e336954fee6 = $(`<div id="html_30747afe9e2f6dcd6a0a7e336954fee6" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Lawrence Ave West North Side</b><br>Avg Delay: 1.1 min</div>`)[0];
+                popup_00ae7bfd317b661c9c32e30f1d8b0807.setContent(html_30747afe9e2f6dcd6a0a7e336954fee6);
+            
+        
+
+        circle_marker_7e70bf4f3229bfca5d4a0efa5370da49.bindPopup(popup_00ae7bfd317b661c9c32e30f1d8b0807)
+        ;
+
+        
+    
+    
+            circle_marker_7e70bf4f3229bfca5d4a0efa5370da49.bindTooltip(
+                `<div>
+                     Dufferin St at Lawrence Ave West North Side: 1.1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5d73daf79bf3e4d895249d6ce8581fb2 = L.circleMarker(
+                [43.675621, -79.442182],
+                {"bubblingMouseEvents": true, "color": "#45ad5b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#45ad5b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_7185579f6b6f73b5948bbf6a009066a5 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_50e78a1ea66ba848f01f414819ada6ea = $(`<div id="html_50e78a1ea66ba848f01f414819ada6ea" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Auburn Ave</b><br>Avg Delay: -2.3 min</div>`)[0];
+                popup_7185579f6b6f73b5948bbf6a009066a5.setContent(html_50e78a1ea66ba848f01f414819ada6ea);
+            
+        
+
+        circle_marker_5d73daf79bf3e4d895249d6ce8581fb2.bindPopup(popup_7185579f6b6f73b5948bbf6a009066a5)
+        ;
+
+        
+    
+    
+            circle_marker_5d73daf79bf3e4d895249d6ce8581fb2.bindTooltip(
+                `<div>
+                     Dufferin St at Auburn Ave: -2.3 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4e7094112cd034503a94d6c58f88143d = L.circleMarker(
+                [43.663251, -79.436863],
+                {"bubblingMouseEvents": true, "color": "#0e8245", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0e8245", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_8ae2050d22412365d5f098c33640d91e = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_28ef43f578125d1badb7160449de7339 = $(`<div id="html_28ef43f578125d1badb7160449de7339" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Shanly St</b><br>Avg Delay: -3.0 min</div>`)[0];
+                popup_8ae2050d22412365d5f098c33640d91e.setContent(html_28ef43f578125d1badb7160449de7339);
+            
+        
+
+        circle_marker_4e7094112cd034503a94d6c58f88143d.bindPopup(popup_8ae2050d22412365d5f098c33640d91e)
+        ;
+
+        
+    
+    
+            circle_marker_4e7094112cd034503a94d6c58f88143d.bindTooltip(
+                `<div>
+                     Dufferin St at Shanly St: -3.0 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c237785150e383902cc9e9887171f9f7 = L.circleMarker(
+                [43.649459, -79.431252],
+                {"bubblingMouseEvents": true, "color": "#fffebe", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fffebe", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_7858e6f6217de078aaea39a0a6ff3d0e = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_76c50d21255c23717139a9bbaa7876d6 = $(`<div id="html_76c50d21255c23717139a9bbaa7876d6" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Dundas St West</b><br>Avg Delay: 0.0 min</div>`)[0];
+                popup_7858e6f6217de078aaea39a0a6ff3d0e.setContent(html_76c50d21255c23717139a9bbaa7876d6);
+            
+        
+
+        circle_marker_c237785150e383902cc9e9887171f9f7.bindPopup(popup_7858e6f6217de078aaea39a0a6ff3d0e)
+        ;
+
+        
+    
+    
+            circle_marker_c237785150e383902cc9e9887171f9f7.bindTooltip(
+                `<div>
+                     Dufferin St at Dundas St West: 0.0 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a34bf32d53d6d37011321b189fce701e = L.circleMarker(
+                [43.700952, -79.451951],
+                {"bubblingMouseEvents": true, "color": "#2da155", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2da155", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_41cf4bbb3c4bd77e5b9a7522f2fb1582 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_aa72c69d74def4c41198772626ada56b = $(`<div id="html_aa72c69d74def4c41198772626ada56b" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Castlefield Ave</b><br>Avg Delay: -2.5 min</div>`)[0];
+                popup_41cf4bbb3c4bd77e5b9a7522f2fb1582.setContent(html_aa72c69d74def4c41198772626ada56b);
+            
+        
+
+        circle_marker_a34bf32d53d6d37011321b189fce701e.bindPopup(popup_41cf4bbb3c4bd77e5b9a7522f2fb1582)
+        ;
+
+        
+    
+    
+            circle_marker_a34bf32d53d6d37011321b189fce701e.bindTooltip(
+                `<div>
+                     Dufferin St at Castlefield Ave: -2.5 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4a12475576009a1c9df1056aa54f5e4e = L.circleMarker(
+                [43.638781, -79.427202],
+                {"bubblingMouseEvents": true, "color": "#fffebe", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fffebe", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_ab7a9cfdefbceed9542418a9bf98d175 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_ca32207208eef3819fd713d57e313b61 = $(`<div id="html_ca32207208eef3819fd713d57e313b61" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at King St West</b><br>Avg Delay: 0.0 min</div>`)[0];
+                popup_ab7a9cfdefbceed9542418a9bf98d175.setContent(html_ca32207208eef3819fd713d57e313b61);
+            
+        
+
+        circle_marker_4a12475576009a1c9df1056aa54f5e4e.bindPopup(popup_ab7a9cfdefbceed9542418a9bf98d175)
+        ;
+
+        
+    
+    
+            circle_marker_4a12475576009a1c9df1056aa54f5e4e.bindTooltip(
+                `<div>
+                     Dufferin St at King St West: 0.0 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_99f8a95509ddfdf5356f352b1308eb21 = L.circleMarker(
+                [43.682439, -79.444935],
+                {"bubblingMouseEvents": true, "color": "#006837", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#006837", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_8f5a89b1f415ff07705ba7f25ac2fddc = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_5dfc05d76003e88c3e264ad6519412c1 = $(`<div id="html_5dfc05d76003e88c3e264ad6519412c1" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Hope St</b><br>Avg Delay: -3.4 min</div>`)[0];
+                popup_8f5a89b1f415ff07705ba7f25ac2fddc.setContent(html_5dfc05d76003e88c3e264ad6519412c1);
+            
+        
+
+        circle_marker_99f8a95509ddfdf5356f352b1308eb21.bindPopup(popup_8f5a89b1f415ff07705ba7f25ac2fddc)
+        ;
+
+        
+    
+    
+            circle_marker_99f8a95509ddfdf5356f352b1308eb21.bindTooltip(
+                `<div>
+                     Dufferin St at Hope St: -3.4 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f6e54f0b24ec8102cab0848dfff66877 = L.circleMarker(
+                [43.730328, -79.458326],
+                {"bubblingMouseEvents": true, "color": "#f88950", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f88950", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_7c4ff12ea1aa31a0e917af2faa5e3965 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_84f904a42b96ee246ea5c8d8c2e50b85 = $(`<div id="html_84f904a42b96ee246ea5c8d8c2e50b85" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Billy Bishop Way North Side</b><br>Avg Delay: 1.8 min</div>`)[0];
+                popup_7c4ff12ea1aa31a0e917af2faa5e3965.setContent(html_84f904a42b96ee246ea5c8d8c2e50b85);
+            
+        
+
+        circle_marker_f6e54f0b24ec8102cab0848dfff66877.bindPopup(popup_7c4ff12ea1aa31a0e917af2faa5e3965)
+        ;
+
+        
+    
+    
+            circle_marker_f6e54f0b24ec8102cab0848dfff66877.bindTooltip(
+                `<div>
+                     Dufferin St at Billy Bishop Way North Side: 1.8 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_23c37e186faf7a0f09493d8b3b28fa04 = L.circleMarker(
+                [43.726345, -79.457682],
+                {"bubblingMouseEvents": true, "color": "#fbfdba", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fbfdba", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_2a8a0d01b965d108b01221f9c24d8231 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_80573b30643e11014335b92db7ebac37 = $(`<div id="html_80573b30643e11014335b92db7ebac37" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Bridgeland Ave South Side</b><br>Avg Delay: -0.1 min</div>`)[0];
+                popup_2a8a0d01b965d108b01221f9c24d8231.setContent(html_80573b30643e11014335b92db7ebac37);
+            
+        
+
+        circle_marker_23c37e186faf7a0f09493d8b3b28fa04.bindPopup(popup_2a8a0d01b965d108b01221f9c24d8231)
+        ;
+
+        
+    
+    
+            circle_marker_23c37e186faf7a0f09493d8b3b28fa04.bindTooltip(
+                `<div>
+                     Dufferin St at Bridgeland Ave South Side: -0.1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e47ecba13b36789028adb2bd80dea3a9 = L.circleMarker(
+                [43.673383, -79.441066],
+                {"bubblingMouseEvents": true, "color": "#fec877", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fec877", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_108394947514f8928e45e1c3bf87f402 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_a2a4640a17d571a453462703a24b5330 = $(`<div id="html_a2a4640a17d571a453462703a24b5330" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Davenport Rd North Side</b><br>Avg Delay: 1.0 min</div>`)[0];
+                popup_108394947514f8928e45e1c3bf87f402.setContent(html_a2a4640a17d571a453462703a24b5330);
+            
+        
+
+        circle_marker_e47ecba13b36789028adb2bd80dea3a9.bindPopup(popup_108394947514f8928e45e1c3bf87f402)
+        ;
+
+        
+    
+    
+            circle_marker_e47ecba13b36789028adb2bd80dea3a9.bindTooltip(
+                `<div>
+                     Dufferin St at Davenport Rd North Side: 1.0 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ee2a7b95ada4b2548255c2c185e011f9 = L.circleMarker(
+                [43.709102, -79.453783],
+                {"bubblingMouseEvents": true, "color": "#9bd469", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9bd469", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_852b8858f02124b42f560619c12356f9 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_1e92ad4ea31b019ef7404aa6b5551899 = $(`<div id="html_1e92ad4ea31b019ef7404aa6b5551899" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Glengrove Ave</b><br>Avg Delay: -1.5 min</div>`)[0];
+                popup_852b8858f02124b42f560619c12356f9.setContent(html_1e92ad4ea31b019ef7404aa6b5551899);
+            
+        
+
+        circle_marker_ee2a7b95ada4b2548255c2c185e011f9.bindPopup(popup_852b8858f02124b42f560619c12356f9)
+        ;
+
+        
+    
+    
+            circle_marker_ee2a7b95ada4b2548255c2c185e011f9.bindTooltip(
+                `<div>
+                     Dufferin St at Glengrove Ave: -1.5 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0bfcf4503d3f4efb4001b5b88ecb86da = L.circleMarker(
+                [43.660199, -79.435337],
+                {"bubblingMouseEvents": true, "color": "#fed884", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fed884", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_c12ea6c89f9cc5492cc32b0c1a57e118 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_daf1b953326c71d5db143c7646975ee6 = $(`<div id="html_daf1b953326c71d5db143c7646975ee6" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Bloor St West - Dufferin Station</b><br>Avg Delay: 0.8 min</div>`)[0];
+                popup_c12ea6c89f9cc5492cc32b0c1a57e118.setContent(html_daf1b953326c71d5db143c7646975ee6);
+            
+        
+
+        circle_marker_0bfcf4503d3f4efb4001b5b88ecb86da.bindPopup(popup_c12ea6c89f9cc5492cc32b0c1a57e118)
+        ;
+
+        
+    
+    
+            circle_marker_0bfcf4503d3f4efb4001b5b88ecb86da.bindTooltip(
+                `<div>
+                     Dufferin St at Bloor St West - Dufferin Station: 0.8 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_db306e7c0c469ed403776490211b7060 = L.circleMarker(
+                [43.678395, -79.443316],
+                {"bubblingMouseEvents": true, "color": "#45ad5b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#45ad5b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_97ea3390514281253d72618f97d6e95a = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_91ae5020dc4cc542181859cae4e54de7 = $(`<div id="html_91ae5020dc4cc542181859cae4e54de7" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at St Clair Ave West</b><br>Avg Delay: -2.3 min</div>`)[0];
+                popup_97ea3390514281253d72618f97d6e95a.setContent(html_91ae5020dc4cc542181859cae4e54de7);
+            
+        
+
+        circle_marker_db306e7c0c469ed403776490211b7060.bindPopup(popup_97ea3390514281253d72618f97d6e95a)
+        ;
+
+        
+    
+    
+            circle_marker_db306e7c0c469ed403776490211b7060.bindTooltip(
+                `<div>
+                     Dufferin St at St Clair Ave West: -2.3 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_897d5cc9828788179f45c1e4048f3b83 = L.circleMarker(
+                [43.703481, -79.452235],
+                {"bubblingMouseEvents": true, "color": "#fdc372", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fdc372", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_20891979955d623a54fc65b304faae43 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_8605cc017f6996aea92d2fdbb6786086 = $(`<div id="html_8605cc017f6996aea92d2fdbb6786086" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Stayner Ave</b><br>Avg Delay: 1.1 min</div>`)[0];
+                popup_20891979955d623a54fc65b304faae43.setContent(html_8605cc017f6996aea92d2fdbb6786086);
+            
+        
+
+        circle_marker_897d5cc9828788179f45c1e4048f3b83.bindPopup(popup_20891979955d623a54fc65b304faae43)
+        ;
+
+        
+    
+    
+            circle_marker_897d5cc9828788179f45c1e4048f3b83.bindTooltip(
+                `<div>
+                     Dufferin St at Stayner Ave: 1.1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_288c9780d8422a21e559e7f0761fccfb = L.circleMarker(
+                [43.656933, -79.434122],
+                {"bubblingMouseEvents": true, "color": "#fed884", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fed884", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_0c099dafc0db18307d1937066f655b83 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_77b70b5581e683efb1d96bb0be16a6cb = $(`<div id="html_77b70b5581e683efb1d96bb0be16a6cb" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Dufferin Park Ave</b><br>Avg Delay: 0.8 min</div>`)[0];
+                popup_0c099dafc0db18307d1937066f655b83.setContent(html_77b70b5581e683efb1d96bb0be16a6cb);
+            
+        
+
+        circle_marker_288c9780d8422a21e559e7f0761fccfb.bindPopup(popup_0c099dafc0db18307d1937066f655b83)
+        ;
+
+        
+    
+    
+            circle_marker_288c9780d8422a21e559e7f0761fccfb.bindTooltip(
+                `<div>
+                     Dufferin St at Dufferin Park Ave: 0.8 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_18a5604e04aac4935471ff8bf42ae30e = L.circleMarker(
+                [43.668259, -79.438833],
+                {"bubblingMouseEvents": true, "color": "#fec877", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fec877", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_024efe43ebbc5c5bfb43ad2e63b2288f = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_eaee36209ecfe32175a96846527b9344 = $(`<div id="html_eaee36209ecfe32175a96846527b9344" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Dupont St</b><br>Avg Delay: 1.0 min</div>`)[0];
+                popup_024efe43ebbc5c5bfb43ad2e63b2288f.setContent(html_eaee36209ecfe32175a96846527b9344);
+            
+        
+
+        circle_marker_18a5604e04aac4935471ff8bf42ae30e.bindPopup(popup_024efe43ebbc5c5bfb43ad2e63b2288f)
+        ;
+
+        
+    
+    
+            circle_marker_18a5604e04aac4935471ff8bf42ae30e.bindTooltip(
+                `<div>
+                     Dufferin St at Dupont St: 1.0 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_01f4e26f443504a62fbe5a12d285cf35 = L.circleMarker(
+                [43.716313, -79.455342],
+                {"bubblingMouseEvents": true, "color": "#fafdb8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fafdb8", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_1ee225c1ed8ca5c045f8400edd2d85f2 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_a4e441930ebdb8ea94b50267e7afa6a7 = $(`<div id="html_a4e441930ebdb8ea94b50267e7afa6a7" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Apex Rd South Side</b><br>Avg Delay: -0.1 min</div>`)[0];
+                popup_1ee225c1ed8ca5c045f8400edd2d85f2.setContent(html_a4e441930ebdb8ea94b50267e7afa6a7);
+            
+        
+
+        circle_marker_01f4e26f443504a62fbe5a12d285cf35.bindPopup(popup_1ee225c1ed8ca5c045f8400edd2d85f2)
+        ;
+
+        
+    
+    
+            circle_marker_01f4e26f443504a62fbe5a12d285cf35.bindTooltip(
+                `<div>
+                     Dufferin St at Apex Rd South Side: -0.1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ad227e3b6b29f73d9c95f959fef56579 = L.circleMarker(
+                [43.642008, -79.428427],
+                {"bubblingMouseEvents": true, "color": "#fffebe", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fffebe", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_dbff327080d7321803a39e370cf04c11 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_e315fda0a2a2c3d4bccf50dc6e4414aa = $(`<div id="html_e315fda0a2a2c3d4bccf50dc6e4414aa" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Queen St West</b><br>Avg Delay: 0.0 min</div>`)[0];
+                popup_dbff327080d7321803a39e370cf04c11.setContent(html_e315fda0a2a2c3d4bccf50dc6e4414aa);
+            
+        
+
+        circle_marker_ad227e3b6b29f73d9c95f959fef56579.bindPopup(popup_dbff327080d7321803a39e370cf04c11)
+        ;
+
+        
+    
+    
+            circle_marker_ad227e3b6b29f73d9c95f959fef56579.bindTooltip(
+                `<div>
+                     Dufferin St at Queen St West: 0.0 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9c2646829fc90229420b04123e6c16f2 = L.circleMarker(
+                [43.685673, -79.446257],
+                {"bubblingMouseEvents": true, "color": "#2da155", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2da155", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_2aa7ba16e0bdae5a27168657833fdd48 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_fdbc684a9f26e3365dab699924700900 = $(`<div id="html_fdbc684a9f26e3365dab699924700900" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Rogers Rd</b><br>Avg Delay: -2.5 min</div>`)[0];
+                popup_2aa7ba16e0bdae5a27168657833fdd48.setContent(html_fdbc684a9f26e3365dab699924700900);
+            
+        
+
+        circle_marker_9c2646829fc90229420b04123e6c16f2.bindPopup(popup_2aa7ba16e0bdae5a27168657833fdd48)
+        ;
+
+        
+    
+    
+            circle_marker_9c2646829fc90229420b04123e6c16f2.bindTooltip(
+                `<div>
+                     Dufferin St at Rogers Rd: -2.5 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dcc2d9d56555943710a2da83daf0232b = L.circleMarker(
+                [43.659958, -79.435506],
+                {"bubblingMouseEvents": true, "color": "#17934e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#17934e", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_cba66c9f7b625dff07292481e8478fe1 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_75898c6bd7f21625de67dec40e1c509b = $(`<div id="html_75898c6bd7f21625de67dec40e1c509b" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Bloor St West - Dufferin Station</b><br>Avg Delay: -2.8 min</div>`)[0];
+                popup_cba66c9f7b625dff07292481e8478fe1.setContent(html_75898c6bd7f21625de67dec40e1c509b);
+            
+        
+
+        circle_marker_dcc2d9d56555943710a2da83daf0232b.bindPopup(popup_cba66c9f7b625dff07292481e8478fe1)
+        ;
+
+        
+    
+    
+            circle_marker_dcc2d9d56555943710a2da83daf0232b.bindTooltip(
+                `<div>
+                     Dufferin St at Bloor St West - Dufferin Station: -2.8 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0d8cf37d9349886cb5ff247facf30468 = L.circleMarker(
+                [43.652873, -79.432579],
+                {"bubblingMouseEvents": true, "color": "#e8f59f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e8f59f", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_45c3fbca7d36c0523ea78dd321fbed00 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_763541003055da0b81eff554c9c36f04 = $(`<div id="html_763541003055da0b81eff554c9c36f04" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at College St North Side</b><br>Avg Delay: -0.4 min</div>`)[0];
+                popup_45c3fbca7d36c0523ea78dd321fbed00.setContent(html_763541003055da0b81eff554c9c36f04);
+            
+        
+
+        circle_marker_0d8cf37d9349886cb5ff247facf30468.bindPopup(popup_45c3fbca7d36c0523ea78dd321fbed00)
+        ;
+
+        
+    
+    
+            circle_marker_0d8cf37d9349886cb5ff247facf30468.bindTooltip(
+                `<div>
+                     Dufferin St at College St North Side: -0.4 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2f39088a417d8a07d5cf1b04d9b0359a = L.circleMarker(
+                [43.644682, -79.429661],
+                {"bubblingMouseEvents": true, "color": "#15904c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15904c", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_30bbdadcb6029d71bafab399990fc1fb = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_1160217968d4a4e97d0f37188f6c5b3c = $(`<div id="html_1160217968d4a4e97d0f37188f6c5b3c" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Alma Ave</b><br>Avg Delay: -2.8 min</div>`)[0];
+                popup_30bbdadcb6029d71bafab399990fc1fb.setContent(html_1160217968d4a4e97d0f37188f6c5b3c);
+            
+        
+
+        circle_marker_2f39088a417d8a07d5cf1b04d9b0359a.bindPopup(popup_30bbdadcb6029d71bafab399990fc1fb)
+        ;
+
+        
+    
+    
+            circle_marker_2f39088a417d8a07d5cf1b04d9b0359a.bindTooltip(
+                `<div>
+                     Dufferin St at Alma Ave: -2.8 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ada827d39c6859adf6e3ea3ef7652d25 = L.circleMarker(
+                [43.673079, -79.441106],
+                {"bubblingMouseEvents": true, "color": "#45ad5b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#45ad5b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_fdca16146c03a22c109ed976c6457896 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_2fae0a1af5798af568c9107861c75570 = $(`<div id="html_2fae0a1af5798af568c9107861c75570" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Davenport Rd</b><br>Avg Delay: -2.3 min</div>`)[0];
+                popup_fdca16146c03a22c109ed976c6457896.setContent(html_2fae0a1af5798af568c9107861c75570);
+            
+        
+
+        circle_marker_ada827d39c6859adf6e3ea3ef7652d25.bindPopup(popup_fdca16146c03a22c109ed976c6457896)
+        ;
+
+        
+    
+    
+            circle_marker_ada827d39c6859adf6e3ea3ef7652d25.bindTooltip(
+                `<div>
+                     Dufferin St at Davenport Rd: -2.3 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ae20152c57caf6e84cb371563aba35e6 = L.circleMarker(
+                [43.635014, -79.425934],
+                {"bubblingMouseEvents": true, "color": "#118848", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#118848", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_2f31b2b43bc09bcff6bd45d84119acac = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_d0575fb3893cebad5947881df8d15c08 = $(`<div id="html_d0575fb3893cebad5947881df8d15c08" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Springhurst Ave</b><br>Avg Delay: -2.9 min</div>`)[0];
+                popup_2f31b2b43bc09bcff6bd45d84119acac.setContent(html_d0575fb3893cebad5947881df8d15c08);
+            
+        
+
+        circle_marker_ae20152c57caf6e84cb371563aba35e6.bindPopup(popup_2f31b2b43bc09bcff6bd45d84119acac)
+        ;
+
+        
+    
+    
+            circle_marker_ae20152c57caf6e84cb371563aba35e6.bindTooltip(
+                `<div>
+                     Dufferin St at Springhurst Ave: -2.9 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_26ba1212110d0dce7b867a39e7d760cf = L.circleMarker(
+                [43.722329, -79.456447],
+                {"bubblingMouseEvents": true, "color": "#dd3d2d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dd3d2d", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_918f8684be99703a7a6ed5dd58b8a764 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_a9a0be766db0281641a338c13cdfa33a = $(`<div id="html_a9a0be766db0281641a338c13cdfa33a" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Ranee Ave North Side</b><br>Avg Delay: 2.6 min</div>`)[0];
+                popup_918f8684be99703a7a6ed5dd58b8a764.setContent(html_a9a0be766db0281641a338c13cdfa33a);
+            
+        
+
+        circle_marker_26ba1212110d0dce7b867a39e7d760cf.bindPopup(popup_918f8684be99703a7a6ed5dd58b8a764)
+        ;
+
+        
+    
+    
+            circle_marker_26ba1212110d0dce7b867a39e7d760cf.bindTooltip(
+                `<div>
+                     Dufferin St at Ranee Ave North Side: 2.6 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_300776d2dde6ff9fe7de796790123331 = L.circleMarker(
+                [43.654788, -79.433476],
+                {"bubblingMouseEvents": true, "color": "#15904c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15904c", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_45334a34b953473e60810fa8da22779f = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_ca54f655f2358264bbc9cb10084f26f3 = $(`<div id="html_ca54f655f2358264bbc9cb10084f26f3" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Sylvan Ave</b><br>Avg Delay: -2.8 min</div>`)[0];
+                popup_45334a34b953473e60810fa8da22779f.setContent(html_ca54f655f2358264bbc9cb10084f26f3);
+            
+        
+
+        circle_marker_300776d2dde6ff9fe7de796790123331.bindPopup(popup_45334a34b953473e60810fa8da22779f)
+        ;
+
+        
+    
+    
+            circle_marker_300776d2dde6ff9fe7de796790123331.bindTooltip(
+                `<div>
+                     Dufferin St at Sylvan Ave: -2.8 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bfe2cd25ee4e11cb028ad843427c004e = L.circleMarker(
+                [43.640185, -79.427735],
+                {"bubblingMouseEvents": true, "color": "#fffebe", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fffebe", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_28e7150a1718ef64376bc93c32b4c733 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_1b88d43f362a3dcc4b5d02178d948c6a = $(`<div id="html_1b88d43f362a3dcc4b5d02178d948c6a" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Melbourne Ave</b><br>Avg Delay: 0.0 min</div>`)[0];
+                popup_28e7150a1718ef64376bc93c32b4c733.setContent(html_1b88d43f362a3dcc4b5d02178d948c6a);
+            
+        
+
+        circle_marker_bfe2cd25ee4e11cb028ad843427c004e.bindPopup(popup_28e7150a1718ef64376bc93c32b4c733)
+        ;
+
+        
+    
+    
+            circle_marker_bfe2cd25ee4e11cb028ad843427c004e.bindTooltip(
+                `<div>
+                     Dufferin St at Melbourne Ave: 0.0 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bf337638cae7e20c0d4ffd147fde8664 = L.circleMarker(
+                [43.720389, -79.455958],
+                {"bubblingMouseEvents": true, "color": "#fdc372", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fdc372", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_34f4e30049736f82fc52d570c6aa369d = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_d33091de28bb3e8d4b5257461a051ec7 = $(`<div id="html_d33091de28bb3e8d4b5257461a051ec7" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Orfus Rd</b><br>Avg Delay: 1.1 min</div>`)[0];
+                popup_34f4e30049736f82fc52d570c6aa369d.setContent(html_d33091de28bb3e8d4b5257461a051ec7);
+            
+        
+
+        circle_marker_bf337638cae7e20c0d4ffd147fde8664.bindPopup(popup_34f4e30049736f82fc52d570c6aa369d)
+        ;
+
+        
+    
+    
+            circle_marker_bf337638cae7e20c0d4ffd147fde8664.bindTooltip(
+                `<div>
+                     Dufferin St at Orfus Rd: 1.1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1e8b8e2596194fd946514ccf8c9d3d98 = L.circleMarker(
+                [43.70891, -79.453464],
+                {"bubblingMouseEvents": true, "color": "#fdc372", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fdc372", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_042e50662153a189144a35a484196f1d = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_3f45e9d475c18937d1cd35ce1efdc57d = $(`<div id="html_3f45e9d475c18937d1cd35ce1efdc57d" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Glengrove Ave</b><br>Avg Delay: 1.1 min</div>`)[0];
+                popup_042e50662153a189144a35a484196f1d.setContent(html_3f45e9d475c18937d1cd35ce1efdc57d);
+            
+        
+
+        circle_marker_1e8b8e2596194fd946514ccf8c9d3d98.bindPopup(popup_042e50662153a189144a35a484196f1d)
+        ;
+
+        
+    
+    
+            circle_marker_1e8b8e2596194fd946514ccf8c9d3d98.bindTooltip(
+                `<div>
+                     Dufferin St at Glengrove Ave: 1.1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_537740ae3e986c567717c6fce361a657 = L.circleMarker(
+                [43.649807, -79.431591],
+                {"bubblingMouseEvents": true, "color": "#15904c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15904c", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_1664f6b655f34d2b7fd74e8e41c86c67 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_486b93a61b15620f2a42c2791f4383c4 = $(`<div id="html_486b93a61b15620f2a42c2791f4383c4" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Dundas St West</b><br>Avg Delay: -2.8 min</div>`)[0];
+                popup_1664f6b655f34d2b7fd74e8e41c86c67.setContent(html_486b93a61b15620f2a42c2791f4383c4);
+            
+        
+
+        circle_marker_537740ae3e986c567717c6fce361a657.bindPopup(popup_1664f6b655f34d2b7fd74e8e41c86c67)
+        ;
+
+        
+    
+    
+            circle_marker_537740ae3e986c567717c6fce361a657.bindTooltip(
+                `<div>
+                     Dufferin St at Dundas St West: -2.8 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7a1b7198efb4b37f58bc5a13807e4a03 = L.circleMarker(
+                [43.721948, -79.456556],
+                {"bubblingMouseEvents": true, "color": "#fbfdba", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fbfdba", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_83449d32a434384d0b1deb3b59e6775e = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_6248b87b92ddde299e6694ab47ea12d3 = $(`<div id="html_6248b87b92ddde299e6694ab47ea12d3" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Bentworth Ave</b><br>Avg Delay: -0.1 min</div>`)[0];
+                popup_83449d32a434384d0b1deb3b59e6775e.setContent(html_6248b87b92ddde299e6694ab47ea12d3);
+            
+        
+
+        circle_marker_7a1b7198efb4b37f58bc5a13807e4a03.bindPopup(popup_83449d32a434384d0b1deb3b59e6775e)
+        ;
+
+        
+    
+    
+            circle_marker_7a1b7198efb4b37f58bc5a13807e4a03.bindTooltip(
+                `<div>
+                     Dufferin St at Bentworth Ave: -0.1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ee0c73a9a3fb079e998f8aa5ec40c83c = L.circleMarker(
+                [43.686836, -79.44654],
+                {"bubblingMouseEvents": true, "color": "#feeda1", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#feeda1", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_a1fa5e6109957708126021aadc80c8e2 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_8afe364dcda213ea2cf18b5bba935fc9 = $(`<div id="html_8afe364dcda213ea2cf18b5bba935fc9" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Eversfield Rd</b><br>Avg Delay: 0.4 min</div>`)[0];
+                popup_a1fa5e6109957708126021aadc80c8e2.setContent(html_8afe364dcda213ea2cf18b5bba935fc9);
+            
+        
+
+        circle_marker_ee0c73a9a3fb079e998f8aa5ec40c83c.bindPopup(popup_a1fa5e6109957708126021aadc80c8e2)
+        ;
+
+        
+    
+    
+            circle_marker_ee0c73a9a3fb079e998f8aa5ec40c83c.bindTooltip(
+                `<div>
+                     Dufferin St at Eversfield Rd: 0.4 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a9df98bf795aecf8f380138e9ff26867 = L.circleMarker(
+                [43.718016, -79.455386],
+                {"bubblingMouseEvents": true, "color": "#fdc372", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fdc372", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_65ad33664bf6e73ff6f73e5cb7fdcf58 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_0f8bf7542ea9dc0288e40a71b6ff4c58 = $(`<div id="html_0f8bf7542ea9dc0288e40a71b6ff4c58" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Celt Ave North Side</b><br>Avg Delay: 1.1 min</div>`)[0];
+                popup_65ad33664bf6e73ff6f73e5cb7fdcf58.setContent(html_0f8bf7542ea9dc0288e40a71b6ff4c58);
+            
+        
+
+        circle_marker_a9df98bf795aecf8f380138e9ff26867.bindPopup(popup_65ad33664bf6e73ff6f73e5cb7fdcf58)
+        ;
+
+        
+    
+    
+            circle_marker_a9df98bf795aecf8f380138e9ff26867.bindTooltip(
+                `<div>
+                     Dufferin St at Celt Ave North Side: 1.1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4cbf4fd5281cf41e733101c29043e7a7 = L.circleMarker(
+                [43.698016, -79.451269],
+                {"bubblingMouseEvents": true, "color": "#199750", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#199750", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_574e67cfc3b98e5d9fd28522c3bec6d5 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_a23a3601054b4bfa6d694007d4808d02 = $(`<div id="html_a23a3601054b4bfa6d694007d4808d02" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Bowie Ave</b><br>Avg Delay: -2.7 min</div>`)[0];
+                popup_574e67cfc3b98e5d9fd28522c3bec6d5.setContent(html_a23a3601054b4bfa6d694007d4808d02);
+            
+        
+
+        circle_marker_4cbf4fd5281cf41e733101c29043e7a7.bindPopup(popup_574e67cfc3b98e5d9fd28522c3bec6d5)
+        ;
+
+        
+    
+    
+            circle_marker_4cbf4fd5281cf41e733101c29043e7a7.bindTooltip(
+                `<div>
+                     Dufferin St at Bowie Ave: -2.7 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6274f01109c89ca0eacf257a399801bb = L.circleMarker(
+                [43.687023, -79.446808],
+                {"bubblingMouseEvents": true, "color": "#2da155", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2da155", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_95cf321dbb9d7f7a1cd8d2e4c9d384ec = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_82d656fd8026df2c9c19f00117559560 = $(`<div id="html_82d656fd8026df2c9c19f00117559560" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Eversfield Rd South Side</b><br>Avg Delay: -2.5 min</div>`)[0];
+                popup_95cf321dbb9d7f7a1cd8d2e4c9d384ec.setContent(html_82d656fd8026df2c9c19f00117559560);
+            
+        
+
+        circle_marker_6274f01109c89ca0eacf257a399801bb.bindPopup(popup_95cf321dbb9d7f7a1cd8d2e4c9d384ec)
+        ;
+
+        
+    
+    
+            circle_marker_6274f01109c89ca0eacf257a399801bb.bindTooltip(
+                `<div>
+                     Dufferin St at Eversfield Rd South Side: -2.5 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_774fbd24057804ad439a4440e440e548 = L.circleMarker(
+                [43.68227, -79.444697],
+                {"bubblingMouseEvents": true, "color": "#fdb163", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fdb163", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_af20c0a5e7d0e0d98af39615cb4dc5e0 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_9e85411331b700f2d3f7bb2923ff6072 = $(`<div id="html_9e85411331b700f2d3f7bb2923ff6072" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Hope St</b><br>Avg Delay: 1.3 min</div>`)[0];
+                popup_af20c0a5e7d0e0d98af39615cb4dc5e0.setContent(html_9e85411331b700f2d3f7bb2923ff6072);
+            
+        
+
+        circle_marker_774fbd24057804ad439a4440e440e548.bindPopup(popup_af20c0a5e7d0e0d98af39615cb4dc5e0)
+        ;
+
+        
+    
+    
+            circle_marker_774fbd24057804ad439a4440e440e548.bindTooltip(
+                `<div>
+                     Dufferin St at Hope St: 1.3 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fa980c7ea9ee062ac4524cccbaee2628 = L.circleMarker(
+                [43.729347, -79.458372],
+                {"bubblingMouseEvents": true, "color": "#fbfdba", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fbfdba", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_358dfa07de68102fc094b30a32136880 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_71ee056aa15fe825403cdfb81e4d7ef5 = $(`<div id="html_71ee056aa15fe825403cdfb81e4d7ef5" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Whitley Ave</b><br>Avg Delay: -0.1 min</div>`)[0];
+                popup_358dfa07de68102fc094b30a32136880.setContent(html_71ee056aa15fe825403cdfb81e4d7ef5);
+            
+        
+
+        circle_marker_fa980c7ea9ee062ac4524cccbaee2628.bindPopup(popup_358dfa07de68102fc094b30a32136880)
+        ;
+
+        
+    
+    
+            circle_marker_fa980c7ea9ee062ac4524cccbaee2628.bindTooltip(
+                `<div>
+                     Dufferin St at Whitley Ave: -0.1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a731cfec505e683113d7b0f170e959e4 = L.circleMarker(
+                [43.640638, -79.428103],
+                {"bubblingMouseEvents": true, "color": "#0e8245", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0e8245", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_e32e750061fe8f8e1d87c0daa7b06e57 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_6ed964f8b1432555ffc398d169721abd = $(`<div id="html_6ed964f8b1432555ffc398d169721abd" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Melbourne Ave</b><br>Avg Delay: -3.0 min</div>`)[0];
+                popup_e32e750061fe8f8e1d87c0daa7b06e57.setContent(html_6ed964f8b1432555ffc398d169721abd);
+            
+        
+
+        circle_marker_a731cfec505e683113d7b0f170e959e4.bindPopup(popup_e32e750061fe8f8e1d87c0daa7b06e57)
+        ;
+
+        
+    
+    
+            circle_marker_a731cfec505e683113d7b0f170e959e4.bindTooltip(
+                `<div>
+                     Dufferin St at Melbourne Ave: -3.0 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f7849df7273425a87e78e69a46dee321 = L.circleMarker(
+                [43.675421, -79.441934],
+                {"bubblingMouseEvents": true, "color": "#fec877", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fec877", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_185cfc829bc6f6add2d51f534aba1ee7 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_9472b946ebc664ab658964d96139382c = $(`<div id="html_9472b946ebc664ab658964d96139382c" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Auburn Ave</b><br>Avg Delay: 1.0 min</div>`)[0];
+                popup_185cfc829bc6f6add2d51f534aba1ee7.setContent(html_9472b946ebc664ab658964d96139382c);
+            
+        
+
+        circle_marker_f7849df7273425a87e78e69a46dee321.bindPopup(popup_185cfc829bc6f6add2d51f534aba1ee7)
+        ;
+
+        
+    
+    
+            circle_marker_f7849df7273425a87e78e69a46dee321.bindTooltip(
+                `<div>
+                     Dufferin St at Auburn Ave: 1.0 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_13f53be1ca10621178d6b4c22d764028 = L.circleMarker(
+                [43.646893, -79.43048],
+                {"bubblingMouseEvents": true, "color": "#15904c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15904c", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_6bb3d6dafa52e1d007e6663a816ad78d = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_31e41f66c5e7f28d23012bd9378678ab = $(`<div id="html_31e41f66c5e7f28d23012bd9378678ab" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Gordon St</b><br>Avg Delay: -2.8 min</div>`)[0];
+                popup_6bb3d6dafa52e1d007e6663a816ad78d.setContent(html_31e41f66c5e7f28d23012bd9378678ab);
+            
+        
+
+        circle_marker_13f53be1ca10621178d6b4c22d764028.bindPopup(popup_6bb3d6dafa52e1d007e6663a816ad78d)
+        ;
+
+        
+    
+    
+            circle_marker_13f53be1ca10621178d6b4c22d764028.bindTooltip(
+                `<div>
+                     Dufferin St at Gordon St: -2.8 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9374f7a90b5a9e50be22c0a0851e13ee = L.circleMarker(
+                [43.702508, -79.452277],
+                {"bubblingMouseEvents": true, "color": "#7fc866", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7fc866", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_5adc79fbb5a18760d9bd858e8e9001fa = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_bfe85beebca1a271a52aa4e9fc917f5b = $(`<div id="html_bfe85beebca1a271a52aa4e9fc917f5b" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Briar Hill Ave</b><br>Avg Delay: -1.8 min</div>`)[0];
+                popup_5adc79fbb5a18760d9bd858e8e9001fa.setContent(html_bfe85beebca1a271a52aa4e9fc917f5b);
+            
+        
+
+        circle_marker_9374f7a90b5a9e50be22c0a0851e13ee.bindPopup(popup_5adc79fbb5a18760d9bd858e8e9001fa)
+        ;
+
+        
+    
+    
+            circle_marker_9374f7a90b5a9e50be22c0a0851e13ee.bindTooltip(
+                `<div>
+                     Dufferin St at Briar Hill Ave: -1.8 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3b7d18834cc153ad3a2761934d9d1fb3 = L.circleMarker(
+                [43.680238, -79.444056],
+                {"bubblingMouseEvents": true, "color": "#006837", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#006837", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_cb636c9c403722258b7a513010c6a098 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_87f2c9c40190b3fbe4f116f7418ca528 = $(`<div id="html_87f2c9c40190b3fbe4f116f7418ca528" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Ascot Ave</b><br>Avg Delay: -3.4 min</div>`)[0];
+                popup_cb636c9c403722258b7a513010c6a098.setContent(html_87f2c9c40190b3fbe4f116f7418ca528);
+            
+        
+
+        circle_marker_3b7d18834cc153ad3a2761934d9d1fb3.bindPopup(popup_cb636c9c403722258b7a513010c6a098)
+        ;
+
+        
+    
+    
+            circle_marker_3b7d18834cc153ad3a2761934d9d1fb3.bindTooltip(
+                `<div>
+                     Dufferin St at Ascot Ave: -3.4 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c3b682ccf7a7dddcca87a450367a763d = L.circleMarker(
+                [43.634401, -79.425872],
+                {"bubblingMouseEvents": true, "color": "#fffebe", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fffebe", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_471f93f014c7fb69516064f7ad01c384 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_d24214eadb0c221afef168b1ecaa4819 = $(`<div id="html_d24214eadb0c221afef168b1ecaa4819" style="width: 100.0%; height: 100.0%;"><b>Dufferin Gate Loop</b><br>Avg Delay: 0.0 min</div>`)[0];
+                popup_471f93f014c7fb69516064f7ad01c384.setContent(html_d24214eadb0c221afef168b1ecaa4819);
+            
+        
+
+        circle_marker_c3b682ccf7a7dddcca87a450367a763d.bindPopup(popup_471f93f014c7fb69516064f7ad01c384)
+        ;
+
+        
+    
+    
+            circle_marker_c3b682ccf7a7dddcca87a450367a763d.bindTooltip(
+                `<div>
+                     Dufferin Gate Loop: 0.0 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_57c6288facb5ca16770a7863a132f66d = L.circleMarker(
+                [43.637414, -79.426893],
+                {"bubblingMouseEvents": true, "color": "#128a49", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#128a49", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_5af0e6093cf13cb5e15a7a964749952a = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_784769a50fac8485a9bfd47553f0e35e = $(`<div id="html_784769a50fac8485a9bfd47553f0e35e" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Liberty St</b><br>Avg Delay: -2.9 min</div>`)[0];
+                popup_5af0e6093cf13cb5e15a7a964749952a.setContent(html_784769a50fac8485a9bfd47553f0e35e);
+            
+        
+
+        circle_marker_57c6288facb5ca16770a7863a132f66d.bindPopup(popup_5af0e6093cf13cb5e15a7a964749952a)
+        ;
+
+        
+    
+    
+            circle_marker_57c6288facb5ca16770a7863a132f66d.bindTooltip(
+                `<div>
+                     Dufferin St at Liberty St: -2.9 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ed12bec32145d0420146fa949f95a713 = L.circleMarker(
+                [43.655107, -79.433431],
+                {"bubblingMouseEvents": true, "color": "#fed884", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fed884", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_d619d743745ff19ef2b7bf71f45a03f9 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_0d4b6f52fb948d6e91034b1b0dd43cd2 = $(`<div id="html_0d4b6f52fb948d6e91034b1b0dd43cd2" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Sylvan Ave North Side</b><br>Avg Delay: 0.8 min</div>`)[0];
+                popup_d619d743745ff19ef2b7bf71f45a03f9.setContent(html_0d4b6f52fb948d6e91034b1b0dd43cd2);
+            
+        
+
+        circle_marker_ed12bec32145d0420146fa949f95a713.bindPopup(popup_d619d743745ff19ef2b7bf71f45a03f9)
+        ;
+
+        
+    
+    
+            circle_marker_ed12bec32145d0420146fa949f95a713.bindTooltip(
+                `<div>
+                     Dufferin St at Sylvan Ave North Side: 0.8 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_50a03e711a23d49d4070e5cea280380b = L.circleMarker(
+                [43.688777, -79.447509],
+                {"bubblingMouseEvents": true, "color": "#2da155", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2da155", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_62fa1dbee3bf8abde88445e7898e59ed);
+        
+    
+        var popup_0968fcb52454990429e0bb19df6c29c2 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_e415c0fbf3a368ae9dcd57c3ed265a64 = $(`<div id="html_e415c0fbf3a368ae9dcd57c3ed265a64" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Holmesdale Rd</b><br>Avg Delay: -2.5 min</div>`)[0];
+                popup_0968fcb52454990429e0bb19df6c29c2.setContent(html_e415c0fbf3a368ae9dcd57c3ed265a64);
+            
+        
+
+        circle_marker_50a03e711a23d49d4070e5cea280380b.bindPopup(popup_0968fcb52454990429e0bb19df6c29c2)
+        ;
+
+        
+    
+    
+            circle_marker_50a03e711a23d49d4070e5cea280380b.bindTooltip(
+                `<div>
+                     Dufferin St at Holmesdale Rd: -2.5 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>

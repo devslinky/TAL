@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_46be6e8d3190a23bda4f5e0560379e01 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="position:fixed;bottom:40px;right:40px;background:rgba(20,20,20,0.85);border:1px solid #555;border-radius:8px;padding:12px 16px;z-index:9999;font-family:monospace;color:#eee;font-size:13px;">
+  <b>Vehicle Occupancy</b><br><br>
+  <span style="color:green;">&#9632;</span> Empty<br>
+  <span style="color:lightgreen;">&#9632;</span> Many Seats Available<br>
+  <span style="color:orange;">&#9632;</span> Few Seats Available<br>
+  <span style="color:red;">&#9632;</span> Full<br>
+  <span style="color:gray;">&#9632;</span> Unknown
+</div>
+    
+            <div class="folium-map" id="map_46be6e8d3190a23bda4f5e0560379e01" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_46be6e8d3190a23bda4f5e0560379e01 = L.map(
+                "map_46be6e8d3190a23bda4f5e0560379e01",
+                {
+                    center: [43.68269600000001, -79.4430442],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_60a42a04744d6a3b2adcd522e82b51d9 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_60a42a04744d6a3b2adcd522e82b51d9.addTo(map_46be6e8d3190a23bda4f5e0560379e01);
+        
+    
+            var circle_marker_3c82f66ad297d8737c4ab091dd3b20d0 = L.circleMarker(
+                [43.694733, -79.44985],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_46be6e8d3190a23bda4f5e0560379e01);
+        
+    
+        var popup_c756d309cbac4867ea6515fe3d6cb13f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ea21bcd30238b1242b497ba40c13c86d = $(`<div id="html_ea21bcd30238b1242b497ba40c13c86d" style="width: 100.0%; height: 100.0%;"><b>Vehicle ID: 9410</b><br>Speed: 35.4 km/hr<br>Occupancy: Few Seats Available<br>Bearing: 163.0 degrees</div>`)[0];
+                popup_c756d309cbac4867ea6515fe3d6cb13f.setContent(html_ea21bcd30238b1242b497ba40c13c86d);
+            
+        
+
+        circle_marker_3c82f66ad297d8737c4ab091dd3b20d0.bindPopup(popup_c756d309cbac4867ea6515fe3d6cb13f)
+        ;
+
+        
+    
+    
+            circle_marker_3c82f66ad297d8737c4ab091dd3b20d0.bindTooltip(
+                `<div>
+                     Vehicle ID: 9410 - Speed: 35.4 km/hr - Occupancy: Few Seats Available
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c6892021408df4668c37ce42c6478d1f = L.circleMarker(
+                [43.65462, -79.433334],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_46be6e8d3190a23bda4f5e0560379e01);
+        
+    
+        var popup_c07f832284d97f8baefcc403971e7017 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8c084ed544a8f18c429a9b1c96cd2466 = $(`<div id="html_8c084ed544a8f18c429a9b1c96cd2466" style="width: 100.0%; height: 100.0%;"><b>Vehicle ID: 9414</b><br>Speed: 27.4 km/hr<br>Occupancy: Few Seats Available<br>Bearing: 345.0 degrees</div>`)[0];
+                popup_c07f832284d97f8baefcc403971e7017.setContent(html_8c084ed544a8f18c429a9b1c96cd2466);
+            
+        
+
+        circle_marker_c6892021408df4668c37ce42c6478d1f.bindPopup(popup_c07f832284d97f8baefcc403971e7017)
+        ;
+
+        
+    
+    
+            circle_marker_c6892021408df4668c37ce42c6478d1f.bindTooltip(
+                `<div>
+                     Vehicle ID: 9414 - Speed: 27.4 km/hr - Occupancy: Few Seats Available
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3e2ef83a6330fc9ac7ee338e4a109f55 = L.circleMarker(
+                [43.652035, -79.43236],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_46be6e8d3190a23bda4f5e0560379e01);
+        
+    
+        var popup_6ea6f1a96108debcbafd31c8608c37ab = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_4e25e11098336d80dfedcf0861765d59 = $(`<div id="html_4e25e11098336d80dfedcf0861765d59" style="width: 100.0%; height: 100.0%;"><b>Vehicle ID: 9412</b><br>Speed: 0.0 km/hr<br>Occupancy: Empty<br>Bearing: 344.0 degrees</div>`)[0];
+                popup_6ea6f1a96108debcbafd31c8608c37ab.setContent(html_4e25e11098336d80dfedcf0861765d59);
+            
+        
+
+        circle_marker_3e2ef83a6330fc9ac7ee338e4a109f55.bindPopup(popup_6ea6f1a96108debcbafd31c8608c37ab)
+        ;
+
+        
+    
+    
+            circle_marker_3e2ef83a6330fc9ac7ee338e4a109f55.bindTooltip(
+                `<div>
+                     Vehicle ID: 9412 - Speed: 0.0 km/hr - Occupancy: Empty
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_193e234de9ef78a319d1f049428fa8f3 = L.circleMarker(
+                [43.722115, -79.45645],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_46be6e8d3190a23bda4f5e0560379e01);
+        
+    
+        var popup_14b92c0d29984f08d9df8ea65fbc640c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e98cd3439730a763f5251d32d62dbb02 = $(`<div id="html_e98cd3439730a763f5251d32d62dbb02" style="width: 100.0%; height: 100.0%;"><b>Vehicle ID: 9407</b><br>Speed: 0.0 km/hr<br>Occupancy: Few Seats Available<br>Bearing: 349.0 degrees</div>`)[0];
+                popup_14b92c0d29984f08d9df8ea65fbc640c.setContent(html_e98cd3439730a763f5251d32d62dbb02);
+            
+        
+
+        circle_marker_193e234de9ef78a319d1f049428fa8f3.bindPopup(popup_14b92c0d29984f08d9df8ea65fbc640c)
+        ;
+
+        
+    
+    
+            circle_marker_193e234de9ef78a319d1f049428fa8f3.bindTooltip(
+                `<div>
+                     Vehicle ID: 9407 - Speed: 0.0 km/hr - Occupancy: Few Seats Available
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_627efcc6416d0a1bf0ddc1097d52f424 = L.circleMarker(
+                [43.658203, -79.43472],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_46be6e8d3190a23bda4f5e0560379e01);
+        
+    
+        var popup_a76b5e5586d9bd27af2ef2e11a7f6f3a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b8655051cfec4b8d25ca22a8cd12e8a4 = $(`<div id="html_b8655051cfec4b8d25ca22a8cd12e8a4" style="width: 100.0%; height: 100.0%;"><b>Vehicle ID: 9424</b><br>Speed: 33.8 km/hr<br>Occupancy: Empty<br>Bearing: 164.0 degrees</div>`)[0];
+                popup_a76b5e5586d9bd27af2ef2e11a7f6f3a.setContent(html_b8655051cfec4b8d25ca22a8cd12e8a4);
+            
+        
+
+        circle_marker_627efcc6416d0a1bf0ddc1097d52f424.bindPopup(popup_a76b5e5586d9bd27af2ef2e11a7f6f3a)
+        ;
+
+        
+    
+    
+            circle_marker_627efcc6416d0a1bf0ddc1097d52f424.bindTooltip(
+                `<div>
+                     Vehicle ID: 9424 - Speed: 33.8 km/hr - Occupancy: Empty
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_895aa4279f0eae3f837f20852320feae = L.circleMarker(
+                [43.734287, -79.45063],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_46be6e8d3190a23bda4f5e0560379e01);
+        
+    
+        var popup_bb1d1cd60577baebd0254459ec075086 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_79434171b6cc51aee5df519bb5253c53 = $(`<div id="html_79434171b6cc51aee5df519bb5253c53" style="width: 100.0%; height: 100.0%;"><b>Vehicle ID: 9433</b><br>Speed: 0.0 km/hr<br>Occupancy: Empty<br>Bearing: 174.0 degrees</div>`)[0];
+                popup_bb1d1cd60577baebd0254459ec075086.setContent(html_79434171b6cc51aee5df519bb5253c53);
+            
+        
+
+        circle_marker_895aa4279f0eae3f837f20852320feae.bindPopup(popup_bb1d1cd60577baebd0254459ec075086)
+        ;
+
+        
+    
+    
+            circle_marker_895aa4279f0eae3f837f20852320feae.bindTooltip(
+                `<div>
+                     Vehicle ID: 9433 - Speed: 0.0 km/hr - Occupancy: Empty
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8e38ad9e6e90cfb43e8f501968a9ef99 = L.circleMarker(
+                [43.680756, -79.44422],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_46be6e8d3190a23bda4f5e0560379e01);
+        
+    
+        var popup_afa87f36b80c5a6ca8a967f11ebae2e0 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b25c3fa84fdccecc5c166ed6afad4031 = $(`<div id="html_b25c3fa84fdccecc5c166ed6afad4031" style="width: 100.0%; height: 100.0%;"><b>Vehicle ID: 9430</b><br>Speed: 33.8 km/hr<br>Occupancy: Few Seats Available<br>Bearing: 163.0 degrees</div>`)[0];
+                popup_afa87f36b80c5a6ca8a967f11ebae2e0.setContent(html_b25c3fa84fdccecc5c166ed6afad4031);
+            
+        
+
+        circle_marker_8e38ad9e6e90cfb43e8f501968a9ef99.bindPopup(popup_afa87f36b80c5a6ca8a967f11ebae2e0)
+        ;
+
+        
+    
+    
+            circle_marker_8e38ad9e6e90cfb43e8f501968a9ef99.bindTooltip(
+                `<div>
+                     Vehicle ID: 9430 - Speed: 33.8 km/hr - Occupancy: Few Seats Available
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8f6a0abf17ed5736f668a342dcb118a4 = L.circleMarker(
+                [43.637886, -79.42704],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_46be6e8d3190a23bda4f5e0560379e01);
+        
+    
+        var popup_e1df18cfdc68a5d7864ff8ccc4862359 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f1a537537c3ad228872f3ad145c872cf = $(`<div id="html_f1a537537c3ad228872f3ad145c872cf" style="width: 100.0%; height: 100.0%;"><b>Vehicle ID: 7254</b><br>Speed: 0.0 km/hr<br>Occupancy: Empty<br>Bearing: 166.0 degrees</div>`)[0];
+                popup_e1df18cfdc68a5d7864ff8ccc4862359.setContent(html_f1a537537c3ad228872f3ad145c872cf);
+            
+        
+
+        circle_marker_8f6a0abf17ed5736f668a342dcb118a4.bindPopup(popup_e1df18cfdc68a5d7864ff8ccc4862359)
+        ;
+
+        
+    
+    
+            circle_marker_8f6a0abf17ed5736f668a342dcb118a4.bindTooltip(
+                `<div>
+                     Vehicle ID: 7254 - Speed: 0.0 km/hr - Occupancy: Empty
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b2431c7009f478c38dd60a8d7f7dd6af = L.circleMarker(
+                [43.731, -79.45872],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_46be6e8d3190a23bda4f5e0560379e01);
+        
+    
+        var popup_40ac8808eb0f72c91d38550ce4788c16 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_70b87d7c5fb6efc6c24d1d030ff025f9 = $(`<div id="html_70b87d7c5fb6efc6c24d1d030ff025f9" style="width: 100.0%; height: 100.0%;"><b>Vehicle ID: 9436</b><br>Speed: 24.1 km/hr<br>Occupancy: Empty<br>Bearing: 170.0 degrees</div>`)[0];
+                popup_40ac8808eb0f72c91d38550ce4788c16.setContent(html_70b87d7c5fb6efc6c24d1d030ff025f9);
+            
+        
+
+        circle_marker_b2431c7009f478c38dd60a8d7f7dd6af.bindPopup(popup_40ac8808eb0f72c91d38550ce4788c16)
+        ;
+
+        
+    
+    
+            circle_marker_b2431c7009f478c38dd60a8d7f7dd6af.bindTooltip(
+                `<div>
+                     Vehicle ID: 9436 - Speed: 24.1 km/hr - Occupancy: Empty
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d37882958657445df6147b56ab31812e = L.circleMarker(
+                [43.69859, -79.451355],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_46be6e8d3190a23bda4f5e0560379e01);
+        
+    
+        var popup_e5f71085de834e5062a716da4c493584 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_4525e30d56eaf170255ab97e90501f44 = $(`<div id="html_4525e30d56eaf170255ab97e90501f44" style="width: 100.0%; height: 100.0%;"><b>Vehicle ID: 9428</b><br>Speed: 1.6 km/hr<br>Occupancy: Empty<br>Bearing: 171.0 degrees</div>`)[0];
+                popup_e5f71085de834e5062a716da4c493584.setContent(html_4525e30d56eaf170255ab97e90501f44);
+            
+        
+
+        circle_marker_d37882958657445df6147b56ab31812e.bindPopup(popup_e5f71085de834e5062a716da4c493584)
+        ;
+
+        
+    
+    
+            circle_marker_d37882958657445df6147b56ab31812e.bindTooltip(
+                `<div>
+                     Vehicle ID: 9428 - Speed: 1.6 km/hr - Occupancy: Empty
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e2217f7c735899071b523b13b457c3fe = L.circleMarker(
+                [43.63453, -79.42687],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_46be6e8d3190a23bda4f5e0560379e01);
+        
+    
+        var popup_97cd396f06bb778cc2b15d22ffb57e5d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a7cd5ce6d9d776cba0afca7ff322baec = $(`<div id="html_a7cd5ce6d9d776cba0afca7ff322baec" style="width: 100.0%; height: 100.0%;"><b>Vehicle ID: 9443</b><br>Speed: 9.7 km/hr<br>Occupancy: Empty<br>Bearing: 228.0 degrees</div>`)[0];
+                popup_97cd396f06bb778cc2b15d22ffb57e5d.setContent(html_a7cd5ce6d9d776cba0afca7ff322baec);
+            
+        
+
+        circle_marker_e2217f7c735899071b523b13b457c3fe.bindPopup(popup_97cd396f06bb778cc2b15d22ffb57e5d)
+        ;
+
+        
+    
+    
+            circle_marker_e2217f7c735899071b523b13b457c3fe.bindTooltip(
+                `<div>
+                     Vehicle ID: 9443 - Speed: 9.7 km/hr - Occupancy: Empty
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_48a47165e54482517c431387db3a8d2e = L.circleMarker(
+                [43.68951, -79.447624],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_46be6e8d3190a23bda4f5e0560379e01);
+        
+    
+        var popup_5f46ec86871649ca728ebfc5b74fac7d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_bc5a72b1485bf7be0f8d891c2d5bb0a1 = $(`<div id="html_bc5a72b1485bf7be0f8d891c2d5bb0a1" style="width: 100.0%; height: 100.0%;"><b>Vehicle ID: 7275</b><br>Speed: 35.4 km/hr<br>Occupancy: Empty<br>Bearing: 344.0 degrees</div>`)[0];
+                popup_5f46ec86871649ca728ebfc5b74fac7d.setContent(html_bc5a72b1485bf7be0f8d891c2d5bb0a1);
+            
+        
+
+        circle_marker_48a47165e54482517c431387db3a8d2e.bindPopup(popup_5f46ec86871649ca728ebfc5b74fac7d)
+        ;
+
+        
+    
+    
+            circle_marker_48a47165e54482517c431387db3a8d2e.bindTooltip(
+                `<div>
+                     Vehicle ID: 7275 - Speed: 35.4 km/hr - Occupancy: Empty
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4784326c593a41de0953cec0c15a38b7 = L.circleMarker(
+                [43.69333, -79.44917],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_46be6e8d3190a23bda4f5e0560379e01);
+        
+    
+        var popup_345a04aedee59586ff38b0bb44434f54 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2c7b758721d5cd81c33363c525dc4d53 = $(`<div id="html_2c7b758721d5cd81c33363c525dc4d53" style="width: 100.0%; height: 100.0%;"><b>Vehicle ID: 9458</b><br>Speed: 40.2 km/hr<br>Occupancy: Few Seats Available<br>Bearing: 343.0 degrees</div>`)[0];
+                popup_345a04aedee59586ff38b0bb44434f54.setContent(html_2c7b758721d5cd81c33363c525dc4d53);
+            
+        
+
+        circle_marker_4784326c593a41de0953cec0c15a38b7.bindPopup(popup_345a04aedee59586ff38b0bb44434f54)
+        ;
+
+        
+    
+    
+            circle_marker_4784326c593a41de0953cec0c15a38b7.bindTooltip(
+                `<div>
+                     Vehicle ID: 9458 - Speed: 40.2 km/hr - Occupancy: Few Seats Available
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6d40ca3cc2d4cd67e62af67ec9e48074 = L.circleMarker(
+                [43.720627, -79.45618],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_46be6e8d3190a23bda4f5e0560379e01);
+        
+    
+        var popup_c27d2374a5b22d438604ad914287cf75 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_5070bdda1bf0b9b1a8ef264737d912c6 = $(`<div id="html_5070bdda1bf0b9b1a8ef264737d912c6" style="width: 100.0%; height: 100.0%;"><b>Vehicle ID: 9456</b><br>Speed: 25.7 km/hr<br>Occupancy: Empty<br>Bearing: 346.0 degrees</div>`)[0];
+                popup_c27d2374a5b22d438604ad914287cf75.setContent(html_5070bdda1bf0b9b1a8ef264737d912c6);
+            
+        
+
+        circle_marker_6d40ca3cc2d4cd67e62af67ec9e48074.bindPopup(popup_c27d2374a5b22d438604ad914287cf75)
+        ;
+
+        
+    
+    
+            circle_marker_6d40ca3cc2d4cd67e62af67ec9e48074.bindTooltip(
+                `<div>
+                     Vehicle ID: 9456 - Speed: 25.7 km/hr - Occupancy: Empty
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0c6d5581f76f96ba89bc6a0db2798088 = L.circleMarker(
+                [43.638218, -79.42714],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_46be6e8d3190a23bda4f5e0560379e01);
+        
+    
+        var popup_5c2add83ead610f18bc6b7e43127eef7 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e64dfd911ad0753922a541cbdb7a81c9 = $(`<div id="html_e64dfd911ad0753922a541cbdb7a81c9" style="width: 100.0%; height: 100.0%;"><b>Vehicle ID: 1395</b><br>Speed: 0.0 km/hr<br>Occupancy: Empty<br>Bearing: 165.0 degrees</div>`)[0];
+                popup_5c2add83ead610f18bc6b7e43127eef7.setContent(html_e64dfd911ad0753922a541cbdb7a81c9);
+            
+        
+
+        circle_marker_0c6d5581f76f96ba89bc6a0db2798088.bindPopup(popup_5c2add83ead610f18bc6b7e43127eef7)
+        ;
+
+        
+    
+    
+            circle_marker_0c6d5581f76f96ba89bc6a0db2798088.bindTooltip(
+                `<div>
+                     Vehicle ID: 1395 - Speed: 0.0 km/hr - Occupancy: Empty
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>

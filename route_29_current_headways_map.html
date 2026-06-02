@@ -1,0 +1,3013 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_a3e605399bce3f6fdb38ccced55534f3 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="position:fixed;bottom:40px;left:40px;background:rgba(20,20,20,0.85);border:1px solid #555;border-radius:8px;padding:12px 16px;z-index:9999;font-family:monospace;color:#eee;font-size:13px;">
+  <b>Avg Headway</b><br><br>
+  <span style="color:#1a9850;">&#9632;</span> Short wait<br>
+  <span style="color:#fee08b;">&#9632;</span> Moderate wait<br>
+  <span style="color:#d73027;">&#9632;</span> Long wait<br>
+  <span style="color:gray;">&#9632;</span> Unknown
+</div>
+    
+            <div class="folium-map" id="map_a3e605399bce3f6fdb38ccced55534f3" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_a3e605399bce3f6fdb38ccced55534f3 = L.map(
+                "map_a3e605399bce3f6fdb38ccced55534f3",
+                {
+                    center: [43.684654125, -79.44430685227273],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_b3b9c602d339eb9665c19c9567cf70c4 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_b3b9c602d339eb9665c19c9567cf70c4.addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+            var circle_marker_a07c1415b209cdda92650efc81df3632 = L.circleMarker(
+                [43.666082, -79.438076],
+                {"bubblingMouseEvents": true, "color": "#f8fcb6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f8fcb6", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_a7345bb8ca2b0a40e98c3cbab0ca864d = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_4a2655f4c132c801a34cd80f6656e1e8 = $(`<div id="html_4a2655f4c132c801a34cd80f6656e1e8" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Lappin Ave South Side</b><br>Avg Headway: 7.6 min</div>`)[0];
+                popup_a7345bb8ca2b0a40e98c3cbab0ca864d.setContent(html_4a2655f4c132c801a34cd80f6656e1e8);
+            
+        
+
+        circle_marker_a07c1415b209cdda92650efc81df3632.bindPopup(popup_a7345bb8ca2b0a40e98c3cbab0ca864d)
+        ;
+
+        
+    
+    
+            circle_marker_a07c1415b209cdda92650efc81df3632.bindTooltip(
+                `<div>
+                     Dufferin St at Lappin Ave South Side: 7.6 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bb2c4f8b6ba13eb791dbf7456f7974d1 = L.circleMarker(
+                [43.71788, -79.455672],
+                {"bubblingMouseEvents": true, "color": "#fff2aa", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fff2aa", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_48fdc479796e75d38fadb772364ae554 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_9d2d8a5f84c5e11d1399f6c4ff9ec58d = $(`<div id="html_9d2d8a5f84c5e11d1399f6c4ff9ec58d" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Samor Rd South Side</b><br>Avg Headway: 8.1 min</div>`)[0];
+                popup_48fdc479796e75d38fadb772364ae554.setContent(html_9d2d8a5f84c5e11d1399f6c4ff9ec58d);
+            
+        
+
+        circle_marker_bb2c4f8b6ba13eb791dbf7456f7974d1.bindPopup(popup_48fdc479796e75d38fadb772364ae554)
+        ;
+
+        
+    
+    
+            circle_marker_bb2c4f8b6ba13eb791dbf7456f7974d1.bindTooltip(
+                `<div>
+                     Dufferin St at Samor Rd South Side: 8.1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ba0633c50b045e62c1f1bf2a8dc10703 = L.circleMarker(
+                [43.644509, -79.429381],
+                {"bubblingMouseEvents": true, "color": "#fff7b2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fff7b2", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_6ef27bc33121886aa2616412dff1b913 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_842dff2c491d0bef40cedcb542a9d1bb = $(`<div id="html_842dff2c491d0bef40cedcb542a9d1bb" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Alma Ave</b><br>Avg Headway: 8.0 min</div>`)[0];
+                popup_6ef27bc33121886aa2616412dff1b913.setContent(html_842dff2c491d0bef40cedcb542a9d1bb);
+            
+        
+
+        circle_marker_ba0633c50b045e62c1f1bf2a8dc10703.bindPopup(popup_6ef27bc33121886aa2616412dff1b913)
+        ;
+
+        
+    
+    
+            circle_marker_ba0633c50b045e62c1f1bf2a8dc10703.bindTooltip(
+                `<div>
+                     Dufferin St at Alma Ave: 8.0 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_60c33c909ae0348c251b0518eb587437 = L.circleMarker(
+                [43.706896, -79.453031],
+                {"bubblingMouseEvents": true, "color": "#b7e075", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b7e075", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_930f18af9032a421354b35be76ec8126 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_d50e7bb7b51111aebf6a0bbdd277e495 = $(`<div id="html_d50e7bb7b51111aebf6a0bbdd277e495" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Glencairn Ave</b><br>Avg Headway: 6.4 min</div>`)[0];
+                popup_930f18af9032a421354b35be76ec8126.setContent(html_d50e7bb7b51111aebf6a0bbdd277e495);
+            
+        
+
+        circle_marker_60c33c909ae0348c251b0518eb587437.bindPopup(popup_930f18af9032a421354b35be76ec8126)
+        ;
+
+        
+    
+    
+            circle_marker_60c33c909ae0348c251b0518eb587437.bindTooltip(
+                `<div>
+                     Dufferin St at Glencairn Ave: 6.4 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a3dd399e34d22e9728df9937451e5250 = L.circleMarker(
+                [43.724737, -79.457304],
+                {"bubblingMouseEvents": true, "color": "#fff3ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fff3ac", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_1c0965216a9651ec7416ac43667ef866 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_d2dddcf75a875ca73b41a4eae0154005 = $(`<div id="html_d2dddcf75a875ca73b41a4eae0154005" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Jane Osler Blvd - Yorkdale Shopping Centre</b><br>Avg Headway: 8.1 min</div>`)[0];
+                popup_1c0965216a9651ec7416ac43667ef866.setContent(html_d2dddcf75a875ca73b41a4eae0154005);
+            
+        
+
+        circle_marker_a3dd399e34d22e9728df9937451e5250.bindPopup(popup_1c0965216a9651ec7416ac43667ef866)
+        ;
+
+        
+    
+    
+            circle_marker_a3dd399e34d22e9728df9937451e5250.bindTooltip(
+                `<div>
+                     Dufferin St at Jane Osler Blvd - Yorkdale Shopping Centre: 8.1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_148250bc935bd3150a2e78caefde68a3 = L.circleMarker(
+                [43.731811, -79.458665],
+                {"bubblingMouseEvents": true, "color": "#30a356", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#30a356", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_682c2ca545981a89e22ccc1baee93284 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_b2c735879761a50922213072b9a0c258 = $(`<div id="html_b2c735879761a50922213072b9a0c258" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Wilson Ave</b><br>Avg Headway: 4.7 min</div>`)[0];
+                popup_682c2ca545981a89e22ccc1baee93284.setContent(html_b2c735879761a50922213072b9a0c258);
+            
+        
+
+        circle_marker_148250bc935bd3150a2e78caefde68a3.bindPopup(popup_682c2ca545981a89e22ccc1baee93284)
+        ;
+
+        
+    
+    
+            circle_marker_148250bc935bd3150a2e78caefde68a3.bindTooltip(
+                `<div>
+                     Dufferin St at Wilson Ave: 4.7 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4fb5decc21d80b4c7488fa4acee37b59 = L.circleMarker(
+                [43.690767, -79.448119],
+                {"bubblingMouseEvents": true, "color": "#fecc7b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fecc7b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_09c02ceecc8b012d2cbf17757a449fe2 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_c5fb403a0fcb35d59862a663d6fc4a5c = $(`<div id="html_c5fb403a0fcb35d59862a663d6fc4a5c" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Gibson St North Side</b><br>Avg Headway: 8.9 min</div>`)[0];
+                popup_09c02ceecc8b012d2cbf17757a449fe2.setContent(html_c5fb403a0fcb35d59862a663d6fc4a5c);
+            
+        
+
+        circle_marker_4fb5decc21d80b4c7488fa4acee37b59.bindPopup(popup_09c02ceecc8b012d2cbf17757a449fe2)
+        ;
+
+        
+    
+    
+            circle_marker_4fb5decc21d80b4c7488fa4acee37b59.bindTooltip(
+                `<div>
+                     Dufferin St at Gibson St North Side: 8.9 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5681a9007f7354b1f1acb756c7703eb9 = L.circleMarker(
+                [43.695717, -79.450479],
+                {"bubblingMouseEvents": true, "color": "#fedc88", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fedc88", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_abd795545194adb781899298f7b1b95c = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_2182639ccb0fc205078b66202fe98148 = $(`<div id="html_2182639ccb0fc205078b66202fe98148" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Ramsden Rd South Side</b><br>Avg Headway: 8.7 min</div>`)[0];
+                popup_abd795545194adb781899298f7b1b95c.setContent(html_2182639ccb0fc205078b66202fe98148);
+            
+        
+
+        circle_marker_5681a9007f7354b1f1acb756c7703eb9.bindPopup(popup_abd795545194adb781899298f7b1b95c)
+        ;
+
+        
+    
+    
+            circle_marker_5681a9007f7354b1f1acb756c7703eb9.bindTooltip(
+                `<div>
+                     Dufferin St at Ramsden Rd South Side: 8.7 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c0c4b9882d9b57fe537542f8435ab545 = L.circleMarker(
+                [43.692029, -79.448632],
+                {"bubblingMouseEvents": true, "color": "#fecc7b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fecc7b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_e15654f57be3508ed554059ee36564e4 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_008625d3a5030282fbe14c19b59f3104 = $(`<div id="html_008625d3a5030282fbe14c19b59f3104" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Rowan Ave</b><br>Avg Headway: 8.9 min</div>`)[0];
+                popup_e15654f57be3508ed554059ee36564e4.setContent(html_008625d3a5030282fbe14c19b59f3104);
+            
+        
+
+        circle_marker_c0c4b9882d9b57fe537542f8435ab545.bindPopup(popup_e15654f57be3508ed554059ee36564e4)
+        ;
+
+        
+    
+    
+            circle_marker_c0c4b9882d9b57fe537542f8435ab545.bindTooltip(
+                `<div>
+                     Dufferin St at Rowan Ave: 8.9 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5ade48109330c90a050a3f724724ce6f = L.circleMarker(
+                [43.670324, -79.439719],
+                {"bubblingMouseEvents": true, "color": "#a7d96b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a7d96b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_86f747b1de4271296a9100168dedbbb8 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_b6e2528d0843afc544c20464dafad139 = $(`<div id="html_b6e2528d0843afc544c20464dafad139" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Brandon Ave</b><br>Avg Headway: 6.2 min</div>`)[0];
+                popup_86f747b1de4271296a9100168dedbbb8.setContent(html_b6e2528d0843afc544c20464dafad139);
+            
+        
+
+        circle_marker_5ade48109330c90a050a3f724724ce6f.bindPopup(popup_86f747b1de4271296a9100168dedbbb8)
+        ;
+
+        
+    
+    
+            circle_marker_5ade48109330c90a050a3f724724ce6f.bindTooltip(
+                `<div>
+                     Dufferin St at Brandon Ave: 6.2 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ffcd813f46f3b8e39cc2be230203d202 = L.circleMarker(
+                [43.636946, -79.426505],
+                {"bubblingMouseEvents": true, "color": "#fff7b2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fff7b2", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_68c9cc30fe26f7eb2205279f70787c6c = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_c1f6a29d92771877dfbf3526c44c04c6 = $(`<div id="html_c1f6a29d92771877dfbf3526c44c04c6" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Liberty St</b><br>Avg Headway: 8.0 min</div>`)[0];
+                popup_68c9cc30fe26f7eb2205279f70787c6c.setContent(html_c1f6a29d92771877dfbf3526c44c04c6);
+            
+        
+
+        circle_marker_ffcd813f46f3b8e39cc2be230203d202.bindPopup(popup_68c9cc30fe26f7eb2205279f70787c6c)
+        ;
+
+        
+    
+    
+            circle_marker_ffcd813f46f3b8e39cc2be230203d202.bindTooltip(
+                `<div>
+                     Dufferin St at Liberty St: 8.0 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6e95ef4a1d902574f15d9eebafe1c5a5 = L.circleMarker(
+                [43.731126, -79.458778],
+                {"bubblingMouseEvents": true, "color": "#fff7b2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fff7b2", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_6a85eb4ad1eee6a36036254c1a9f37d2 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_e0734bae754125dc0209bcb5550f043d = $(`<div id="html_e0734bae754125dc0209bcb5550f043d" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Wilson Ave South Side</b><br>Avg Headway: 8.0 min</div>`)[0];
+                popup_6a85eb4ad1eee6a36036254c1a9f37d2.setContent(html_e0734bae754125dc0209bcb5550f043d);
+            
+        
+
+        circle_marker_6e95ef4a1d902574f15d9eebafe1c5a5.bindPopup(popup_6a85eb4ad1eee6a36036254c1a9f37d2)
+        ;
+
+        
+    
+    
+            circle_marker_6e95ef4a1d902574f15d9eebafe1c5a5.bindTooltip(
+                `<div>
+                     Dufferin St at Wilson Ave South Side: 8.0 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_18a7d7967cadc2485be1770a035dfcc4 = L.circleMarker(
+                [43.714241, -79.454916],
+                {"bubblingMouseEvents": true, "color": "#fa9857", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fa9857", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_ff37e73046334e7f1215fe15fbda8839 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_910b2388f77101280fcd635abf2990f3 = $(`<div id="html_910b2388f77101280fcd635abf2990f3" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Lawrence Ave West</b><br>Avg Headway: 9.7 min</div>`)[0];
+                popup_ff37e73046334e7f1215fe15fbda8839.setContent(html_910b2388f77101280fcd635abf2990f3);
+            
+        
+
+        circle_marker_18a7d7967cadc2485be1770a035dfcc4.bindPopup(popup_ff37e73046334e7f1215fe15fbda8839)
+        ;
+
+        
+    
+    
+            circle_marker_18a7d7967cadc2485be1770a035dfcc4.bindTooltip(
+                `<div>
+                     Dufferin St at Lawrence Ave West: 9.7 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a65cdd24b6f5217130cf56055bc3e60b = L.circleMarker(
+                [43.720554, -79.456276],
+                {"bubblingMouseEvents": true, "color": "#fff3ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fff3ac", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_336504ad5c25582e4432079d6159ae54 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_55cfa075983146efdbc7819bbebff94d = $(`<div id="html_55cfa075983146efdbc7819bbebff94d" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Orfus Rd</b><br>Avg Headway: 8.1 min</div>`)[0];
+                popup_336504ad5c25582e4432079d6159ae54.setContent(html_55cfa075983146efdbc7819bbebff94d);
+            
+        
+
+        circle_marker_a65cdd24b6f5217130cf56055bc3e60b.bindPopup(popup_336504ad5c25582e4432079d6159ae54)
+        ;
+
+        
+    
+    
+            circle_marker_a65cdd24b6f5217130cf56055bc3e60b.bindTooltip(
+                `<div>
+                     Dufferin St at Orfus Rd: 8.1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_09f021337727dd6b4e72a378c68e60a8 = L.circleMarker(
+                [43.677768, -79.442907],
+                {"bubblingMouseEvents": true, "color": "#a7d96b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a7d96b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_6b1a566ca0471606d3e2604ec3202b1f = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_03d40d18862afc4b7bdc00bba9538b38 = $(`<div id="html_03d40d18862afc4b7bdc00bba9538b38" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at St Clair Ave West</b><br>Avg Headway: 6.2 min</div>`)[0];
+                popup_6b1a566ca0471606d3e2604ec3202b1f.setContent(html_03d40d18862afc4b7bdc00bba9538b38);
+            
+        
+
+        circle_marker_09f021337727dd6b4e72a378c68e60a8.bindPopup(popup_6b1a566ca0471606d3e2604ec3202b1f)
+        ;
+
+        
+    
+    
+            circle_marker_09f021337727dd6b4e72a378c68e60a8.bindTooltip(
+                `<div>
+                     Dufferin St at St Clair Ave West: 6.2 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2ce5a7e2efbddff761df7bae5fa5ae8e = L.circleMarker(
+                [43.652658, -79.432661],
+                {"bubblingMouseEvents": true, "color": "#b3df72", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b3df72", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_56eb27d8f44cc61cee034ddf6c40c417 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_868557402886f467273dceb8ee804d3e = $(`<div id="html_868557402886f467273dceb8ee804d3e" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at College St</b><br>Avg Headway: 6.3 min</div>`)[0];
+                popup_56eb27d8f44cc61cee034ddf6c40c417.setContent(html_868557402886f467273dceb8ee804d3e);
+            
+        
+
+        circle_marker_2ce5a7e2efbddff761df7bae5fa5ae8e.bindPopup(popup_56eb27d8f44cc61cee034ddf6c40c417)
+        ;
+
+        
+    
+    
+            circle_marker_2ce5a7e2efbddff761df7bae5fa5ae8e.bindTooltip(
+                `<div>
+                     Dufferin St at College St: 6.3 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7f2ec670717a01b3f213c5a4d6ed0bd5 = L.circleMarker(
+                [43.710983, -79.454179],
+                {"bubblingMouseEvents": true, "color": "#f88c51", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f88c51", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_0625d37173154d126e94ceca53699b38 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_a91f4691c5379c11e7d73521d907c32c = $(`<div id="html_a91f4691c5379c11e7d73521d907c32c" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Playfair Ave</b><br>Avg Headway: 9.9 min</div>`)[0];
+                popup_0625d37173154d126e94ceca53699b38.setContent(html_a91f4691c5379c11e7d73521d907c32c);
+            
+        
+
+        circle_marker_7f2ec670717a01b3f213c5a4d6ed0bd5.bindPopup(popup_0625d37173154d126e94ceca53699b38)
+        ;
+
+        
+    
+    
+            circle_marker_7f2ec670717a01b3f213c5a4d6ed0bd5.bindTooltip(
+                `<div>
+                     Dufferin St at Playfair Ave: 9.9 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_610d394dc946909e0773866557144f48 = L.circleMarker(
+                [43.702243, -79.451968],
+                {"bubblingMouseEvents": true, "color": "#b7e075", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b7e075", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_494f709281db8668bd902e9d8ad707db = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_aee0054fbce36da405cfd040b4c2a6bf = $(`<div id="html_aee0054fbce36da405cfd040b4c2a6bf" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Briar Hill Ave</b><br>Avg Headway: 6.4 min</div>`)[0];
+                popup_494f709281db8668bd902e9d8ad707db.setContent(html_aee0054fbce36da405cfd040b4c2a6bf);
+            
+        
+
+        circle_marker_610d394dc946909e0773866557144f48.bindPopup(popup_494f709281db8668bd902e9d8ad707db)
+        ;
+
+        
+    
+    
+            circle_marker_610d394dc946909e0773866557144f48.bindTooltip(
+                `<div>
+                     Dufferin St at Briar Hill Ave: 6.4 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_decc1746a3c1e9fa71cbb2570dd74cfb = L.circleMarker(
+                [43.668082, -79.43895],
+                {"bubblingMouseEvents": true, "color": "#f8fcb6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f8fcb6", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_2a69b5b19f71f24612d14a7c6b31705b = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_8cd5a8d96fd2f001faf212481b27a5c5 = $(`<div id="html_8cd5a8d96fd2f001faf212481b27a5c5" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Dupont St South Side</b><br>Avg Headway: 7.6 min</div>`)[0];
+                popup_2a69b5b19f71f24612d14a7c6b31705b.setContent(html_8cd5a8d96fd2f001faf212481b27a5c5);
+            
+        
+
+        circle_marker_decc1746a3c1e9fa71cbb2570dd74cfb.bindPopup(popup_2a69b5b19f71f24612d14a7c6b31705b)
+        ;
+
+        
+    
+    
+            circle_marker_decc1746a3c1e9fa71cbb2570dd74cfb.bindTooltip(
+                `<div>
+                     Dufferin St at Dupont St South Side: 7.6 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_90fd991609ff45a2bdee473f8890ec20 = L.circleMarker(
+                [43.692263, -79.448914],
+                {"bubblingMouseEvents": true, "color": "#fedc88", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fedc88", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_eef4c8a8f7bdf52b9e9b3d4edc078534 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_4320654e7757bf61e40cba5bdba6eede = $(`<div id="html_4320654e7757bf61e40cba5bdba6eede" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Rowan Ave</b><br>Avg Headway: 8.7 min</div>`)[0];
+                popup_eef4c8a8f7bdf52b9e9b3d4edc078534.setContent(html_4320654e7757bf61e40cba5bdba6eede);
+            
+        
+
+        circle_marker_90fd991609ff45a2bdee473f8890ec20.bindPopup(popup_eef4c8a8f7bdf52b9e9b3d4edc078534)
+        ;
+
+        
+    
+    
+            circle_marker_90fd991609ff45a2bdee473f8890ec20.bindTooltip(
+                `<div>
+                     Dufferin St at Rowan Ave: 8.7 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ddfa8572d825a06c62ea4526bd48f230 = L.circleMarker(
+                [43.63907, -79.427505],
+                {"bubblingMouseEvents": true, "color": "#78c565", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#78c565", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_a20492f7ac4c60b12d97fd7ff4aedb87 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_763dc2eb64041bf8d8f1c58f0e61a2ae = $(`<div id="html_763dc2eb64041bf8d8f1c58f0e61a2ae" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at King St West</b><br>Avg Headway: 5.5 min</div>`)[0];
+                popup_a20492f7ac4c60b12d97fd7ff4aedb87.setContent(html_763dc2eb64041bf8d8f1c58f0e61a2ae);
+            
+        
+
+        circle_marker_ddfa8572d825a06c62ea4526bd48f230.bindPopup(popup_a20492f7ac4c60b12d97fd7ff4aedb87)
+        ;
+
+        
+    
+    
+            circle_marker_ddfa8572d825a06c62ea4526bd48f230.bindTooltip(
+                `<div>
+                     Dufferin St at King St West: 5.5 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9b10e462de2a749ccfdbea77f977f889 = L.circleMarker(
+                [43.700622, -79.45155],
+                {"bubblingMouseEvents": true, "color": "#b7e075", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b7e075", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_1a09501f9538b5b3a930fa286d6f3761 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_d175cec148a5e6418d7dbff27d204fe5 = $(`<div id="html_d175cec148a5e6418d7dbff27d204fe5" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Castlefield Ave</b><br>Avg Headway: 6.4 min</div>`)[0];
+                popup_1a09501f9538b5b3a930fa286d6f3761.setContent(html_d175cec148a5e6418d7dbff27d204fe5);
+            
+        
+
+        circle_marker_9b10e462de2a749ccfdbea77f977f889.bindPopup(popup_1a09501f9538b5b3a930fa286d6f3761)
+        ;
+
+        
+    
+    
+            circle_marker_9b10e462de2a749ccfdbea77f977f889.bindTooltip(
+                `<div>
+                     Dufferin St at Castlefield Ave: 6.4 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_edb253f8c42da2876684632846830e2e = L.circleMarker(
+                [43.716083, -79.454991],
+                {"bubblingMouseEvents": true, "color": "#b7e075", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b7e075", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_0d82f0107c8eea3b603f479a02ca5059 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_6053028b07eb0a8200110bf86094b69f = $(`<div id="html_6053028b07eb0a8200110bf86094b69f" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Dane Ave</b><br>Avg Headway: 6.4 min</div>`)[0];
+                popup_0d82f0107c8eea3b603f479a02ca5059.setContent(html_6053028b07eb0a8200110bf86094b69f);
+            
+        
+
+        circle_marker_edb253f8c42da2876684632846830e2e.bindPopup(popup_0d82f0107c8eea3b603f479a02ca5059)
+        ;
+
+        
+    
+    
+            circle_marker_edb253f8c42da2876684632846830e2e.bindTooltip(
+                `<div>
+                     Dufferin St at Dane Ave: 6.4 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4c567326dfd9801f32693c11d5cb4d06 = L.circleMarker(
+                [43.662856, -79.436555],
+                {"bubblingMouseEvents": true, "color": "#a7d96b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a7d96b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_63ef4d57a83077614551ea0f67b3cf28 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_8cf82942e74e710309c94f03016dcb52 = $(`<div id="html_8cf82942e74e710309c94f03016dcb52" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Shanly St</b><br>Avg Headway: 6.2 min</div>`)[0];
+                popup_63ef4d57a83077614551ea0f67b3cf28.setContent(html_8cf82942e74e710309c94f03016dcb52);
+            
+        
+
+        circle_marker_4c567326dfd9801f32693c11d5cb4d06.bindPopup(popup_63ef4d57a83077614551ea0f67b3cf28)
+        ;
+
+        
+    
+    
+            circle_marker_4c567326dfd9801f32693c11d5cb4d06.bindTooltip(
+                `<div>
+                     Dufferin St at Shanly St: 6.2 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7d909e3fdbddd66d6f777564293c5741 = L.circleMarker(
+                [43.685461, -79.445973],
+                {"bubblingMouseEvents": true, "color": "#fecc7b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fecc7b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_ff54570d8375d26790daf137c52779c0 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_98cc50ef1e317f03dea8e72970ecc953 = $(`<div id="html_98cc50ef1e317f03dea8e72970ecc953" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Rogers Rd</b><br>Avg Headway: 8.9 min</div>`)[0];
+                popup_ff54570d8375d26790daf137c52779c0.setContent(html_98cc50ef1e317f03dea8e72970ecc953);
+            
+        
+
+        circle_marker_7d909e3fdbddd66d6f777564293c5741.bindPopup(popup_ff54570d8375d26790daf137c52779c0)
+        ;
+
+        
+    
+    
+            circle_marker_7d909e3fdbddd66d6f777564293c5741.bindTooltip(
+                `<div>
+                     Dufferin St at Rogers Rd: 8.9 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_799eb45d04b373d108b3200235aed9ed = L.circleMarker(
+                [43.734475, -79.45092],
+                {"bubblingMouseEvents": true, "color": "#fff7b2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fff7b2", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_19b8a47e6357ec359613a3a20a0a2cdd = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_d5b50a9aaa5beea9f772d87c2f489a37 = $(`<div id="html_d5b50a9aaa5beea9f772d87c2f489a37" style="width: 100.0%; height: 100.0%;"><b>Wilson Station at Bus Bay 1A</b><br>Avg Headway: 8.0 min</div>`)[0];
+                popup_19b8a47e6357ec359613a3a20a0a2cdd.setContent(html_d5b50a9aaa5beea9f772d87c2f489a37);
+            
+        
+
+        circle_marker_799eb45d04b373d108b3200235aed9ed.bindPopup(popup_19b8a47e6357ec359613a3a20a0a2cdd)
+        ;
+
+        
+    
+    
+            circle_marker_799eb45d04b373d108b3200235aed9ed.bindTooltip(
+                `<div>
+                     Wilson Station at Bus Bay 1A: 8.0 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cd5cbca21380e9fe1a205ba5c75212b2 = L.circleMarker(
+                [43.695556, -79.450105],
+                {"bubblingMouseEvents": true, "color": "#fecc7b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fecc7b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_a15f8fbf9705af78e12ab35e29be88cd = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_1d984345461531547d3e40337ea309e1 = $(`<div id="html_1d984345461531547d3e40337ea309e1" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Eglinton Ave West</b><br>Avg Headway: 8.9 min</div>`)[0];
+                popup_a15f8fbf9705af78e12ab35e29be88cd.setContent(html_1d984345461531547d3e40337ea309e1);
+            
+        
+
+        circle_marker_cd5cbca21380e9fe1a205ba5c75212b2.bindPopup(popup_a15f8fbf9705af78e12ab35e29be88cd)
+        ;
+
+        
+    
+    
+            circle_marker_cd5cbca21380e9fe1a205ba5c75212b2.bindTooltip(
+                `<div>
+                     Dufferin St at Eglinton Ave West: 8.9 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1f5cd27311afec58c59c4f259d7f2cad = L.circleMarker(
+                [43.64236, -79.428744],
+                {"bubblingMouseEvents": true, "color": "#7ac665", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7ac665", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_941cea97e0ec53149b0867f4877139a1 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_53b1af8e0e94681dabe86b10bcdbacf5 = $(`<div id="html_53b1af8e0e94681dabe86b10bcdbacf5" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Queen St West</b><br>Avg Headway: 5.6 min</div>`)[0];
+                popup_941cea97e0ec53149b0867f4877139a1.setContent(html_53b1af8e0e94681dabe86b10bcdbacf5);
+            
+        
+
+        circle_marker_1f5cd27311afec58c59c4f259d7f2cad.bindPopup(popup_941cea97e0ec53149b0867f4877139a1)
+        ;
+
+        
+    
+    
+            circle_marker_1f5cd27311afec58c59c4f259d7f2cad.bindTooltip(
+                `<div>
+                     Dufferin St at Queen St West: 5.6 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6ed1ec198df2e54fced94b3f4818487c = L.circleMarker(
+                [43.688509, -79.447222],
+                {"bubblingMouseEvents": true, "color": "#fed481", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fed481", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_380d2cc16320f376a59136a672f1f635 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_ce18fea2491672d830832f340b0cb04b = $(`<div id="html_ce18fea2491672d830832f340b0cb04b" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Martin St</b><br>Avg Headway: 8.8 min</div>`)[0];
+                popup_380d2cc16320f376a59136a672f1f635.setContent(html_ce18fea2491672d830832f340b0cb04b);
+            
+        
+
+        circle_marker_6ed1ec198df2e54fced94b3f4818487c.bindPopup(popup_380d2cc16320f376a59136a672f1f635)
+        ;
+
+        
+    
+    
+            circle_marker_6ed1ec198df2e54fced94b3f4818487c.bindTooltip(
+                `<div>
+                     Dufferin St at Martin St: 8.8 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b0b96db416e55e9671b5518ab74bffaf = L.circleMarker(
+                [43.680038, -79.443781],
+                {"bubblingMouseEvents": true, "color": "#60ba62", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#60ba62", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_56a816e7788ae4e83bba495e2fbe474c = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_92548b2b301f20a9f9fa6ede49868fe4 = $(`<div id="html_92548b2b301f20a9f9fa6ede49868fe4" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Ascot Ave</b><br>Avg Headway: 5.2 min</div>`)[0];
+                popup_56a816e7788ae4e83bba495e2fbe474c.setContent(html_92548b2b301f20a9f9fa6ede49868fe4);
+            
+        
+
+        circle_marker_b0b96db416e55e9671b5518ab74bffaf.bindPopup(popup_56a816e7788ae4e83bba495e2fbe474c)
+        ;
+
+        
+    
+    
+            circle_marker_b0b96db416e55e9671b5518ab74bffaf.bindTooltip(
+                `<div>
+                     Dufferin St at Ascot Ave: 5.2 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fde930eaf919d49bb9e53d9c146f8a37 = L.circleMarker(
+                [43.646696, -79.430224],
+                {"bubblingMouseEvents": true, "color": "#fff7b2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fff7b2", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_42b2d4514870ec7da15da2521341bb4b = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_4bd45fdd34e581f58be5a9e397f15846 = $(`<div id="html_4bd45fdd34e581f58be5a9e397f15846" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Gordon St</b><br>Avg Headway: 8.0 min</div>`)[0];
+                popup_42b2d4514870ec7da15da2521341bb4b.setContent(html_4bd45fdd34e581f58be5a9e397f15846);
+            
+        
+
+        circle_marker_fde930eaf919d49bb9e53d9c146f8a37.bindPopup(popup_42b2d4514870ec7da15da2521341bb4b)
+        ;
+
+        
+    
+    
+            circle_marker_fde930eaf919d49bb9e53d9c146f8a37.bindTooltip(
+                `<div>
+                     Dufferin St at Gordon St: 8.0 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f4c7270d9ac072819e0e748cbfc87466 = L.circleMarker(
+                [43.697772, -79.450959],
+                {"bubblingMouseEvents": true, "color": "#e3f399", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e3f399", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_005bf6d32eca5d032948c987550a3893 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_1ebc6c395b0c7611658d9515e825cbcd = $(`<div id="html_1ebc6c395b0c7611658d9515e825cbcd" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Whitmore Ave</b><br>Avg Headway: 7.2 min</div>`)[0];
+                popup_005bf6d32eca5d032948c987550a3893.setContent(html_1ebc6c395b0c7611658d9515e825cbcd);
+            
+        
+
+        circle_marker_f4c7270d9ac072819e0e748cbfc87466.bindPopup(popup_005bf6d32eca5d032948c987550a3893)
+        ;
+
+        
+    
+    
+            circle_marker_f4c7270d9ac072819e0e748cbfc87466.bindTooltip(
+                `<div>
+                     Dufferin St at Whitmore Ave: 7.2 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fe664a7400c968860d87fe4b4c4f2308 = L.circleMarker(
+                [43.710483, -79.453838],
+                {"bubblingMouseEvents": true, "color": "#b7e075", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b7e075", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_709b22472d51d1de4a276cdb75c333c7 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_02343636cf00099deb3f388eec2c080e = $(`<div id="html_02343636cf00099deb3f388eec2c080e" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Wenderly Dr</b><br>Avg Headway: 6.4 min</div>`)[0];
+                popup_709b22472d51d1de4a276cdb75c333c7.setContent(html_02343636cf00099deb3f388eec2c080e);
+            
+        
+
+        circle_marker_fe664a7400c968860d87fe4b4c4f2308.bindPopup(popup_709b22472d51d1de4a276cdb75c333c7)
+        ;
+
+        
+    
+    
+            circle_marker_fe664a7400c968860d87fe4b4c4f2308.bindTooltip(
+                `<div>
+                     Dufferin St at Wenderly Dr: 6.4 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_77dfda0bb5325be0ea9ef653a1971a08 = L.circleMarker(
+                [43.703932, -79.452566],
+                {"bubblingMouseEvents": true, "color": "#f47044", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f47044", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_b98c195ddb8024d161fd3d6d1872e642 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_efd00181c06faf0cf6d7da10a0800026 = $(`<div id="html_efd00181c06faf0cf6d7da10a0800026" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Wingold Ave</b><br>Avg Headway: 10.3 min</div>`)[0];
+                popup_b98c195ddb8024d161fd3d6d1872e642.setContent(html_efd00181c06faf0cf6d7da10a0800026);
+            
+        
+
+        circle_marker_77dfda0bb5325be0ea9ef653a1971a08.bindPopup(popup_b98c195ddb8024d161fd3d6d1872e642)
+        ;
+
+        
+    
+    
+            circle_marker_77dfda0bb5325be0ea9ef653a1971a08.bindTooltip(
+                `<div>
+                     Dufferin St at Wingold Ave: 10.3 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0f18934679659b82fafb37c1416c86ca = L.circleMarker(
+                [43.67053, -79.440005],
+                {"bubblingMouseEvents": true, "color": "#f8fcb6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f8fcb6", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_13289ee8b08fe6e974fe79af0a423ac8 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_03a7404d82d1b875cc4ae21b65b25dea = $(`<div id="html_03a7404d82d1b875cc4ae21b65b25dea" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Brandon Ave</b><br>Avg Headway: 7.6 min</div>`)[0];
+                popup_13289ee8b08fe6e974fe79af0a423ac8.setContent(html_03a7404d82d1b875cc4ae21b65b25dea);
+            
+        
+
+        circle_marker_0f18934679659b82fafb37c1416c86ca.bindPopup(popup_13289ee8b08fe6e974fe79af0a423ac8)
+        ;
+
+        
+    
+    
+            circle_marker_0f18934679659b82fafb37c1416c86ca.bindTooltip(
+                `<div>
+                     Dufferin St at Brandon Ave: 7.6 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ff27936ca8ac1d3e7cb1655e8d2c576b = L.circleMarker(
+                [43.665387, -79.437622],
+                {"bubblingMouseEvents": true, "color": "#a7d96b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a7d96b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_4669655b786709e21bee108cae79a6bb = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_4bf90c7ad0a8270a6636c8c980821aba = $(`<div id="html_4bf90c7ad0a8270a6636c8c980821aba" style="width: 100.0%; height: 100.0%;"><b>Dufferin St and Millicent St</b><br>Avg Headway: 6.2 min</div>`)[0];
+                popup_4669655b786709e21bee108cae79a6bb.setContent(html_4bf90c7ad0a8270a6636c8c980821aba);
+            
+        
+
+        circle_marker_ff27936ca8ac1d3e7cb1655e8d2c576b.bindPopup(popup_4669655b786709e21bee108cae79a6bb)
+        ;
+
+        
+    
+    
+            circle_marker_ff27936ca8ac1d3e7cb1655e8d2c576b.bindTooltip(
+                `<div>
+                     Dufferin St and Millicent St: 6.2 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4407a1ad23b238809ed9aa6a495ccef5 = L.circleMarker(
+                [43.726531, -79.457356],
+                {"bubblingMouseEvents": true, "color": "#30a356", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#30a356", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_639ea7a067d1819be3cde3ab8d3fcba5 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_6e729291afed7b76c3cd2950b47822cc = $(`<div id="html_6e729291afed7b76c3cd2950b47822cc" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Yorkdale Rd</b><br>Avg Headway: 4.7 min</div>`)[0];
+                popup_639ea7a067d1819be3cde3ab8d3fcba5.setContent(html_6e729291afed7b76c3cd2950b47822cc);
+            
+        
+
+        circle_marker_4407a1ad23b238809ed9aa6a495ccef5.bindPopup(popup_639ea7a067d1819be3cde3ab8d3fcba5)
+        ;
+
+        
+    
+    
+            circle_marker_4407a1ad23b238809ed9aa6a495ccef5.bindTooltip(
+                `<div>
+                     Dufferin St at Yorkdale Rd: 4.7 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ddf3117967bdd30793c0c98616078fdf = L.circleMarker(
+                [43.725083, -79.456993],
+                {"bubblingMouseEvents": true, "color": "#30a356", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#30a356", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_7ba2154cd282820951cc3c809309dae9 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_da386c866e664f212448b45060062e59 = $(`<div id="html_da386c866e664f212448b45060062e59" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Jane Osler Blvd - Yorkdale Shopping Centre</b><br>Avg Headway: 4.7 min</div>`)[0];
+                popup_7ba2154cd282820951cc3c809309dae9.setContent(html_da386c866e664f212448b45060062e59);
+            
+        
+
+        circle_marker_ddf3117967bdd30793c0c98616078fdf.bindPopup(popup_7ba2154cd282820951cc3c809309dae9)
+        ;
+
+        
+    
+    
+            circle_marker_ddf3117967bdd30793c0c98616078fdf.bindTooltip(
+                `<div>
+                     Dufferin St at Jane Osler Blvd - Yorkdale Shopping Centre: 4.7 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_407748b0f3fd8d2f7f397123a0d3e17c = L.circleMarker(
+                [43.657218, -79.43441],
+                {"bubblingMouseEvents": true, "color": "#abdb6d", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#abdb6d", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_4108e063b632f017019f3177ec943835 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_1b012c16d0d1bd005650b52f02517ab5 = $(`<div id="html_1b012c16d0d1bd005650b52f02517ab5" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Dufferin Park Ave</b><br>Avg Headway: 6.2 min</div>`)[0];
+                popup_4108e063b632f017019f3177ec943835.setContent(html_1b012c16d0d1bd005650b52f02517ab5);
+            
+        
+
+        circle_marker_407748b0f3fd8d2f7f397123a0d3e17c.bindPopup(popup_4108e063b632f017019f3177ec943835)
+        ;
+
+        
+    
+    
+            circle_marker_407748b0f3fd8d2f7f397123a0d3e17c.bindTooltip(
+                `<div>
+                     Dufferin St at Dufferin Park Ave: 6.2 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5bc61d2b6597dee839ede2e15f0849b8 = L.circleMarker(
+                [43.733336, -79.453577],
+                {"bubblingMouseEvents": true, "color": "#fff7b2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fff7b2", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_cb925b2839a620687b0a98891a2ce08c = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_311c000acd274f8b383da264f6d8be35 = $(`<div id="html_311c000acd274f8b383da264f6d8be35" style="width: 100.0%; height: 100.0%;"><b>Wilson Ave at Transit Rd West Side</b><br>Avg Headway: 8.0 min</div>`)[0];
+                popup_cb925b2839a620687b0a98891a2ce08c.setContent(html_311c000acd274f8b383da264f6d8be35);
+            
+        
+
+        circle_marker_5bc61d2b6597dee839ede2e15f0849b8.bindPopup(popup_cb925b2839a620687b0a98891a2ce08c)
+        ;
+
+        
+    
+    
+            circle_marker_5bc61d2b6597dee839ede2e15f0849b8.bindTooltip(
+                `<div>
+                     Wilson Ave at Transit Rd West Side: 8.0 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_acb22d3e1103ad8c53ab13bfe1fedd87 = L.circleMarker(
+                [43.707138, -79.453371],
+                {"bubblingMouseEvents": true, "color": "#f67c4a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f67c4a", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_cf85d91a223443789cce4b5e11d10299 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_8a0a267fcb01b6beaafcd80236e21e66 = $(`<div id="html_8a0a267fcb01b6beaafcd80236e21e66" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Glencairn Ave</b><br>Avg Headway: 10.1 min</div>`)[0];
+                popup_cf85d91a223443789cce4b5e11d10299.setContent(html_8a0a267fcb01b6beaafcd80236e21e66);
+            
+        
+
+        circle_marker_acb22d3e1103ad8c53ab13bfe1fedd87.bindPopup(popup_cf85d91a223443789cce4b5e11d10299)
+        ;
+
+        
+    
+    
+            circle_marker_acb22d3e1103ad8c53ab13bfe1fedd87.bindTooltip(
+                `<div>
+                     Dufferin St at Glencairn Ave: 10.1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8c52e118772c3029d8a9e27780cfb7c6 = L.circleMarker(
+                [43.690529, -79.448215],
+                {"bubblingMouseEvents": true, "color": "#fedc88", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fedc88", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_6b6733ac535f55c004ebff1ac524c783 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_82f93f22254e54a33f99cf1667b62f70 = $(`<div id="html_82f93f22254e54a33f99cf1667b62f70" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Preston Rd South Side</b><br>Avg Headway: 8.7 min</div>`)[0];
+                popup_6b6733ac535f55c004ebff1ac524c783.setContent(html_82f93f22254e54a33f99cf1667b62f70);
+            
+        
+
+        circle_marker_8c52e118772c3029d8a9e27780cfb7c6.bindPopup(popup_6b6733ac535f55c004ebff1ac524c783)
+        ;
+
+        
+    
+    
+            circle_marker_8c52e118772c3029d8a9e27780cfb7c6.bindTooltip(
+                `<div>
+                     Dufferin St at Preston Rd South Side: 8.7 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_572e77652e4f4921048cf4d7a37349d6 = L.circleMarker(
+                [43.714493, -79.454638],
+                {"bubblingMouseEvents": true, "color": "#b7e075", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b7e075", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_9729e2f518c6b94f99ae84f44b39e5a9 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_a8ac8283c7e1741e7e5479c17c828e4d = $(`<div id="html_a8ac8283c7e1741e7e5479c17c828e4d" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Lawrence Ave West North Side</b><br>Avg Headway: 6.4 min</div>`)[0];
+                popup_9729e2f518c6b94f99ae84f44b39e5a9.setContent(html_a8ac8283c7e1741e7e5479c17c828e4d);
+            
+        
+
+        circle_marker_572e77652e4f4921048cf4d7a37349d6.bindPopup(popup_9729e2f518c6b94f99ae84f44b39e5a9)
+        ;
+
+        
+    
+    
+            circle_marker_572e77652e4f4921048cf4d7a37349d6.bindTooltip(
+                `<div>
+                     Dufferin St at Lawrence Ave West North Side: 6.4 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3ec6c02e144ebb7785a2e58fb0cef8f4 = L.circleMarker(
+                [43.675621, -79.442182],
+                {"bubblingMouseEvents": true, "color": "#f8fcb6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f8fcb6", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_4c3bfb32862cc59e93eb549c0efdc580 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_fc556f7e22e3810133059cb982d7c2d9 = $(`<div id="html_fc556f7e22e3810133059cb982d7c2d9" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Auburn Ave</b><br>Avg Headway: 7.6 min</div>`)[0];
+                popup_4c3bfb32862cc59e93eb549c0efdc580.setContent(html_fc556f7e22e3810133059cb982d7c2d9);
+            
+        
+
+        circle_marker_3ec6c02e144ebb7785a2e58fb0cef8f4.bindPopup(popup_4c3bfb32862cc59e93eb549c0efdc580)
+        ;
+
+        
+    
+    
+            circle_marker_3ec6c02e144ebb7785a2e58fb0cef8f4.bindTooltip(
+                `<div>
+                     Dufferin St at Auburn Ave: 7.6 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f7d6eb54b75e01d9b7c7236d5d8ee6b9 = L.circleMarker(
+                [43.663251, -79.436863],
+                {"bubblingMouseEvents": true, "color": "#006837", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#006837", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_fd484a5d2823b9a70f082babe2c26938 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_9d0d8726b4b270a27f0efe865a2977eb = $(`<div id="html_9d0d8726b4b270a27f0efe865a2977eb" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Shanly St</b><br>Avg Headway: 3.6 min</div>`)[0];
+                popup_fd484a5d2823b9a70f082babe2c26938.setContent(html_9d0d8726b4b270a27f0efe865a2977eb);
+            
+        
+
+        circle_marker_f7d6eb54b75e01d9b7c7236d5d8ee6b9.bindPopup(popup_fd484a5d2823b9a70f082babe2c26938)
+        ;
+
+        
+    
+    
+            circle_marker_f7d6eb54b75e01d9b7c7236d5d8ee6b9.bindTooltip(
+                `<div>
+                     Dufferin St at Shanly St: 3.6 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6413bdd670b630c6bea1f0e8b05e88a4 = L.circleMarker(
+                [43.649459, -79.431252],
+                {"bubblingMouseEvents": true, "color": "#fff7b2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fff7b2", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_468f945d76124c602a0c5319878dc132 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_14cf26f62e0d0c4e2d5f5cb5eac35b53 = $(`<div id="html_14cf26f62e0d0c4e2d5f5cb5eac35b53" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Dundas St West</b><br>Avg Headway: 8.0 min</div>`)[0];
+                popup_468f945d76124c602a0c5319878dc132.setContent(html_14cf26f62e0d0c4e2d5f5cb5eac35b53);
+            
+        
+
+        circle_marker_6413bdd670b630c6bea1f0e8b05e88a4.bindPopup(popup_468f945d76124c602a0c5319878dc132)
+        ;
+
+        
+    
+    
+            circle_marker_6413bdd670b630c6bea1f0e8b05e88a4.bindTooltip(
+                `<div>
+                     Dufferin St at Dundas St West: 8.0 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ec64a924f2dc0ef83db2dd95816fe143 = L.circleMarker(
+                [43.700952, -79.451951],
+                {"bubblingMouseEvents": true, "color": "#b50f26", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b50f26", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_4d7fd36ff1cd7e2d573b679b1823d9a7 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_f2056a406efd700c8f27f80546fca3e7 = $(`<div id="html_f2056a406efd700c8f27f80546fca3e7" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Castlefield Ave</b><br>Avg Headway: 11.7 min</div>`)[0];
+                popup_4d7fd36ff1cd7e2d573b679b1823d9a7.setContent(html_f2056a406efd700c8f27f80546fca3e7);
+            
+        
+
+        circle_marker_ec64a924f2dc0ef83db2dd95816fe143.bindPopup(popup_4d7fd36ff1cd7e2d573b679b1823d9a7)
+        ;
+
+        
+    
+    
+            circle_marker_ec64a924f2dc0ef83db2dd95816fe143.bindTooltip(
+                `<div>
+                     Dufferin St at Castlefield Ave: 11.7 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_567d553417c19c34b7c04d685d598f48 = L.circleMarker(
+                [43.638781, -79.427202],
+                {"bubblingMouseEvents": true, "color": "#fff7b2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fff7b2", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_0f34eee0f36dd9dd4c399bf714bd9892 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_28503da13640c504e4058c2b354fc92b = $(`<div id="html_28503da13640c504e4058c2b354fc92b" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at King St West</b><br>Avg Headway: 8.0 min</div>`)[0];
+                popup_0f34eee0f36dd9dd4c399bf714bd9892.setContent(html_28503da13640c504e4058c2b354fc92b);
+            
+        
+
+        circle_marker_567d553417c19c34b7c04d685d598f48.bindPopup(popup_0f34eee0f36dd9dd4c399bf714bd9892)
+        ;
+
+        
+    
+    
+            circle_marker_567d553417c19c34b7c04d685d598f48.bindTooltip(
+                `<div>
+                     Dufferin St at King St West: 8.0 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8dc404c99d0c7428f5b5b978e713c4a1 = L.circleMarker(
+                [43.682439, -79.444935],
+                {"bubblingMouseEvents": true, "color": "#fed07e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fed07e", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_5cea67a876b125d98c6c9d37fc003adc = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_fd942ee26698d08d894d50c7df4201c9 = $(`<div id="html_fd942ee26698d08d894d50c7df4201c9" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Hope St</b><br>Avg Headway: 8.9 min</div>`)[0];
+                popup_5cea67a876b125d98c6c9d37fc003adc.setContent(html_fd942ee26698d08d894d50c7df4201c9);
+            
+        
+
+        circle_marker_8dc404c99d0c7428f5b5b978e713c4a1.bindPopup(popup_5cea67a876b125d98c6c9d37fc003adc)
+        ;
+
+        
+    
+    
+            circle_marker_8dc404c99d0c7428f5b5b978e713c4a1.bindTooltip(
+                `<div>
+                     Dufferin St at Hope St: 8.9 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e56d63bacc23b34c82a7cf9d018ef83f = L.circleMarker(
+                [43.730328, -79.458326],
+                {"bubblingMouseEvents": true, "color": "#30a356", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#30a356", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_e75396b32872f53a5e4a2c7dc6f8dc5f = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_aa8968c765777a8f9f40b8eea667c83e = $(`<div id="html_aa8968c765777a8f9f40b8eea667c83e" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Billy Bishop Way North Side</b><br>Avg Headway: 4.7 min</div>`)[0];
+                popup_e75396b32872f53a5e4a2c7dc6f8dc5f.setContent(html_aa8968c765777a8f9f40b8eea667c83e);
+            
+        
+
+        circle_marker_e56d63bacc23b34c82a7cf9d018ef83f.bindPopup(popup_e75396b32872f53a5e4a2c7dc6f8dc5f)
+        ;
+
+        
+    
+    
+            circle_marker_e56d63bacc23b34c82a7cf9d018ef83f.bindTooltip(
+                `<div>
+                     Dufferin St at Billy Bishop Way North Side: 4.7 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_69917dfde6b35f94db29c5c16ba5885c = L.circleMarker(
+                [43.726345, -79.457682],
+                {"bubblingMouseEvents": true, "color": "#fff3ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fff3ac", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_c94ec66f3b4151490f247dff38614b55 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_898619c2b4c8dfcf29ef48a25d5cc936 = $(`<div id="html_898619c2b4c8dfcf29ef48a25d5cc936" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Bridgeland Ave South Side</b><br>Avg Headway: 8.1 min</div>`)[0];
+                popup_c94ec66f3b4151490f247dff38614b55.setContent(html_898619c2b4c8dfcf29ef48a25d5cc936);
+            
+        
+
+        circle_marker_69917dfde6b35f94db29c5c16ba5885c.bindPopup(popup_c94ec66f3b4151490f247dff38614b55)
+        ;
+
+        
+    
+    
+            circle_marker_69917dfde6b35f94db29c5c16ba5885c.bindTooltip(
+                `<div>
+                     Dufferin St at Bridgeland Ave South Side: 8.1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a38bc3fd89ef500b7be78ca40bf99f03 = L.circleMarker(
+                [43.673383, -79.441066],
+                {"bubblingMouseEvents": true, "color": "#a7d96b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a7d96b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_01c93ff9f9538541e6a47d2b1d13b6d2 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_5bd207a585aa9ae6427a649283e599e6 = $(`<div id="html_5bd207a585aa9ae6427a649283e599e6" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Davenport Rd North Side</b><br>Avg Headway: 6.2 min</div>`)[0];
+                popup_01c93ff9f9538541e6a47d2b1d13b6d2.setContent(html_5bd207a585aa9ae6427a649283e599e6);
+            
+        
+
+        circle_marker_a38bc3fd89ef500b7be78ca40bf99f03.bindPopup(popup_01c93ff9f9538541e6a47d2b1d13b6d2)
+        ;
+
+        
+    
+    
+            circle_marker_a38bc3fd89ef500b7be78ca40bf99f03.bindTooltip(
+                `<div>
+                     Dufferin St at Davenport Rd North Side: 6.2 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5a2f999f6644bdd9d9053b1418a16551 = L.circleMarker(
+                [43.709102, -79.453783],
+                {"bubblingMouseEvents": true, "color": "#f88c51", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f88c51", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_92510db90ae0e8c5b0903742f014cae0 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_d0f2f72703cd73ab602e25fac5c0e805 = $(`<div id="html_d0f2f72703cd73ab602e25fac5c0e805" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Glengrove Ave</b><br>Avg Headway: 9.9 min</div>`)[0];
+                popup_92510db90ae0e8c5b0903742f014cae0.setContent(html_d0f2f72703cd73ab602e25fac5c0e805);
+            
+        
+
+        circle_marker_5a2f999f6644bdd9d9053b1418a16551.bindPopup(popup_92510db90ae0e8c5b0903742f014cae0)
+        ;
+
+        
+    
+    
+            circle_marker_5a2f999f6644bdd9d9053b1418a16551.bindTooltip(
+                `<div>
+                     Dufferin St at Glengrove Ave: 9.9 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7d8c9f57546498e6c7dfbb893c557dd1 = L.circleMarker(
+                [43.660199, -79.435337],
+                {"bubblingMouseEvents": true, "color": "#c5e67e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c5e67e", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_31b08ed1c8877b4a63bbb9ac3f6ae289 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_3eeddaf1d2c8d74f4f78e7f0dc27c68c = $(`<div id="html_3eeddaf1d2c8d74f4f78e7f0dc27c68c" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Bloor St West - Dufferin Station</b><br>Avg Headway: 6.6 min</div>`)[0];
+                popup_31b08ed1c8877b4a63bbb9ac3f6ae289.setContent(html_3eeddaf1d2c8d74f4f78e7f0dc27c68c);
+            
+        
+
+        circle_marker_7d8c9f57546498e6c7dfbb893c557dd1.bindPopup(popup_31b08ed1c8877b4a63bbb9ac3f6ae289)
+        ;
+
+        
+    
+    
+            circle_marker_7d8c9f57546498e6c7dfbb893c557dd1.bindTooltip(
+                `<div>
+                     Dufferin St at Bloor St West - Dufferin Station: 6.6 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_76696e6c4b4366a644d20030420bdbff = L.circleMarker(
+                [43.678395, -79.443316],
+                {"bubblingMouseEvents": true, "color": "#f8fcb6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f8fcb6", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_7fd191833e843f69afd2ccad053d377e = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_763f1c2121b12ccd9e0f7a82bc6b86d7 = $(`<div id="html_763f1c2121b12ccd9e0f7a82bc6b86d7" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at St Clair Ave West</b><br>Avg Headway: 7.6 min</div>`)[0];
+                popup_7fd191833e843f69afd2ccad053d377e.setContent(html_763f1c2121b12ccd9e0f7a82bc6b86d7);
+            
+        
+
+        circle_marker_76696e6c4b4366a644d20030420bdbff.bindPopup(popup_7fd191833e843f69afd2ccad053d377e)
+        ;
+
+        
+    
+    
+            circle_marker_76696e6c4b4366a644d20030420bdbff.bindTooltip(
+                `<div>
+                     Dufferin St at St Clair Ave West: 7.6 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e7696a378e446647c47ff221a81cb941 = L.circleMarker(
+                [43.703481, -79.452235],
+                {"bubblingMouseEvents": true, "color": "#b7e075", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b7e075", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_4cd3ae68c7a23660116b7ae7eb5c28c2 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_0badf1407b29585efdcd9bb6e1b71d1c = $(`<div id="html_0badf1407b29585efdcd9bb6e1b71d1c" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Stayner Ave</b><br>Avg Headway: 6.4 min</div>`)[0];
+                popup_4cd3ae68c7a23660116b7ae7eb5c28c2.setContent(html_0badf1407b29585efdcd9bb6e1b71d1c);
+            
+        
+
+        circle_marker_e7696a378e446647c47ff221a81cb941.bindPopup(popup_4cd3ae68c7a23660116b7ae7eb5c28c2)
+        ;
+
+        
+    
+    
+            circle_marker_e7696a378e446647c47ff221a81cb941.bindTooltip(
+                `<div>
+                     Dufferin St at Stayner Ave: 6.4 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_280842bbfc362c04cbd9d7200b939364 = L.circleMarker(
+                [43.656933, -79.434122],
+                {"bubblingMouseEvents": true, "color": "#c5e67e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c5e67e", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_9ea262c9becb9607c6c6f0c83db9a5a5 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_3ed583050b6110d4e1369a589824435d = $(`<div id="html_3ed583050b6110d4e1369a589824435d" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Dufferin Park Ave</b><br>Avg Headway: 6.6 min</div>`)[0];
+                popup_9ea262c9becb9607c6c6f0c83db9a5a5.setContent(html_3ed583050b6110d4e1369a589824435d);
+            
+        
+
+        circle_marker_280842bbfc362c04cbd9d7200b939364.bindPopup(popup_9ea262c9becb9607c6c6f0c83db9a5a5)
+        ;
+
+        
+    
+    
+            circle_marker_280842bbfc362c04cbd9d7200b939364.bindTooltip(
+                `<div>
+                     Dufferin St at Dufferin Park Ave: 6.6 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_488bbf3951ab029e1403d022f68d0365 = L.circleMarker(
+                [43.668259, -79.438833],
+                {"bubblingMouseEvents": true, "color": "#a7d96b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a7d96b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_a5fcca67ba1d459a99bc955b1f76fdf5 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_7d4dab9a5b277120b22649bd393f6fcc = $(`<div id="html_7d4dab9a5b277120b22649bd393f6fcc" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Dupont St</b><br>Avg Headway: 6.2 min</div>`)[0];
+                popup_a5fcca67ba1d459a99bc955b1f76fdf5.setContent(html_7d4dab9a5b277120b22649bd393f6fcc);
+            
+        
+
+        circle_marker_488bbf3951ab029e1403d022f68d0365.bindPopup(popup_a5fcca67ba1d459a99bc955b1f76fdf5)
+        ;
+
+        
+    
+    
+            circle_marker_488bbf3951ab029e1403d022f68d0365.bindTooltip(
+                `<div>
+                     Dufferin St at Dupont St: 6.2 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_28169d3f5f261b783892feb2bd1fb3b6 = L.circleMarker(
+                [43.716313, -79.455342],
+                {"bubblingMouseEvents": true, "color": "#fff2aa", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fff2aa", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_8d68417b1a93dbabff0316dc5db0b000 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_765bd5813dc84f56d3424afb09ada82e = $(`<div id="html_765bd5813dc84f56d3424afb09ada82e" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Apex Rd South Side</b><br>Avg Headway: 8.1 min</div>`)[0];
+                popup_8d68417b1a93dbabff0316dc5db0b000.setContent(html_765bd5813dc84f56d3424afb09ada82e);
+            
+        
+
+        circle_marker_28169d3f5f261b783892feb2bd1fb3b6.bindPopup(popup_8d68417b1a93dbabff0316dc5db0b000)
+        ;
+
+        
+    
+    
+            circle_marker_28169d3f5f261b783892feb2bd1fb3b6.bindTooltip(
+                `<div>
+                     Dufferin St at Apex Rd South Side: 8.1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e9f8c4d2bd0f455a71bf3036db0c00fa = L.circleMarker(
+                [43.642008, -79.428427],
+                {"bubblingMouseEvents": true, "color": "#fff7b2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fff7b2", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_bf24556ea1a0b6c0fe0b9b5a656ee044 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_4ac9f21bd7b5b49d3111833286bc4f0e = $(`<div id="html_4ac9f21bd7b5b49d3111833286bc4f0e" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Queen St West</b><br>Avg Headway: 8.0 min</div>`)[0];
+                popup_bf24556ea1a0b6c0fe0b9b5a656ee044.setContent(html_4ac9f21bd7b5b49d3111833286bc4f0e);
+            
+        
+
+        circle_marker_e9f8c4d2bd0f455a71bf3036db0c00fa.bindPopup(popup_bf24556ea1a0b6c0fe0b9b5a656ee044)
+        ;
+
+        
+    
+    
+            circle_marker_e9f8c4d2bd0f455a71bf3036db0c00fa.bindTooltip(
+                `<div>
+                     Dufferin St at Queen St West: 8.0 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5375da68a9dc64459cd1466678383bfc = L.circleMarker(
+                [43.685673, -79.446257],
+                {"bubblingMouseEvents": true, "color": "#fedc88", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fedc88", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_9d94286c5226773b31ebb9c9eaac09fb = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_115497ca6abec262084ed663f9dd2892 = $(`<div id="html_115497ca6abec262084ed663f9dd2892" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Rogers Rd</b><br>Avg Headway: 8.7 min</div>`)[0];
+                popup_9d94286c5226773b31ebb9c9eaac09fb.setContent(html_115497ca6abec262084ed663f9dd2892);
+            
+        
+
+        circle_marker_5375da68a9dc64459cd1466678383bfc.bindPopup(popup_9d94286c5226773b31ebb9c9eaac09fb)
+        ;
+
+        
+    
+    
+            circle_marker_5375da68a9dc64459cd1466678383bfc.bindTooltip(
+                `<div>
+                     Dufferin St at Rogers Rd: 8.7 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9ae88675f0416df0dface30a06a1a786 = L.circleMarker(
+                [43.659958, -79.435506],
+                {"bubblingMouseEvents": true, "color": "#a0d669", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a0d669", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_ea95d2280d2752f9deecdf5a38af1387 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_dfca15a078e4fee836b2de64fd8e9e2c = $(`<div id="html_dfca15a078e4fee836b2de64fd8e9e2c" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Bloor St West - Dufferin Station</b><br>Avg Headway: 6.0 min</div>`)[0];
+                popup_ea95d2280d2752f9deecdf5a38af1387.setContent(html_dfca15a078e4fee836b2de64fd8e9e2c);
+            
+        
+
+        circle_marker_9ae88675f0416df0dface30a06a1a786.bindPopup(popup_ea95d2280d2752f9deecdf5a38af1387)
+        ;
+
+        
+    
+    
+            circle_marker_9ae88675f0416df0dface30a06a1a786.bindTooltip(
+                `<div>
+                     Dufferin St at Bloor St West - Dufferin Station: 6.0 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7a097ea2210637435dfb5d9fe6c7ceea = L.circleMarker(
+                [43.652873, -79.432579],
+                {"bubblingMouseEvents": true, "color": "#fee491", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fee491", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_6733cd052cbac9cf0568f51e7dccd4ab = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_5034f5bd808dec917b9feda4918e5558 = $(`<div id="html_5034f5bd808dec917b9feda4918e5558" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at College St North Side</b><br>Avg Headway: 8.5 min</div>`)[0];
+                popup_6733cd052cbac9cf0568f51e7dccd4ab.setContent(html_5034f5bd808dec917b9feda4918e5558);
+            
+        
+
+        circle_marker_7a097ea2210637435dfb5d9fe6c7ceea.bindPopup(popup_6733cd052cbac9cf0568f51e7dccd4ab)
+        ;
+
+        
+    
+    
+            circle_marker_7a097ea2210637435dfb5d9fe6c7ceea.bindTooltip(
+                `<div>
+                     Dufferin St at College St North Side: 8.5 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2938b792a50d3186ae41b6981d1ee4df = L.circleMarker(
+                [43.644682, -79.429661],
+                {"bubblingMouseEvents": true, "color": "#c7e77f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c7e77f", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_fc4fa140bf802c4208e983ab57a3161e = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_3da9959f8212a9dacb90115b861482b8 = $(`<div id="html_3da9959f8212a9dacb90115b861482b8" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Alma Ave</b><br>Avg Headway: 6.7 min</div>`)[0];
+                popup_fc4fa140bf802c4208e983ab57a3161e.setContent(html_3da9959f8212a9dacb90115b861482b8);
+            
+        
+
+        circle_marker_2938b792a50d3186ae41b6981d1ee4df.bindPopup(popup_fc4fa140bf802c4208e983ab57a3161e)
+        ;
+
+        
+    
+    
+            circle_marker_2938b792a50d3186ae41b6981d1ee4df.bindTooltip(
+                `<div>
+                     Dufferin St at Alma Ave: 6.7 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a9835b859c859dc9a0ccf09e4a24b8e8 = L.circleMarker(
+                [43.673079, -79.441106],
+                {"bubblingMouseEvents": true, "color": "#f8fcb6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f8fcb6", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_e0376ef8a4b011b1eaab5d6b70e5bb1c = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_9cf85531190d26a6c2d8125416ae45da = $(`<div id="html_9cf85531190d26a6c2d8125416ae45da" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Davenport Rd</b><br>Avg Headway: 7.6 min</div>`)[0];
+                popup_e0376ef8a4b011b1eaab5d6b70e5bb1c.setContent(html_9cf85531190d26a6c2d8125416ae45da);
+            
+        
+
+        circle_marker_a9835b859c859dc9a0ccf09e4a24b8e8.bindPopup(popup_e0376ef8a4b011b1eaab5d6b70e5bb1c)
+        ;
+
+        
+    
+    
+            circle_marker_a9835b859c859dc9a0ccf09e4a24b8e8.bindTooltip(
+                `<div>
+                     Dufferin St at Davenport Rd: 7.6 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e71ef192ed24764e799d7b070d831d75 = L.circleMarker(
+                [43.635014, -79.425934],
+                {"bubblingMouseEvents": true, "color": "#75c465", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#75c465", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_9153a04a5765f62cbe65a18077182862 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_0ad25d7b3df6ba85fc5b7cf8dea2904b = $(`<div id="html_0ad25d7b3df6ba85fc5b7cf8dea2904b" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Springhurst Ave</b><br>Avg Headway: 5.5 min</div>`)[0];
+                popup_9153a04a5765f62cbe65a18077182862.setContent(html_0ad25d7b3df6ba85fc5b7cf8dea2904b);
+            
+        
+
+        circle_marker_e71ef192ed24764e799d7b070d831d75.bindPopup(popup_9153a04a5765f62cbe65a18077182862)
+        ;
+
+        
+    
+    
+            circle_marker_e71ef192ed24764e799d7b070d831d75.bindTooltip(
+                `<div>
+                     Dufferin St at Springhurst Ave: 5.5 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0d79bb491832de805f6fa79b12d587a5 = L.circleMarker(
+                [43.722329, -79.456447],
+                {"bubblingMouseEvents": true, "color": "#f5fbb2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f5fbb2", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_60e8558a3d9fad8aed1ec202b4dab57c = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_bac7c617dcf19c553f88b5048525d3e0 = $(`<div id="html_bac7c617dcf19c553f88b5048525d3e0" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Ranee Ave North Side</b><br>Avg Headway: 7.6 min</div>`)[0];
+                popup_60e8558a3d9fad8aed1ec202b4dab57c.setContent(html_bac7c617dcf19c553f88b5048525d3e0);
+            
+        
+
+        circle_marker_0d79bb491832de805f6fa79b12d587a5.bindPopup(popup_60e8558a3d9fad8aed1ec202b4dab57c)
+        ;
+
+        
+    
+    
+            circle_marker_0d79bb491832de805f6fa79b12d587a5.bindTooltip(
+                `<div>
+                     Dufferin St at Ranee Ave North Side: 7.6 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6719aad10a789f2afd8c9fdd309c788f = L.circleMarker(
+                [43.654788, -79.433476],
+                {"bubblingMouseEvents": true, "color": "#addc6f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#addc6f", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_ac2ff634b2f5f77296674d9e279cae66 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_ab05664fe255214cca6277d87ed4c09a = $(`<div id="html_ab05664fe255214cca6277d87ed4c09a" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Sylvan Ave</b><br>Avg Headway: 6.2 min</div>`)[0];
+                popup_ac2ff634b2f5f77296674d9e279cae66.setContent(html_ab05664fe255214cca6277d87ed4c09a);
+            
+        
+
+        circle_marker_6719aad10a789f2afd8c9fdd309c788f.bindPopup(popup_ac2ff634b2f5f77296674d9e279cae66)
+        ;
+
+        
+    
+    
+            circle_marker_6719aad10a789f2afd8c9fdd309c788f.bindTooltip(
+                `<div>
+                     Dufferin St at Sylvan Ave: 6.2 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_86d9226d617dad2d2c0e0a803477d476 = L.circleMarker(
+                [43.640185, -79.427735],
+                {"bubblingMouseEvents": true, "color": "#fff7b2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fff7b2", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_2332034101af1581c807c30c0c7247a3 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_9d20281b0b02e38480bd9e79270f91c9 = $(`<div id="html_9d20281b0b02e38480bd9e79270f91c9" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Melbourne Ave</b><br>Avg Headway: 8.0 min</div>`)[0];
+                popup_2332034101af1581c807c30c0c7247a3.setContent(html_9d20281b0b02e38480bd9e79270f91c9);
+            
+        
+
+        circle_marker_86d9226d617dad2d2c0e0a803477d476.bindPopup(popup_2332034101af1581c807c30c0c7247a3)
+        ;
+
+        
+    
+    
+            circle_marker_86d9226d617dad2d2c0e0a803477d476.bindTooltip(
+                `<div>
+                     Dufferin St at Melbourne Ave: 8.0 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ec39e606173b8feef13b68851051babc = L.circleMarker(
+                [43.720389, -79.455958],
+                {"bubblingMouseEvents": true, "color": "#b7e075", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b7e075", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_7e41ed8fddd4c1d3054db74ea4b0d549 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_933cbe15055aa5b407462a23310a106e = $(`<div id="html_933cbe15055aa5b407462a23310a106e" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Orfus Rd</b><br>Avg Headway: 6.4 min</div>`)[0];
+                popup_7e41ed8fddd4c1d3054db74ea4b0d549.setContent(html_933cbe15055aa5b407462a23310a106e);
+            
+        
+
+        circle_marker_ec39e606173b8feef13b68851051babc.bindPopup(popup_7e41ed8fddd4c1d3054db74ea4b0d549)
+        ;
+
+        
+    
+    
+            circle_marker_ec39e606173b8feef13b68851051babc.bindTooltip(
+                `<div>
+                     Dufferin St at Orfus Rd: 6.4 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_df530c8aa82dcecf5bd9ca809e2bc8bf = L.circleMarker(
+                [43.70891, -79.453464],
+                {"bubblingMouseEvents": true, "color": "#b7e075", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b7e075", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_c1e23ae70cc043cde4303f2b76f61f77 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_57f59083fccbad1c2e3ed01cfd887e05 = $(`<div id="html_57f59083fccbad1c2e3ed01cfd887e05" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Glengrove Ave</b><br>Avg Headway: 6.4 min</div>`)[0];
+                popup_c1e23ae70cc043cde4303f2b76f61f77.setContent(html_57f59083fccbad1c2e3ed01cfd887e05);
+            
+        
+
+        circle_marker_df530c8aa82dcecf5bd9ca809e2bc8bf.bindPopup(popup_c1e23ae70cc043cde4303f2b76f61f77)
+        ;
+
+        
+    
+    
+            circle_marker_df530c8aa82dcecf5bd9ca809e2bc8bf.bindTooltip(
+                `<div>
+                     Dufferin St at Glengrove Ave: 6.4 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_54c683574e8108c88bd531cddc0f94a3 = L.circleMarker(
+                [43.649807, -79.431591],
+                {"bubblingMouseEvents": true, "color": "#bde379", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bde379", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_75bbc164d6a47fba4fdc7f07d3e0ec3c = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_cc1eaa6fa818856382ff3a4675ed48a7 = $(`<div id="html_cc1eaa6fa818856382ff3a4675ed48a7" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Dundas St West</b><br>Avg Headway: 6.5 min</div>`)[0];
+                popup_75bbc164d6a47fba4fdc7f07d3e0ec3c.setContent(html_cc1eaa6fa818856382ff3a4675ed48a7);
+            
+        
+
+        circle_marker_54c683574e8108c88bd531cddc0f94a3.bindPopup(popup_75bbc164d6a47fba4fdc7f07d3e0ec3c)
+        ;
+
+        
+    
+    
+            circle_marker_54c683574e8108c88bd531cddc0f94a3.bindTooltip(
+                `<div>
+                     Dufferin St at Dundas St West: 6.5 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_053471d668bd76b7e324219a65a396c1 = L.circleMarker(
+                [43.721948, -79.456556],
+                {"bubblingMouseEvents": true, "color": "#fff3ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fff3ac", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_ae06aa3a9537a3c1f664d3a25202e1ab = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_2c1bd848d3b302a6b172863f97957a9a = $(`<div id="html_2c1bd848d3b302a6b172863f97957a9a" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Bentworth Ave</b><br>Avg Headway: 8.1 min</div>`)[0];
+                popup_ae06aa3a9537a3c1f664d3a25202e1ab.setContent(html_2c1bd848d3b302a6b172863f97957a9a);
+            
+        
+
+        circle_marker_053471d668bd76b7e324219a65a396c1.bindPopup(popup_ae06aa3a9537a3c1f664d3a25202e1ab)
+        ;
+
+        
+    
+    
+            circle_marker_053471d668bd76b7e324219a65a396c1.bindTooltip(
+                `<div>
+                     Dufferin St at Bentworth Ave: 8.1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0a2651e12ed7f2abe4d4cf3e0e4dd610 = L.circleMarker(
+                [43.686836, -79.44654],
+                {"bubblingMouseEvents": true, "color": "#fed481", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fed481", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_752f01ba1360c2db9e0b70cb0341c861 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_2cbae9726f7af0511f58bf2841f65f98 = $(`<div id="html_2cbae9726f7af0511f58bf2841f65f98" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Eversfield Rd</b><br>Avg Headway: 8.8 min</div>`)[0];
+                popup_752f01ba1360c2db9e0b70cb0341c861.setContent(html_2cbae9726f7af0511f58bf2841f65f98);
+            
+        
+
+        circle_marker_0a2651e12ed7f2abe4d4cf3e0e4dd610.bindPopup(popup_752f01ba1360c2db9e0b70cb0341c861)
+        ;
+
+        
+    
+    
+            circle_marker_0a2651e12ed7f2abe4d4cf3e0e4dd610.bindTooltip(
+                `<div>
+                     Dufferin St at Eversfield Rd: 8.8 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_df1dc224ea146eead48cd741c3b084b1 = L.circleMarker(
+                [43.718016, -79.455386],
+                {"bubblingMouseEvents": true, "color": "#b7e075", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b7e075", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_e2f1d483e985b970ef568c9c69f5a506 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_5addc7feb4d5172de51609960e8a9505 = $(`<div id="html_5addc7feb4d5172de51609960e8a9505" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Celt Ave North Side</b><br>Avg Headway: 6.4 min</div>`)[0];
+                popup_e2f1d483e985b970ef568c9c69f5a506.setContent(html_5addc7feb4d5172de51609960e8a9505);
+            
+        
+
+        circle_marker_df1dc224ea146eead48cd741c3b084b1.bindPopup(popup_e2f1d483e985b970ef568c9c69f5a506)
+        ;
+
+        
+    
+    
+            circle_marker_df1dc224ea146eead48cd741c3b084b1.bindTooltip(
+                `<div>
+                     Dufferin St at Celt Ave North Side: 6.4 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6aa1e6cc72b935a16738143882178434 = L.circleMarker(
+                [43.698016, -79.451269],
+                {"bubblingMouseEvents": true, "color": "#a50026", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50026", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_44a71c4b7e220e0acf8aa943fe043afd = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_4b351549919379e6f48e730bd655c7b4 = $(`<div id="html_4b351549919379e6f48e730bd655c7b4" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Bowie Ave</b><br>Avg Headway: 11.9 min</div>`)[0];
+                popup_44a71c4b7e220e0acf8aa943fe043afd.setContent(html_4b351549919379e6f48e730bd655c7b4);
+            
+        
+
+        circle_marker_6aa1e6cc72b935a16738143882178434.bindPopup(popup_44a71c4b7e220e0acf8aa943fe043afd)
+        ;
+
+        
+    
+    
+            circle_marker_6aa1e6cc72b935a16738143882178434.bindTooltip(
+                `<div>
+                     Dufferin St at Bowie Ave: 11.9 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_94936229476f378c10e92e1979a842fb = L.circleMarker(
+                [43.687023, -79.446808],
+                {"bubblingMouseEvents": true, "color": "#fedc88", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fedc88", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_012bef678491fd74398081c30038d157 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_281f3b3311b36fc1ebc5a5d56c0fedf9 = $(`<div id="html_281f3b3311b36fc1ebc5a5d56c0fedf9" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Eversfield Rd South Side</b><br>Avg Headway: 8.7 min</div>`)[0];
+                popup_012bef678491fd74398081c30038d157.setContent(html_281f3b3311b36fc1ebc5a5d56c0fedf9);
+            
+        
+
+        circle_marker_94936229476f378c10e92e1979a842fb.bindPopup(popup_012bef678491fd74398081c30038d157)
+        ;
+
+        
+    
+    
+            circle_marker_94936229476f378c10e92e1979a842fb.bindTooltip(
+                `<div>
+                     Dufferin St at Eversfield Rd South Side: 8.7 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b4cacb8de1e32d793008508c3bd49c19 = L.circleMarker(
+                [43.68227, -79.444697],
+                {"bubblingMouseEvents": true, "color": "#60ba62", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#60ba62", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_1406f5f695cbafb6bf60221ea04f9863 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_a48c0647462556ccf377411a26ae9f91 = $(`<div id="html_a48c0647462556ccf377411a26ae9f91" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Hope St</b><br>Avg Headway: 5.2 min</div>`)[0];
+                popup_1406f5f695cbafb6bf60221ea04f9863.setContent(html_a48c0647462556ccf377411a26ae9f91);
+            
+        
+
+        circle_marker_b4cacb8de1e32d793008508c3bd49c19.bindPopup(popup_1406f5f695cbafb6bf60221ea04f9863)
+        ;
+
+        
+    
+    
+            circle_marker_b4cacb8de1e32d793008508c3bd49c19.bindTooltip(
+                `<div>
+                     Dufferin St at Hope St: 5.2 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4213820fc0e5ffc960509e482e8d02c2 = L.circleMarker(
+                [43.729347, -79.458372],
+                {"bubblingMouseEvents": true, "color": "#fff3ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fff3ac", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_e47cf8893eb029c9b241cac521a520ad = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_12c71ff14ad8e3d4b850ca592247fd2e = $(`<div id="html_12c71ff14ad8e3d4b850ca592247fd2e" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Whitley Ave</b><br>Avg Headway: 8.1 min</div>`)[0];
+                popup_e47cf8893eb029c9b241cac521a520ad.setContent(html_12c71ff14ad8e3d4b850ca592247fd2e);
+            
+        
+
+        circle_marker_4213820fc0e5ffc960509e482e8d02c2.bindPopup(popup_e47cf8893eb029c9b241cac521a520ad)
+        ;
+
+        
+    
+    
+            circle_marker_4213820fc0e5ffc960509e482e8d02c2.bindTooltip(
+                `<div>
+                     Dufferin St at Whitley Ave: 8.1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_60113ec87a1df2e9133a0bac1542a434 = L.circleMarker(
+                [43.640638, -79.428103],
+                {"bubblingMouseEvents": true, "color": "#7dc765", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7dc765", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_1b76849d1e8a93a7a574b3e1340b2193 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_e88fcdf57f039c52aa9504d066886239 = $(`<div id="html_e88fcdf57f039c52aa9504d066886239" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Melbourne Ave</b><br>Avg Headway: 5.6 min</div>`)[0];
+                popup_1b76849d1e8a93a7a574b3e1340b2193.setContent(html_e88fcdf57f039c52aa9504d066886239);
+            
+        
+
+        circle_marker_60113ec87a1df2e9133a0bac1542a434.bindPopup(popup_1b76849d1e8a93a7a574b3e1340b2193)
+        ;
+
+        
+    
+    
+            circle_marker_60113ec87a1df2e9133a0bac1542a434.bindTooltip(
+                `<div>
+                     Dufferin St at Melbourne Ave: 5.6 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e4629b47f456dd44ab5c6ac28255411a = L.circleMarker(
+                [43.675421, -79.441934],
+                {"bubblingMouseEvents": true, "color": "#a7d96b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a7d96b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_b86399ae01052ace189835cb3f802e11 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_3e3482bd4257662b571d2d7219bcaefd = $(`<div id="html_3e3482bd4257662b571d2d7219bcaefd" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Auburn Ave</b><br>Avg Headway: 6.2 min</div>`)[0];
+                popup_b86399ae01052ace189835cb3f802e11.setContent(html_3e3482bd4257662b571d2d7219bcaefd);
+            
+        
+
+        circle_marker_e4629b47f456dd44ab5c6ac28255411a.bindPopup(popup_b86399ae01052ace189835cb3f802e11)
+        ;
+
+        
+    
+    
+            circle_marker_e4629b47f456dd44ab5c6ac28255411a.bindTooltip(
+                `<div>
+                     Dufferin St at Auburn Ave: 6.2 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a4f61ad9212b41ef5ddc634a75eb738d = L.circleMarker(
+                [43.646893, -79.43048],
+                {"bubblingMouseEvents": true, "color": "#bfe47a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#bfe47a", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_1aeaf86614ae3b58d8f6b0361b7ecd03 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_1635d332a860b87f46649db35208ef92 = $(`<div id="html_1635d332a860b87f46649db35208ef92" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Gordon St</b><br>Avg Headway: 6.5 min</div>`)[0];
+                popup_1aeaf86614ae3b58d8f6b0361b7ecd03.setContent(html_1635d332a860b87f46649db35208ef92);
+            
+        
+
+        circle_marker_a4f61ad9212b41ef5ddc634a75eb738d.bindPopup(popup_1aeaf86614ae3b58d8f6b0361b7ecd03)
+        ;
+
+        
+    
+    
+            circle_marker_a4f61ad9212b41ef5ddc634a75eb738d.bindTooltip(
+                `<div>
+                     Dufferin St at Gordon St: 6.5 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_88fcc96ff2589935454627fa47a88dd9 = L.circleMarker(
+                [43.702508, -79.452277],
+                {"bubblingMouseEvents": true, "color": "#f47044", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f47044", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_f7debb8c5d2b6e6d68f68d7319dee9b3 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_f5b60d9be4acb99cce80b322a34d0437 = $(`<div id="html_f5b60d9be4acb99cce80b322a34d0437" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Briar Hill Ave</b><br>Avg Headway: 10.3 min</div>`)[0];
+                popup_f7debb8c5d2b6e6d68f68d7319dee9b3.setContent(html_f5b60d9be4acb99cce80b322a34d0437);
+            
+        
+
+        circle_marker_88fcc96ff2589935454627fa47a88dd9.bindPopup(popup_f7debb8c5d2b6e6d68f68d7319dee9b3)
+        ;
+
+        
+    
+    
+            circle_marker_88fcc96ff2589935454627fa47a88dd9.bindTooltip(
+                `<div>
+                     Dufferin St at Briar Hill Ave: 10.3 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ee7ca62670eb7d4909d554c12879ea63 = L.circleMarker(
+                [43.680238, -79.444056],
+                {"bubblingMouseEvents": true, "color": "#fed07e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fed07e", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_412b1fd7b81e5ee12e61a1eb28d1ce19 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_fdb4c037df44b9c86ee79b277d7c566d = $(`<div id="html_fdb4c037df44b9c86ee79b277d7c566d" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Ascot Ave</b><br>Avg Headway: 8.9 min</div>`)[0];
+                popup_412b1fd7b81e5ee12e61a1eb28d1ce19.setContent(html_fdb4c037df44b9c86ee79b277d7c566d);
+            
+        
+
+        circle_marker_ee7ca62670eb7d4909d554c12879ea63.bindPopup(popup_412b1fd7b81e5ee12e61a1eb28d1ce19)
+        ;
+
+        
+    
+    
+            circle_marker_ee7ca62670eb7d4909d554c12879ea63.bindTooltip(
+                `<div>
+                     Dufferin St at Ascot Ave: 8.9 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b5c59cce4c87ba333c5c7e70ecbfe670 = L.circleMarker(
+                [43.634401, -79.425872],
+                {"bubblingMouseEvents": true, "color": "#fff7b2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fff7b2", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_d5df4be972c9a38b24c9d88bf18d0a71 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_4f2f6544e21ec15564dd6879fd8616c1 = $(`<div id="html_4f2f6544e21ec15564dd6879fd8616c1" style="width: 100.0%; height: 100.0%;"><b>Dufferin Gate Loop</b><br>Avg Headway: 8.0 min</div>`)[0];
+                popup_d5df4be972c9a38b24c9d88bf18d0a71.setContent(html_4f2f6544e21ec15564dd6879fd8616c1);
+            
+        
+
+        circle_marker_b5c59cce4c87ba333c5c7e70ecbfe670.bindPopup(popup_d5df4be972c9a38b24c9d88bf18d0a71)
+        ;
+
+        
+    
+    
+            circle_marker_b5c59cce4c87ba333c5c7e70ecbfe670.bindTooltip(
+                `<div>
+                     Dufferin Gate Loop: 8.0 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7eb934e5bdce45f7cba0745b7f3478ae = L.circleMarker(
+                [43.637414, -79.426893],
+                {"bubblingMouseEvents": true, "color": "#73c264", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#73c264", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_889528cce6c4744d81d7a1a5268bf95d = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_5d885fb16f11cde12058c1d0ee7babac = $(`<div id="html_5d885fb16f11cde12058c1d0ee7babac" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Liberty St</b><br>Avg Headway: 5.5 min</div>`)[0];
+                popup_889528cce6c4744d81d7a1a5268bf95d.setContent(html_5d885fb16f11cde12058c1d0ee7babac);
+            
+        
+
+        circle_marker_7eb934e5bdce45f7cba0745b7f3478ae.bindPopup(popup_889528cce6c4744d81d7a1a5268bf95d)
+        ;
+
+        
+    
+    
+            circle_marker_7eb934e5bdce45f7cba0745b7f3478ae.bindTooltip(
+                `<div>
+                     Dufferin St at Liberty St: 5.5 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4e8ea5dcd03b2650d2584881cf550fac = L.circleMarker(
+                [43.655107, -79.433431],
+                {"bubblingMouseEvents": true, "color": "#c5e67e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c5e67e", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_f8a2cd1487925cbfbfe1be97c4d65a5e = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_733a32fe079cc35ac2bd8e318a4b2b71 = $(`<div id="html_733a32fe079cc35ac2bd8e318a4b2b71" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Sylvan Ave North Side</b><br>Avg Headway: 6.6 min</div>`)[0];
+                popup_f8a2cd1487925cbfbfe1be97c4d65a5e.setContent(html_733a32fe079cc35ac2bd8e318a4b2b71);
+            
+        
+
+        circle_marker_4e8ea5dcd03b2650d2584881cf550fac.bindPopup(popup_f8a2cd1487925cbfbfe1be97c4d65a5e)
+        ;
+
+        
+    
+    
+            circle_marker_4e8ea5dcd03b2650d2584881cf550fac.bindTooltip(
+                `<div>
+                     Dufferin St at Sylvan Ave North Side: 6.6 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5cb22e4059e03eb3cd3550d7035cadf5 = L.circleMarker(
+                [43.688777, -79.447509],
+                {"bubblingMouseEvents": true, "color": "#fedc88", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fedc88", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 2}
+            ).addTo(map_a3e605399bce3f6fdb38ccced55534f3);
+        
+    
+        var popup_91cf2b2a6909f8649c15a160f6100754 = L.popup({
+  "maxWidth": 220,
+});
+
+        
+            
+                var html_4fa7fe5fd05304b585a956feb8618463 = $(`<div id="html_4fa7fe5fd05304b585a956feb8618463" style="width: 100.0%; height: 100.0%;"><b>Dufferin St at Holmesdale Rd</b><br>Avg Headway: 8.7 min</div>`)[0];
+                popup_91cf2b2a6909f8649c15a160f6100754.setContent(html_4fa7fe5fd05304b585a956feb8618463);
+            
+        
+
+        circle_marker_5cb22e4059e03eb3cd3550d7035cadf5.bindPopup(popup_91cf2b2a6909f8649c15a160f6100754)
+        ;
+
+        
+    
+    
+            circle_marker_5cb22e4059e03eb3cd3550d7035cadf5.bindTooltip(
+                `<div>
+                     Dufferin St at Holmesdale Rd: 8.7 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>
