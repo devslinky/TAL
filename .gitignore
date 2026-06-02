@@ -1,0 +1,4 @@
+.venv/
+.DS_Store
+trip_metrics.csv
+*.html
