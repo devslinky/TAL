@@ -1,0 +1,129 @@
+Introduction
+--------------------------------------------------------------------------------------------------------------------------------------
+
+    This document provides a summary of the current data pipeline and analytics architecture of iROAM; a MVP (Minimum Viable Product)
+    analytics dashboard that visualizes TTC's RealTime Veichle Positions Feed
+
+    iROAM  has 5 major capabilities: continuous realtime data ingestion, append-only operational storage [only adds data, doesn't delete], GTFS-aware trajectory reconstruction, anomaly analytics,
+    and short-horizon bus bunching forecasting.
+
+    Additionally, through the continous storing of historical real-time data; higher-level analysis such as playback, route diagnosis and predictive monitoring is also supported.
+
+    All in all, iROAM can be regarded as a multi-layer spatiotemporal decision-support system for public transit operations.
+
+
+Scope
+--------------------------------------------------------------------------------------------------------------------------------------
+    The system takes in TTCs' GTFS-Realtime VehiclePositions as real time feed data and joins it with static GTFS schedule
+    and shape data. The system constantly queries real time feed data to develop an "operational representation of route behaviour 
+    over time". From this the system answers four classes of questions:
+
+    "State monitoring: Which vehicles are active now, on which routes, and with what freshness and service condition?
+    Trajectory reconstruction: How did a given trip instance evolve along its route in time-distance space?
+    Anomaly diagnosis: Where and when did bunching, long idling, or severe crowding occur?
+    Short-term forecasting: Which currently running buses are at risk of bunching in the next few minutes?"
+
+Architecture Design
+--------------------------------------------------------------------------------------------------------------------------------------
+    The design of iROAM consisted of a layered (non-monolithic) application design. The codebase is organized into apps/, core/,
+    db/, deployment/. 
+
+    Generally, db/ handles the modelling and querying of stored data. apps/ interacts with db/ to get data to collect, read and write data for
+    processing, analyzing and viewing. deployment/ handles the training and deploying of the LightGBM predictive model.
+
+        Repository Area                        Architectural Role
+    ----------------------------------------------------------------------------------
+    apps/collector/                        GTFS-Realtime acquisition, parsing, and normalization
+    db/models/, db/queries/, db/migrations/ persistence model, query layer, schema evolution
+    apps/analytics/                        GTFS-aware trajectory reconstruction and anomaly inputs
+    apps/api/                              route, fleet, trajectory, and iROAM service interfaces
+    apps/dashboard/                        general operational dashboard for live and historical views
+    deployment/bunching_lightgbm/          deployable predictive model bundle and retraining script
+    tests/                                 behavioural specification for parser, analytics, API, and forecast logic
+
+
+    Layer 1. Data acquisition
+    --------------------------------------------------------------------------------------------------------------------------------------
+    data aquisition is implemented in apps/collector/. apps/collector/ pulls Realtime bytes from the TTC endpoint (api) at fixed
+    intervals. It handles api fetch failures (HTTP failure, timeout, retry behaviour) and parses the protobuf format of responses.
+    It also normalizes, then writes, the feed meta data and feed data into a database.
+
+    FeedSpec defines a class of objects used to call transit feeds. It is written in a modular way; so that it is feed-agnostic.
+    FeedSpec objects define what a feed's name is, where to fetch it from and what [feed/data] normalizer to use. 
+    
+    We specify a FeedFetchLog class that defines a table of feed fetch records containing information regarding the 
+    feed fetched, the status of the fetch and the chronological/temporal order of fetch; preserving provenance and observability
+
+    We specify a RawGtfsrtSnapshot class that defines a table of successfully fetched feeds; specifcially including feed header 
+    metadata, a foreign key to FeedFetchLog record with feed information, and a content hash to check if the fetched feed is unique
+    (has feed been updated since last fetch)
+
+    We specify a VehiclePositions class that defines a table for normalized vehicle_positions data. The data also contains the 
+    raw unnormalized data in a raw_entity column
+
+    
+    Layer 2. Persistent Storage Layer
+    --------------------------------------------------------------------------------------------------------------------------------------
+    4 tools are used to create the database layer: PostgreSQL, PostGIS, SQLAlchemy 2.x and Alembic. PostgreSQL is the database in
+    which the data is stored. PostGIS allows for geographic information processing. SQLAlchemy 2.x lets python interact with 
+    SQL databases without using raw SQL (using python instead). Alembic is a migration tool that manages changes to database 
+    schemas over time (kind of like git but for databases).
+
+    "The live schema revolves around four core entities:
+
+    feed_fetch_logs: every collection attempt, whether successful or failed;
+    raw_gtfsrt_snapshots: one metadata record (content hash, header info) per successful fetch;
+    vehicle_positions: normalized realtime AVL rows;
+    analytics_runs and trip_trajectories: derived trajectory analytics output."
+
+    to note:
+    data is appended never replaced/overwrittern as it is fetched
+    fetches of the same unchanged/not-updated feed are considered to be unique snapshots due to it being a sign of signal feed liveness
+    the raw protobuf data is not stored, so if needed, the raw data for veichle_positions come from raw_entity
+
+    Layer 3: Analytics and Reconstruction Layer
+    --------------------------------------------------------------------------------------------------------------------------------------
+    app/analytics/ takes the pointwise historical vehicle_positions data and creates route trajectories from them. The transformation
+    of this data is done through pandas; therefore the PostgreSQL database only interacts with runner.py; which is responsible for 
+    reading the historical vehicle_positions data to app/analytics/ and then writes the transformed data back into a PostgreSQL
+    database. This allows for controlled access and manipulation of the actual data in the database.
+
+    + gtfs_static.py creates a cache of gtfs_static data tables to use
+    + runner.py calls run_for_date which loads the static data from the cache (gtfs_statis.load_all()), as well as trip instances that could be filtered by service date (i.e. pipeline.list_trip_instances)
+    + Within the run_for_date function; apps/analytics/pipeline is called where its list_trip_instance functions extract chronologically ordered
+    trip_id, start_date pairs; these pairs are used to fetch veichle_position data, attatch static attributes, project GPS points, remove 
+    geographic/off-route outliers, derive moving speeds, create and upsample trajectories and peresist these trajectories 
+    (all of this is done through using pipeline.preprocess functions) 
+
+    The output of this layer is trip_trajectories which contains all the information needed by iROAM to conduct any further analysis.
+
+    Layer 4: Service and API Layer
+    -----------------------------------------------------------------------------------------------------------------------------------------------
+    contained within apps/api; it exposes 
+
+    "live fleet APIs (/vehicles, /routes, /feed-status, /replay);
+    trajectory APIs (/trajectories);
+    iROAM route analytics APIs (/iroam/routes, /iroam/stops, /iroam/buses, /iroam/analytics, /iroam/forecast)."
+
+    the api's call queries within /db/queries to service information to the frontend
+
+    Layer 5: Presentation Layer
+    -------------------------------------------------------------------------------------------------------------------------------------------------
+    "Two presentation surfaces coexist in the repository:
+
+    a Streamlit operational dashboard in apps/dashboard/, focused on general platform monitoring;
+    a static React-style iROAM interface served from apps/api/static/iroam.html, focused on route playback, visual analytics, and forecasting."
+
+    "The iROAM interface is organized around three user tasks:
+
+    parameter configuration for route, date, direction, and anomaly thresholds;
+    playback via a time-distance diagram coupled to a schematic route view;
+    analytics through stop-level and hourly summaries, plus running-time allocation views."
+    
+    Layer 6: Predictive Modeling Layer
+    -------------------------------------------------------------------------------------------------------------------------------------------------
+    The predictive layer is contained within deployment/bunching_lightgbm 
+
+
+
+
