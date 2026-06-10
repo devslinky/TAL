@@ -59,7 +59,7 @@ Architecture Design
     (has feed been updated since last fetch)
 
     We specify a VehiclePositions class that defines a table for normalized vehicle_positions data. The data also contains the 
-    raw unnormalized data in a raw_entity column
+    raw unnormalized data in a raw_entity column (normalize_vehicles called in feed_specs)
 
     
     Layer 2. Persistent Storage Layer
@@ -122,7 +122,42 @@ Architecture Design
     
     Layer 6: Predictive Modeling Layer
     -------------------------------------------------------------------------------------------------------------------------------------------------
-    The predictive layer is contained within deployment/bunching_lightgbm 
+    The predictive layer is contained within deployment/bunching_lightgbm where a LightGBM model is used for bus bunching prediction. 
+
+
+End-to-End Data pipeline
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+The data pipeline has two interconnected flows: a live operational pipeline and a predictive feature pipeline.
+
+    Live Operational pipeline
+    --------------------------------------------------------------------------------------------------------------------------------------------------
+    1. Collector fetches TTC GTFS-Realtime VehiclePositions data at intervals
+    2. This data is parsed and normalized into a vehicle_positions orm/datatable
+    3. Feed metadata and content hash are recorded in raw_gtfsrt_snapshots
+    4. The analytics worker periodically identifies new, updated trip instances data 
+    5. The trip_trajectories orm/datatable is updated with the fetched data
+    6. The API serves route-level playback and analytics from trip_trajectories.
+    7. The frontend renders route playback, anomaly overlays, and summary charts from the API response.
+
+    Predictive Pipeline 
+    -------------------------------------------------------------------------------------------------------------------------------------------------------
+    1. identifies buses that are currently “running” and eligible
+    2. constructs a 60-step by 9-channel feature window per eligible bus
+    3. batches these windows through the LightGBM model bundle
+    4. returns per-bus probabilities and aggregate horizon summaries
+
+
+Key Algorithms and Analytical Methods
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+1. We move away from georgraphical coordinate progression to route progression by looking at the one-dimension distance the vehicle is going along the
+route given it is within a distance below some threshold w/r to the route (given by orthogonal_distance_m)
+2. We can interpolate vehicles position using the next row speed and upsampling time period (used for upsampling data)
+3. for each route_id, direction_id ; we choose one specific shape_id (the one with most stop_ids) to represent all trips taking that route
+4. Anomaly Detection:
+    + bus idiling if samples have speed below a threshold for over a threshold duration of time
+    + crowding is measured through mapping occupancy descriptions to rough occupancy percentages 
+    + bus bunching is detected if consecutive busses cross the same stop within a headway threshold or if their along-route seperation stays below 
+    a spatial threshold over a contigous interval
 
 
 
